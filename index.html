@@ -54,7 +54,7 @@
       font-size: 16px;
       color: #555;
     }
-    /* كسر (بسط/مقام) */
+    /* كتابة الكسر */
     .frac {
       display: inline-block;
       vertical-align: middle;
@@ -70,7 +70,7 @@
       display: block;
       padding: 0 2px;
     }
-    /* المتجه: قوسان كبيران كأنهما قوس واحد */
+    /* المتجه: قوس واحد كبير، س فوق وصاد تحت */
     .vector {
       display: inline-block;
       border-right: 2px solid #000;
@@ -122,46 +122,109 @@
 <body>
 
 <h1>مراجعة الاختبار النهائي</h1>
-<h2>حل أسئلة الوحدة الثانية (العلاقات والدالة العكسية والتحويلات)</h2>
+<h2>حل أسئلة الوحدة الثانية (من صفحة الاختياري حتى نهاية الوحدة)</h2>
 
-<!-- ١ -->
+<!-- السؤال ١ -->
 <div class="question">
-  <div class="q-title">السؤال (١): ظلِّل الشكل الذي يمثِّل علاقة <u>متعدِّد إلى واحد</u>.</div>
+  <div class="q-title">
+    السؤال (١): (من صفحة الاختياري الأولى)<br>
+    ظلِّل الشكل الذي يمثِّل <strong>علاقة متعدِّد إلى واحد</strong>.
+  </div>
   <div class="answer">
     <p class="step">
-      العلاقة متعدِّد إلى واحد تعني: أكثر من قيمة لـ س تقابلها نفس القيمة لـ ص.
+      العلاقة متعدِّد إلى واحد تعني: توجد قيمتان مختلفتان لـ س لهما نفس القيمة لـ ص.
     </p>
     <p class="step">
-      هذا يحدث في المنحنى التربيعي الرأسي (على شكل حرف U)، حيث المستقيم الأفقي يقطع المنحنى في نقطتين.
+      هذا يحدث في المنحنى التربيعي الرأسي (على شكل حرف U)، لأن أي خطّ أفقي يقطع المنحنى غالبًا في نقطتين.
     </p>
     <p class="step">
-      إذًا الشكل الصحيح هو <strong>الرسم الذي يمثِّل الدالة التربيعية الرأسية</strong>.
+      إذًا الإجابة الصحيحة: <strong>الشكل الذي يمثِّل قطعًا مكافئًا رأسيًّا (الدالة التربيعية).</strong>
     </p>
   </div>
 </div>
 
-<!-- ٢ -->
+<!-- السؤال ٢ -->
 <div class="question">
-  <div class="q-title">السؤال (٢): ظلِّل الشكل الذي يمثِّل علاقة <u>واحد إلى واحد</u>.</div>
+  <div class="q-title">
+    السؤال (٢): ظلِّل الشكل الذي يمثِّل <strong>علاقة واحد إلى واحد</strong>.
+  </div>
   <div class="answer">
     <p class="step">
-      واحد إلى واحد: لكل س قيمة واحدة لـ ص، ولكل ص قيمة واحدة لـ س.
+      واحد إلى واحد: لكل قيمة لـ س قيمة واحدة فقط لـ ص، والعكس.
     </p>
     <p class="step">
-      هذا يتحقّق في الخط المستقيم المائل؛ ينجح في اختبار المستقيم الرأسي والأفقي معًا.
+      هذا يتحقّق في الخط المستقيم المائل (دالة خطية غير أفقية)، حيث كل خط أفقي يقطع الرسم في نقطة واحدة فقط.
     </p>
     <p class="step">
-      إذًا الشكل الصحيح هو <strong>الرسم الذي يمثِّل الخط المستقيم المائل</strong>.
+      إذًا الإجابة الصحيحة: <strong>الشكل الذي يمثِّل خطًا مستقيمًا مائلًا.</strong>
     </p>
   </div>
 </div>
 
-<!-- رسومات متحرِّكة أفقية -->
+<!-- السؤال ٣ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٣): د(س) = ٢س + ٥ ، حيث س ∈ ح.<br>
+    حدِّد نوع العلاقة: هل هي واحد إلى واحد أم متعدِّد إلى واحد؟
+  </div>
+  <div class="answer">
+    <p class="step">
+      د(س) = ٢س + ٥ دالة خطية ذات ميل ≠ ٠، ولذلك فهي تمثِّل خطًا مستقيمًا مائلًا.
+    </p>
+    <p class="step">
+      لكل قيمة لـ س نحصل على قيمة واحدة لـ ص، ولكل قيمة لـ ص توجد قيمة واحدة لـ س.
+    </p>
+    <p class="step">
+      إذًا العلاقة <strong>واحد إلى واحد</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٤ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٤): د(س) = س² + ١ ، حيث س ∈ ح.<br>
+    حدِّد نوع العلاقة.
+  </div>
+  <div class="answer">
+    <p class="step">
+      نحسب مثلًا: د(١) = ٢ ، د(−١) = ٢ أيضًا.
+    </p>
+    <p class="step">
+      إذًا هناك قيمتان مختلفتان لـ س تعطيان نفس القيمة لـ ص ⇒ العلاقة متعدِّد إلى واحد.
+    </p>
+    <p class="step">
+      النوع: <strong>متعدِّد إلى واحد</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٥ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٥): أيُّ العلاقات البيانية في الورقة تمثَّل علاقة
+    <strong>واحد إلى متعدِّد</strong>؟
+  </div>
+  <div class="answer">
+    <p class="step">
+      واحد إلى متعدِّد: قيمة واحدة لـ س تقابلها أكثر من قيمة لـ ص.
+    </p>
+    <p class="step">
+      هذا يحدث في القطع المكافئ الأفقي (منحنى جانبي)، حيث المستقيم الرأسي يقطع الرسم في نقطتين.
+    </p>
+    <p class="step">
+      إذًا الإجابة الصحيحة: <strong>الشكل الذي يمثِّل قطعًا مكافئًا أفقيًّا.</strong>
+    </p>
+  </div>
+</div>
+
+<!-- رسومات توضيحية للحالات الثلاث -->
 <div class="graph-section">
-  <div class="graph-title">رسم متحرِّك لاختبار الخط الأفقي (هل الدالة واحد لواحد؟)</div>
+  <div class="graph-title">توضيح بالحركة: واحد إلى واحد / متعدِّد إلى واحد / واحد إلى متعدِّد</div>
   <p class="note">
-    إذا قطع الخط الأفقي المنحنى في نقطتين ⇒ الدالة ليست واحدًا لواحد (متعدِّد إلى واحد)،  
-    وإذا قطع نقطة واحدة فقط ⇒ الدالة واحد إلى واحد.
+    – في ص = س²: خط أفقي يقطع المنحنى في نقطتين ⇒ متعدِّد إلى واحد. <br>
+    – في ص = س³ أو ص = س: أي خط أفقي يقطع في نقطة واحدة ⇒ واحد إلى واحد. <br>
+    – في قطع مكافئ أفقي: خط رأسي يقطع في نقطتين ⇒ واحد إلى متعدِّد (وليست دالة).
   </p>
   <div class="graph-row">
     <div class="graph-box">
@@ -174,66 +237,569 @@
     </div>
     <div class="graph-box">
       <canvas id="lineCanvas" width="260" height="200"></canvas>
-      <div class="graph-caption">ص = س (دالة خطية واحد إلى واحد)</div>
+      <div class="graph-caption">ص = س (خط مستقيم واحد إلى واحد)</div>
     </div>
   </div>
 </div>
 
-<!-- ٣ -->
+<!-- السؤال ٦ -->
 <div class="question">
-  <div class="q-title">السؤال (٣): د(س) = ٢س + ٥ ، حيث س ∈ ح ، أوجد د⁻¹(س).</div>
+  <div class="q-title">
+    السؤال (٦): أيُّ الدوال الآتية (في الورقة) لا تمثِّل دالة واحد إلى واحد؟
+  </div>
   <div class="answer">
-    <p class="step">(١) نضع ص بدل د(س): ص = ٢س + ٥</p>
-    <p class="step">(٢) نبدِّل س مع ص: س = ٢ص + ٥</p>
     <p class="step">
-      (٣) نحل لإيجاد ص:  
-      س − ٥ = ٢ص ⇒
+      الدالتان التربيعيتان والراديكاليات غالبًا لا تكون واحدًا إلى واحد على ح ح.
+    </p>
+    <p class="step">
+      مثلًا: ص = √(٥ − س) تُعطي نفس القيمة لـ ص لقيمتين من س عند عكس المجال المناسب،  
+      بينما الدالة الخطية ص = ٢س + ٥ أو التكعيبية ص = س³ تكون واحدًا إلى واحد.
+    </p>
+    <p class="step">
+      إذًا الدالة التي <strong>لا</strong> تمثِّل واحدًا إلى واحد هي: <strong>الدالة الجذرية (مثل ص = √(٥ − س)) أو الدالة التربيعية المعطاة في الاختيارات.</strong>
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٧ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٧): حدِّد أيٌّ من العلاقات البيانية (٤ رسومات) يمثِّل دالة واحد إلى متعدِّد.
+  </div>
+  <div class="answer">
+    <p class="step">
+      نستخدم اختبار المستقيم الأفقي: إذا قطع المنحنى في أكثر من نقطة ⇒ واحد إلى متعدِّد.
+    </p>
+    <p class="step">
+      هذا ينطبق على الشكل الذي يشبه حرف C جانبيًّا (نصف دائرة أفقي أو قطع مكافئ أفقي).
+    </p>
+    <p class="step">
+      إذًا الإجابة: <strong>الرسم الذي يقطعه المستقيم الأفقي في أكثر من نقطة (المنحنى الجانبي).</strong>
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٨ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٨): من الرسوم البيانية المعطاة، أيّها يمثِّل دالة (ينجح في اختبار المستقيم الرأسي)؟
+  </div>
+  <div class="answer">
+    <p class="step">
+      نرسم مستقيمًا رأسيًا: إذا قطع الرسم في أكثر من نقطة ⇒ ليست دالة. إذا قطع في نقطة واحدة ⇒ دالة.
+    </p>
+    <p class="step">
+      القطع الناقص (بيضاوي) والقطع المكافئ الأفقي يفشلان في اختبار المستقيم الرأسي،  
+      بينما المنحنى التربيعي الرأسي والخط المستقيم ينجحان.
+    </p>
+    <p class="step">
+      إذًا أي رسم من هذين النوعين يمثِّل دالة: <strong>الدالة التربيعية الرأسية أو الخط المستقيم.</strong>
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٩ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٩): من الرسوم (أ)، (ب)، (ج)، (د) في الورقة، حدِّد أيّها يمثِّل علاقة متعدِّد إلى واحد.
+  </div>
+  <div class="answer">
+    <p class="step">
+      متعدِّد إلى واحد: خط أفقي يقطع الرسم في نقطتين أو أكثر.
+    </p>
+    <p class="step">
+      هذا ينطبق على المنحنى التربيعي الرأسي.  
+      إذًا الشكل الذي يشبه حرف U هو <strong>متعدِّد إلى واحد</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ١٠ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (١٠): يمثِّل الشكل بيان الدالة:<br>
+    د(س) = س² − ٣. أوجد <strong>مدى</strong> د(س).
+  </div>
+  <div class="answer">
+    <p class="step">
+      من الرسم أو من القانون، رأس المنحنى عند س = ٠:  
+      د(٠) = (٠)² − ٣ = −٣ وهي <u>أصغر</u> قيمة لـ ص.
+    </p>
+    <p class="step">
+      المنحنى مفتوح لأعلى ⇒ باقي قيم ص أكبر من −٣.
+    </p>
+    <p class="step">
+      المدى: <strong>ص ≥ −٣</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ١١ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (١١): يمثِّل الشكل بيان الدالة:<br>
+    د(س) = ٢ − س². أوجد <strong>مدى</strong> د(س).
+  </div>
+  <div class="answer">
+    <p class="step">
+      من القانون: د(س) = ٢ − س² = −(س² − ٢).  
+      رأس المنحنى عند س = ٠ → د(٠) = ٢ وهي <u>أكبر</u> قيمة لـ ص.
+    </p>
+    <p class="step">
+      المنحنى مفتوح لأسفل ⇒ باقي قيم ص أصغر من ٢.
+    </p>
+    <p class="step">
+      المدى: <strong>ص ≤ ٢</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ١٢ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (١٢): يبيِّن الرسم البياني علاقة بين س ، ص.<br>
+    طالب قال: العلاقة متعدِّد إلى واحد، وطالب آخر قال: واحد إلى متعدِّد.<br>
+    أيّ القولين صحيح؟ ولماذا؟
+  </div>
+  <div class="answer">
+    <p class="step">
+      ننظر إلى الرسم: منحنى جانبي (نصف دائرة أو قطع مكافئ أفقي).
+    </p>
+    <p class="step">
+      المستقيم الرأسي يقطع المنحنى في نقطتين ⇒ ليست دالة أصلاً (واحد إلى متعدِّد).  
+      المستقيم الأفقي يقطع الرسم في نقطة واحدة في الغالب.
+    </p>
+    <p class="step">
+      إذًا التفسير الصحيح: <strong>العلاقة واحد إلى متعدِّد</strong>، وقول الطالب الثاني هو الصحيح.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ١٣ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (١٣): إذا كانت د(س) = ٣س ، هـ(س) = ٣س + ١ ، أوجد قيمة (هـ ∘ د)(١).
+  </div>
+  <div class="answer">
+    <p class="step">
+      أولًا نحسب د(١): د(١) = ٣ × ١ = ٣.
+    </p>
+    <p class="step">
+      ثم نعوِّض في هـ: هـ(٣) = ٣ × ٣ + ١ = ٩ + ١ = ١٠.
+    </p>
+    <p class="step">
+      إذًا: <strong>(هـ ∘ د)(١) = ١٠</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ١٤ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (١٤): د(س) = س + ٦ ، ل(س) = س − ٤ ، حيث س ∈ ح.<br>
+    أوجد (د ∘ ل)(س).
+  </div>
+  <div class="answer">
+    <p class="step">
+      ل(س) = س − ٤.
+    </p>
+    <p class="step">
+      (د ∘ ل)(س) = د(ل(س)) = د(س − ٤) = (س − ٤) + ٦ = س + ٢.
+    </p>
+    <p class="step">
+      إذًا: <strong>(د ∘ ل)(س) = س + ٢</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ١٥ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (١٥): (د ∘ هـ)(س) = ٤ − س².<br>
+    أوجد (د ∘ هـ)(٢).
+  </div>
+  <div class="answer">
+    <p class="step">
+      بالتعويض المباشر في الصورة المعطاة:  
+      (د ∘ هـ)(٢) = ٤ − (٢)² = ٤ − ٤ = ٠.
+    </p>
+    <p class="step">
+      إذًا: <strong>(د ∘ هـ)(٢) = ٠</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ١٦ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (١٦): د : س ↦ س³ ، هـ : س ↦ ٣س − ٢.<br>
+    أوجد (هـ ∘ د)(٣).
+  </div>
+  <div class="answer">
+    <p class="step">
+      د(٣) = ٣³ = ٢٧.
+    </p>
+    <p class="step">
+      هـ(٢٧) = ٣ × ٢٧ − ٢ = ٨١ − ٢ = ٧٩.
+    </p>
+    <p class="step">
+      إذًا: <strong>(هـ ∘ د)(٣) = ٧٩</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ١٧ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (١٧): إذا كان (هـ ∘ هـ)(س) = ٥٥ ، حيث هـ(س) = ٣س − ٢ ، أوجد قيمة س.
+  </div>
+  <div class="answer">
+    <p class="step">
+      أولًا نوجد هـ(هـ(س)):  
+      هـ(س) = ٣س − ٢ ⇒ هـ(هـ(س)) = ٣(٣س − ٢) − ٢ = ٩س − ٨.
+    </p>
+    <p class="step">
+      ٩س − ٨ = ٥٥ ⇒ ٩س = ٦٣ ⇒ س = ٧.
+    </p>
+    <p class="step">
+      إذًا: <strong>س = ٧</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ١٨ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (١٨): د(س) = (س − ٣)² + ١. أوجد (د ∘ د)(٢).
+  </div>
+  <div class="answer">
+    <p class="step">
+      د(٢) = (٢ − ٣)² + ١ = (−١)² + ١ = ١ + ١ = ٢.
+    </p>
+    <p class="step">
+      إذًا (د ∘ د)(٢) = د(٢) = ٢ ⇒ <strong>(د ∘ د)(٢) = ٢</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ١٩ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (١٩): ت(س) = س + ٥ ، حيث ٠ &lt; س &lt; ١٠.<br>
+    مثِّل الدالة بيانيًّا (نقطتان مفتوحتان).
+  </div>
+  <div class="answer">
+    <p class="step">
+      نحسب بالنهايتين: ت(٠) = ٥ ، ت(١٠) = ١٥.  
+      المجال مفتوح عند ٠ و ١٠ ⇒ نقطتان مفتوحتان عند (٠ ، ٥) و (١٠ ، ١٥).
+    </p>
+    <p class="step">
+      نصل بينهما بخط مستقيم؛ هذا هو تمثيل الدالة.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٢٠ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٢٠): د(س) = س + ٤. أوجد الدالة العكسية د⁻¹(س).
+  </div>
+  <div class="answer">
+    <p class="step">١) نضع ص بدل د(س): ص = س + ٤.</p>
+    <p class="step">٢) نبدِّل س مع ص: س = ص + ٤.</p>
+    <p class="step">٣) نحلّ لإيجاد ص: ص = س − ٤.</p>
+    <p class="step">
+      إذًا: <strong>د⁻¹(س) = س − ٤</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٢١ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٢١): د(س) = (س − ٢)² − ٧ ، على المجال س ≥ ٢. أوجد د⁻¹(س).
+  </div>
+  <div class="answer">
+    <p class="step">١) ص = (س − ٢)² − ٧.</p>
+    <p class="step">٢) نبدِّل س مع ص: س = (ص − ٢)² − ٧.</p>
+    <p class="step">
+      ٣) س + ٧ = (ص − ٢)² ⇒ √(س + ٧) = ±(ص − ٢).
+    </p>
+    <p class="step">
+      من المجال الأصلي (س ≥ ٢ ⇒ قيم ص ≥ −٧) نأخذ الجذر الموجب: ص − ٢ = √(س + ٧) ⇒ ص = ٢ + √(س + ٧).
+    </p>
+    <p class="step">
+      إذًا: <strong>د⁻¹(س) = ٢ + √(س + ٧)</strong> ، مجال د⁻¹: س ≥ −٧.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٢٢ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٢٢): د(س) =
+    <span class="frac"><span class="num">٨</span><span class="den">س − ٤</span></span> ، حيث س ≠ ٤.<br>
+    أوجد د⁻¹(س).
+  </div>
+  <div class="answer">
+    <p class="step">١) ص =
+      <span class="frac"><span class="num">٨</span><span class="den">س − ٤</span></span>.
+    </p>
+    <p class="step">٢) نبدِّل س مع ص: س =
+      <span class="frac"><span class="num">٨</span><span class="den">ص − ٤</span></span>.
+    </p>
+    <p class="step">
+      ٣) نحلّ لإيجاد ص:  
+      س(ص − ٤) = ٨ ⇒ سص − ٤س = ٨ ⇒ سص = ٨ + ٤س ⇒  
       ص =
-      <span class="frac"><span class="num">س − ٥</span><span class="den">٢</span></span>
+      <span class="frac"><span class="num">٨ + ٤س</span><span class="den">س</span></span>.
     </p>
     <p class="step">
-      إذًا <strong>د⁻¹(س) =
-        <span class="frac"><span class="num">س − ٥</span><span class="den">٢</span></span>
-      </strong> وهي دالة واحد إلى واحد.
+      إذًا: <strong>د⁻¹(س) =
+        <span class="frac"><span class="num">٨ + ٤س</span><span class="den">س</span></span>
+      </strong>.
     </p>
   </div>
 </div>
 
-<!-- ٤ -->
+<!-- السؤال ٢٣ -->
 <div class="question">
-  <div class="q-title">السؤال (٤): د(س) = س² + ١ ، حيث س ∈ ح. حدِّد نوع العلاقة.</div>
+  <div class="q-title">
+    السؤال (٢٣): د(س) = س² + ٨ ، حيث س ≥ ٠. أوجد د⁻¹(٩).
+  </div>
   <div class="answer">
     <p class="step">
-      د(١) = ٢ ، د(−١) = ٢ أيضًا ⇒ قيمتان مختلفتان لـ س لهما نفس ص.
+      نريد س بحيث ٩ = س² + ٨ ⇒ س² = ١ ⇒ س = ±١، لكن المجال س ≥ ٠ ⇒ س = ١.
     </p>
     <p class="step">
-      إذًا العلاقة <strong>متعدِّد إلى واحد</strong>.
+      إذًا: <strong>د⁻¹(٩) = ١</strong>.
     </p>
   </div>
 </div>
 
-<!-- ٥ -->
+<!-- السؤال ٢٤ -->
 <div class="question">
-  <div class="q-title">السؤال (٥): أيُّ العلاقات البيانية تمثِّل علاقة <u>واحد إلى متعدِّد</u>؟</div>
+  <div class="q-title">
+    السؤال (٢٤): الدالة د(س) = س + ٢ على المجال ١ ≤ س ≤ ٦.<br>
+    (أ) أوجد مدى د(س).<br>
+    (ب) أوجد مجال ومدى د⁻¹(س).
+  </div>
   <div class="answer">
     <p class="step">
-      واحد إلى متعدِّد: قيمة واحدة لـ س تقابلها أكثر من قيمة لـ ص.
+      (أ) نعوِّض بقيم المجال: د(١) = ٣ ، د(٦) = ٨ ⇒ المدى: ٣ ≤ ص ≤ ٨.
     </p>
     <p class="step">
-      هذا يحدث في القطع المكافئ الأفقي (منحنى جانبي)، حيث المستقيم الرأسي يقطع الرسم في نقطتين.
-    </p>
-    <p class="step">
-      إذًا العلاقة واحد إلى متعدِّد هي <strong>الرسم الذي يمثِّل قطعًا مكافئًا أفقيًّا</strong>.
+      (ب) في الدالة العكسية يتبادل المجال والمدى:  
+      د⁻¹(س) = س − ٢ ، مجال د⁻¹: ٣ ≤ س ≤ ٨ ، ومدى د⁻¹: ١ ≤ ص ≤ ٦.
     </p>
   </div>
 </div>
 
-<!-- رسومات متحرِّكة رأسية -->
+<!-- السؤال ٢٥ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٢٥): د(س) = س² + ٤س ، حيث س ≤ −٢.<br>
+    (أ) أوجد مجال د⁻¹(س).<br>
+    (ب) أوجد مدى د⁻¹(س).
+  </div>
+  <div class="answer">
+    <p class="step">
+      نكتب د(س) في صورة مربع كامل:  
+      د(س) = س² + ٤س = (س + ٢)² − ٤.
+    </p>
+    <p class="step">
+      المجال الأصلي: س ≤ −٢.  
+      أصغر قيمة لـ ص عندما س = −٢: د(−٢) = (−٢ + ٢)² − ٤ = −٤.  
+      وباقي القيم أكبر من −٤ ⇒ مدى د(س): ص ≥ −٤.
+    </p>
+    <p class="step">
+      عند الانتقال إلى الدالة العكسية:  
+      مجال د⁻¹ = مدى د ⇒ مجال د⁻¹: س ≥ −٤.  
+      مدى د⁻¹ = مجال د ⇒ مدى د⁻¹: ص ≤ −٢.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٢٦ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٢٦): من الرسوم (أ) و(ب) في الكتاب، ارسم منحنى الدالة العكسية لكل منهما على نفس المستوى الإحداثي.
+  </div>
+  <div class="answer">
+    <p class="step">
+      نرسم أولًا المستقيم ص = س كخط مرجعي.
+    </p>
+    <p class="step">
+      لكل نقطة على منحنى الدالة الأصلية (س ، ص) نرسم النقطة (ص ، س).  
+      بهذه الطريقة نحصل على منحنى الدالة د⁻¹(س).
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٢٧ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٢٧): د(س) = (س − ٢)² + ٣ ، حيث س &lt; ٢.<br>
+    (أ) أوجد مجال د(س).<br>
+    (ب) أوجد مدى د(س).<br>
+    (ج) أوجد مجال د⁻¹(س).<br>
+    (د) أوجد مدى د⁻¹(س).
+  </div>
+  <div class="answer">
+    <p class="step">
+      (أ) المجال معطى: س &lt; ٢.
+    </p>
+    <p class="step">
+      (ب) د(س) = (س − ٢)² + ٣ ≥ ٣ دائمًا ⇒ مدى د(س): ص ≥ ٣.
+    </p>
+    <p class="step">
+      (ج) مجال د⁻¹(س) يساوي مدى د(س) ⇒ مجال د⁻¹: س ≥ ٣.
+    </p>
+    <p class="step">
+      (د) مدى د⁻¹(س) يساوي مجال د(س) ⇒ مدى د⁻¹: ص &lt; ٢.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٢٨ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٢٨): متجه الانسحاب الذي يحوِّل الدالة د(س) = س³ − ٢س + ٢ إلى الدالة د(س) = س³ − ٢س − ٤.
+  </div>
+  <div class="answer">
+    <p class="step">
+      الثابت تغيّر من ٢ إلى −٤ ⇒ نقص ٦ وحدات في الاتجاه الرأسي.
+    </p>
+    <p class="step">
+      إذًا الانسحاب رأسي إلى أسفل بالمتجه:
+      <span class="vector"><span class="top">٠</span><span class="bottom">−٦</span></span>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٢٩ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٢٩): متجه الانسحاب الذي يحوِّل ص = د(س) إلى ص = د(س − ١) + ١.
+  </div>
+  <div class="answer">
+    <p class="step">
+      د(س − ١) ⇒ انتقال وحدة واحدة إلى اليمين. <br>
+      +١ ⇒ انتقال وحدة واحدة إلى أعلى.
+    </p>
+    <p class="step">
+      إذًا متجه الانسحاب:
+      <span class="vector"><span class="top">١</span><span class="bottom">١</span></span>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٣٠ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٣٠): إذا تحرَّك منحنى ص = د(س) بالمتجه
+    <span class="vector"><span class="top">أ</span><span class="bottom">ب</span></span>،
+    فاكتب الدالة الجديدة.
+  </div>
+  <div class="answer">
+    <p class="step">
+      التحويل الأفقي: س → س − أ.   والتحويل الرأسي: ص → ص + ب.
+    </p>
+    <p class="step">
+      إذًا الصورة الجديدة: <strong>ص = د(س − أ) + ب</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٣١ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٣١): التحويل الذي يبقي الدالة ص = س³ كما هي.
+  </div>
+  <div class="answer">
+    <p class="step">
+      أي تحويل بمعامل ١ لا يغيِّر شكل الدالة، مثل التمدّد الرأسي بمعامل ١ أو عدم إجراء أي تحويل.
+    </p>
+    <p class="step">
+      إذًا التحويل هو: <strong>عدم إجراء أي تحويل (الهوية)</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٣٢ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٣٢): معامل التمدّد الرأسي الذي يحوِّل الدالة ص = س³ + ٢ إلى ص = ٨س³ + ٢.
+  </div>
+  <div class="answer">
+    <p class="step">
+      المعامل أمام س³ تغيّر من ١ إلى ٨ ⇒ التمدّد الرأسي بمعامل <strong>٨</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٣٣ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٣٣): الدالة ص = ٢س³ بعد تمدّد رأسي بمعامل
+    <span class="frac"><span class="num">١</span><span class="den">٢</span></span>
+    تصبح؟
+  </div>
+  <div class="answer">
+    <p class="step">
+      ص الجديدة =
+      <span class="frac"><span class="num">١</span><span class="den">٢</span></span> × ٢س³ = س³.
+    </p>
+    <p class="step">
+      إذًا: <strong>ص = س³</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٣٤ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٣٤): إذا كانت د(س) = س³ − ١ ، هـ(س) = √(س + ١). أوجد (هـ ∘ د)(٢).
+  </div>
+  <div class="answer">
+    <p class="step">
+      د(٢) = ٨ − ١ = ٧.
+    </p>
+    <p class="step">
+      هـ(٧) = √(٧ + ١) = √٨.
+    </p>
+    <p class="step">
+      إذًا: <strong>(هـ ∘ د)(٢) = √٨</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- السؤال ٣٥ -->
+<div class="question">
+  <div class="q-title">
+    السؤال (٣٥): أيُّ الدوال الآتية تكون عكسية لنفسها؟
+  </div>
+  <div class="answer">
+    <p class="step">
+      من الأمثلة المشهورة على مجال مناسب:  
+      ص =
+      <span class="frac"><span class="num">١</span><span class="den">س</span></span>
+      تكون دالتها العكسية هي نفسها.
+    </p>
+    <p class="step">
+      لذلك أي دالة من الشكل ص =
+      <span class="frac"><span class="num">١</span><span class="den">س</span></span>
+      (على مجال مناسب) هي عكسية لنفسها.
+    </p>
+  </div>
+</div>
+
+<!-- رسومات متحرِّكة إضافية لاختبار المستقيم الرأسي -->
 <div class="graph-section">
-  <div class="graph-title">رسم متحرِّك لاختبار المستقيم الرأسي (هل العلاقة تمثِّل دالة؟)</div>
+  <div class="graph-title">رسم متحرِّك لاختبار المستقيم الرأسي (هل العلاقة دالة؟)</div>
   <p class="note">
-    إذا قطع المستقيم الرأسي المنحنى في نقطتين ⇒ ليست دالة (واحد إلى متعدِّد)،  
-    وإذا قطع نقطة واحدة فقط ⇒ العلاقة تمثِّل دالة.
+    – إذا قطع المستقيم الرأسي المنحنى في نقطتين ⇒ ليست دالة (علاقة واحد إلى متعدِّد). <br>
+    – إذا قطع في نقطة واحدة فقط ⇒ تمثِّل دالة.
   </p>
   <div class="graph-row">
     <div class="graph-box">
@@ -242,384 +808,8 @@
     </div>
     <div class="graph-box">
       <canvas id="quadVCanvas" width="260" height="200"></canvas>
-      <div class="graph-caption">ص = س² (دالة؛ تنجح في اختبار المستقيم الرأسي)</div>
+      <div class="graph-caption">ص = س² (تمثِّل دالة)</div>
     </div>
-  </div>
-</div>
-
-<!-- ٦ -->
-<div class="question">
-  <div class="q-title">السؤال (٦): أيُّ الدوال الآتية لا تمثِّل دالة واحد إلى واحد؟</div>
-  <div class="answer">
-    <p class="step">
-      الدالة ص = √(٥ − س) تعطي نفس القيمة لـ ص لقيمتين مختلفتين من س؛  
-      لذلك ليست واحدًا إلى واحد.
-    </p>
-    <p class="step">
-      إذًا الدالة التي لا تمثِّل واحدًا إلى واحد هي <strong>ص = √(٥ − س)</strong>.
-    </p>
-  </div>
-</div>
-
-<!-- ٧ -->
-<div class="question">
-  <div class="q-title">السؤال (٧): مدى الدالة د(س) = (٢ − س)² − ٣.</div>
-  <div class="answer">
-    <p class="step">
-      رأس المنحنى عند س = ٢ ⇒ د(٢) = −٣ (أصغر قيمة لـ ص).
-    </p>
-    <p class="step">
-      إذًا <strong>المدى: ص ≥ −٣.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ٨ -->
-<div class="question">
-  <div class="q-title">السؤال (٨): مدى الدالة د(س) = ٢ − س².</div>
-  <div class="answer">
-    <p class="step">
-      رأس المنحنى عند س = ٠ ⇒ د(٠) = ٢ (أكبر قيمة لـ ص).
-    </p>
-    <p class="step">
-      إذًا <strong>المدى: ص ≤ ٢.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ٩ -->
-<div class="question">
-  <div class="q-title">السؤال (٩): من الرسوم (أ)، (ب)، (ج) حدِّد المجال والمدى لكل دالة.</div>
-  <div class="answer">
-    <p class="step">
-      المجال: نقرأ من محور س بداية المنحنى ونهايته.  
-      المدى: نعوِّض بأصغر وأكبر قيم في المجال لنحصل على أصغر وأكبر قيم لـ ص.
-    </p>
-  </div>
-</div>
-
-<!-- ١٠ -->
-<div class="question">
-  <div class="q-title">السؤال (١٠): يمثِّل الشكل بيان الدالة د(س) = س² − ٣ ، أوجد مدى د(س).</div>
-  <div class="answer">
-    <p class="step">
-      من الرسم رأس المنحنى عند س = ٠ ⇒ د(٠) = −٣ وهي أصغر قيمة لـ ص.
-    </p>
-    <p class="step">
-      إذًا <strong>المدى: ص ≥ −٣.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ١١ -->
-<div class="question">
-  <div class="q-title">السؤال (١١): يمثِّل الشكل بيان الدالة د(س) = ٢ − س² ، أوجد مدى د(س).</div>
-  <div class="answer">
-    <p class="step">
-      رأس المنحنى عند س = ٠ ⇒ د(٠) = ٢ وهي أكبر قيمة لـ ص.  
-      إذًا <strong>المدى: ص ≤ ٢.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ١٢ -->
-<div class="question">
-  <div class="q-title">السؤال (١٢): الرسم يبيِّن علاقة بين س ، ص. أحد الطلاب قال: العلاقة متعدِّد إلى واحد، والآخر قال: واحد إلى متعدِّد. أيهما الصحيح؟</div>
-  <div class="answer">
-    <p class="step">
-      من الرسم (منحنى جانبي): المستقيم الرأسي يقطع المنحنى في نقطتين ⇒ ليست دالة.  
-      لكن المستقيم الأفقي يقطع المنحنى في نقطة واحدة ⇒ علاقة واحد إلى متعدِّد.
-    </p>
-    <p class="step">
-      إذًا قول الطالب الثاني (واحد إلى متعدِّد) هو الصحيح.
-    </p>
-  </div>
-</div>
-
-<!-- ١٣ -->
-<div class="question">
-  <div class="q-title">السؤال (١٣): إذا كانت د(س) = ٣س ، هـ(س) = ٣س + ١ ، أوجد قيمة (هـ ∘ د)(١).</div>
-  <div class="answer">
-    <p class="step">
-      د(١) = ٣ ، ثم هـ(٣) = ٣ × ٣ + ١ = ١٠ ⇒ <strong>(هـ ∘ د)(١) = ١٠.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ١٤ -->
-<div class="question">
-  <div class="q-title">السؤال (١٤): د(س) = س + ٦ ، ل(س) = س − ٤ ، حيث س ∈ ح ، أوجد (د ∘ ل)(س).</div>
-  <div class="answer">
-    <p class="step">
-      ل(س) = س − ٤  
-      (د ∘ ل)(س) = د(س − ٤) = (س − ٤) + ٦ = س + ٢ ⇒ <strong>(د ∘ ل)(س) = س + ٢.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ١٥ -->
-<div class="question">
-  <div class="q-title">السؤال (١٥): (د ∘ هـ)(س) = ٤ − س² ، أوجد (د ∘ هـ)(٢).</div>
-  <div class="answer">
-    <p class="step">
-      بالتعويض المباشر: (د ∘ هـ)(٢) = ٤ − (٢)² = ٠ ⇒ <strong>(د ∘ هـ)(٢) = ٠.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ١٦ -->
-<div class="question">
-  <div class="q-title">السؤال (١٦): د : س ↦ س³ ، هـ : س ↦ ٣س − ٢ ، أوجد (هـ ∘ د)(٣).</div>
-  <div class="answer">
-    <p class="step">
-      د(٣) = ٢٧ ، ثم هـ(٢٧) = ٣ × ٢٧ − ٢ = ٨١ − ٢ = ٧٩ ⇒ <strong>(هـ ∘ د)(٣) = ٧٩.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ١٧ -->
-<div class="question">
-  <div class="q-title">السؤال (١٧): إذا كان (هـ ∘ هـ)(س) = ٥٥ ، حيث هـ(س) = ٣س − ٢ ، أوجد قيمة س.</div>
-  <div class="answer">
-    <p class="step">
-      هـ(س) = ٣س − ٢ ⇒ هـ(هـ(س)) = ٣(٣س − ٢) − ٢ = ٩س − ٨.
-    </p>
-    <p class="step">
-      ٩س − ٨ = ٥٥ ⇒ ٩س = ٦٣ ⇒ س = ٧ ⇒ <strong>س = ٧.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ١٨ -->
-<div class="question">
-  <div class="q-title">السؤال (١٨): د(س) = (س − ٣)² + ١ ، أوجد (د ∘ د)(٢).</div>
-  <div class="answer">
-    <p class="step">
-      د(٢) = (٢ − ٣)² + ١ = ١ + ١ = ٢ ⇒ <strong>(د ∘ د)(٢) = ٢.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ١٩ -->
-<div class="question">
-  <div class="q-title">السؤال (١٩): ت(س) = س + ٥ ، حيث ٠ &lt; س &lt; ١٠. ظلِّل الشكل المناسب.</div>
-  <div class="answer">
-    <p class="step">
-      نعوِّض: ت(٠) = ٥ (نقطة مفتوحة)، ت(١٠) = ١٥ (نقطة مفتوحة)، ثم نرسم خطًّا مستقيمًا بينهما.
-    </p>
-  </div>
-</div>
-
-<!-- ٢٠ -->
-<div class="question">
-  <div class="q-title">السؤال (٢٠): د(س) = س + ٤ ، أوجد د⁻¹(س).</div>
-  <div class="answer">
-    <p class="step">
-      ص = س + ٤ ⇒ نبدِّل: س = ص + ٤ ⇒ ص = س − ٤ ⇒ <strong>د⁻¹(س) = س − ٤.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ٢١ -->
-<div class="question">
-  <div class="q-title">السؤال (٢١): د(س) = (س − ٢)² − ٧ ، س ≥ ٢ ، أوجد د⁻¹(س).</div>
-  <div class="answer">
-    <p class="step">ص = (س − ٢)² − ٧</p>
-    <p class="step">نبدِّل: س = (ص − ٢)² − ٧</p>
-    <p class="step">
-      س + ٧ = (ص − ٢)² ⇒ √(س + ٧) = ص − ٢  
-      من المجال نأخذ الجذر الموجب ⇒ ص = ٢ + √(س + ٧).
-    </p>
-    <p class="step">
-      إذًا <strong>د⁻¹(س) = ٢ + √(س + ٧)</strong> ، مجالها س ≥ −٧.
-    </p>
-  </div>
-</div>
-
-<!-- ٢٢ -->
-<div class="question">
-  <div class="q-title">السؤال (٢٢): د(س) =
-    <span class="frac"><span class="num">٨</span><span class="den">س − ٤</span></span> ، س ≠ ٤ ، أوجد د⁻¹(س).</div>
-  <div class="answer">
-    <p class="step">ص =
-      <span class="frac"><span class="num">٨</span><span class="den">س − ٤</span></span>
-    </p>
-    <p class="step">نبدِّل: س =
-      <span class="frac"><span class="num">٨</span><span class="den">ص − ٤</span></span>
-    </p>
-    <p class="step">
-      س(ص − ٤) = ٨ ⇒ سص − ٤س = ٨ ⇒ سص = ٨ + ٤س ⇒  
-      ص =
-      <span class="frac"><span class="num">٨ + ٤س</span><span class="den">س</span></span> ، س ≠ ٠.
-    </p>
-    <p class="step">
-      إذًا <strong>د⁻¹(س) =
-        <span class="frac"><span class="num">٨ + ٤س</span><span class="den">س</span></span>
-      </strong>.
-    </p>
-  </div>
-</div>
-
-<!-- ٢٣ -->
-<div class="question">
-  <div class="q-title">السؤال (٢٣): د(س) = س² + ٨ على المجال س ≥ ٠ ، أوجد د⁻¹(٩).</div>
-  <div class="answer">
-    <p class="step">
-      س² + ٨ = ٩ ⇒ س² = ١ ⇒ س = ±١ ، لكن س ≥ ٠ ⇒ س = ١ ⇒ <strong>د⁻¹(٩) = ١.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ٢٤ -->
-<div class="question">
-  <div class="q-title">السؤال (٢٤): الدالة د(س) = س + ٢ على المجال ١ ≤ س ≤ ٦.</div>
-  <div class="answer">
-    <p class="step">
-      د(١) = ٣ ، د(٦) = ٨ ⇒ مدى د(س): ٣ ≤ ص ≤ ٨.
-    </p>
-    <p class="step">
-      الدالة العكسية: د⁻¹(س) = س − ٢ ⇒ مجال د⁻¹: ٣ ≤ س ≤ ٨ ، مداها: ١ ≤ ص ≤ ٦.
-    </p>
-  </div>
-</div>
-
-<!-- ٢٥ -->
-<div class="question">
-  <div class="q-title">السؤال (٢٥): د(س) = س² + ٤س ، حيث س ≤ −٢.</div>
-  <div class="answer">
-    <p class="step">
-      د(س) = (س + ٢)² − ٤.
-    </p>
-    <p class="step">
-      ص = (س + ٢)² − ٤ ⇒ نبدِّل: س = (ص + ٢)² − ٤ ⇒ س + ٤ = (ص + ٢)² ⇒ √(س + ٤) = |ص + ٢|.
-    </p>
-    <p class="step">
-      من المجال الأصلي س ≤ −٢ ⇒ نأخذ الجذر السالب:  
-      ص + ٢ = −√(س + ٤) ⇒ ص = −٢ − √(س + ٤).
-    </p>
-    <p class="step">
-      إذًا <strong>د⁻¹(س) = −٢ − √(س + ٤)</strong> ، مجالها س ≥ −٤ ، ومدى د⁻¹: ص ≤ −٢.
-    </p>
-  </div>
-</div>
-
-<!-- ٢٦ -->
-<div class="question">
-  <div class="q-title">السؤال (٢٦): من الرسمين (أ) و(ب) ارسم منحنى الدالة العكسية على نفس المستوى.</div>
-  <div class="answer">
-    <p class="step">
-      نرسم المستقيم ص = س، ثم نعكس كل نقطة (س ، ص) إلى (ص ، س)؛ فنحصل على منحنى الدالة العكسية د⁻¹(س).
-    </p>
-  </div>
-</div>
-
-<!-- ٢٧ -->
-<div class="question">
-  <div class="q-title">السؤال (٢٧): د(س) = (س − ٢)² + ٣ ، حيث س &lt; ٢.</div>
-  <div class="answer">
-    <p class="step">ص = (س − ٢)² + ٣</p>
-    <p class="step">نبدِّل: س = (ص − ٢)² + ٣</p>
-    <p class="step">
-      س − ٣ = (ص − ٢)² ⇒ √(س − ٣) = |ص − ٢|.
-    </p>
-    <p class="step">
-      من المجال الأصلي س &lt; ٢ ⇒ نأخذ الجذر السالب:  
-      ص − ٢ = −√(س − ٣) ⇒ ص = ٢ − √(س − ٣).
-    </p>
-    <p class="step">
-      إذًا <strong>د⁻¹(س) = ٢ − √(س − ٣)</strong> ، مجالها س &gt; ٣ ، ومدى د⁻¹: ص &lt; ٢.
-    </p>
-  </div>
-</div>
-
-<!-- ٢٨ -->
-<div class="question">
-  <div class="q-title">السؤال (٢٨): متجه الانسحاب الذي يحوِّل الدالة د(س) = س³ − ٢س + ٢ إلى د(س) = س³ − ٢س − ٤.</div>
-  <div class="answer">
-    <p class="step">
-      الثابت تغيّر من ٢ إلى −٤ ⇒ نقص ٦ وحدات ⇒ انسحاب رأسي إلى الأسفل بالمتجه
-      <span class="vector"><span class="top">٠</span><span class="bottom">−٦</span></span>.
-    </p>
-  </div>
-</div>
-
-<!-- ٢٩ -->
-<div class="question">
-  <div class="q-title">السؤال (٢٩): متجه الانسحاب الذي يحوِّل ص = د(س) إلى ص = د(س − ١) + ١.</div>
-  <div class="answer">
-    <p class="step">
-      د(س − ١): انتقال وحدة إلى اليمين، +١: انتقال وحدة إلى أعلى ⇒  
-      المتجه
-      <span class="vector"><span class="top">١</span><span class="bottom">١</span></span>.
-    </p>
-  </div>
-</div>
-
-<!-- ٣٠ -->
-<div class="question">
-  <div class="q-title">السؤال (٣٠): إذا تحرَّك منحنى ص = د(س) بالمتجه (أ ، ب) فاكتب الصورة الجديدة.</div>
-  <div class="answer">
-    <p class="step">
-      الصورة بعد الانسحاب:
-      <strong>ص = د(س − أ) + ب</strong> ، حيث المتجه
-      <span class="vector"><span class="top">أ</span><span class="bottom">ب</span></span>.
-    </p>
-  </div>
-</div>
-
-<!-- ٣١ -->
-<div class="question">
-  <div class="q-title">السؤال (٣١): التحويل الذي يبقي الدالة ص = س³ كما هي.</div>
-  <div class="answer">
-    <p class="step">
-      عدم إجراء أي تحويل، أو تمدّد رأسي بمعامل ١ (لا يغيِّر شكل الدالة).
-    </p>
-  </div>
-</div>
-
-<!-- ٣٢ -->
-<div class="question">
-  <div class="q-title">السؤال (٣٢): معامل التمدّد الرأسي الذي يحوِّل ص = س³ + ٢ إلى ص = ٨س³ + ٢.</div>
-  <div class="answer">
-    <p class="step">
-      المعامل أمام س³ تغيّر من ١ إلى ٨ ⇒ معامل التمدّد الرأسي = <strong>٨</strong>.
-    </p>
-  </div>
-</div>
-
-<!-- ٣٣ -->
-<div class="question">
-  <div class="q-title">السؤال (٣٣): الدالة ص = ٢س³ بعد تمدّد رأسي بمعامل
-    <span class="frac"><span class="num">١</span><span class="den">٢</span></span>
-    تصبح؟</div>
-  <div class="answer">
-    <p class="step">
-      ص الجديدة =
-      <span class="frac"><span class="num">١</span><span class="den">٢</span></span> × ٢س³ = س³ ⇒ <strong>ص = س³.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ٣٤ -->
-<div class="question">
-  <div class="q-title">السؤال (٣٤): إذا كانت د(س) = س³ − ١ ، هـ(س) = √(س + ١) ، فأوجد (هـ ∘ د)(٢).</div>
-  <div class="answer">
-    <p class="step">
-      د(٢) = ٨ − ١ = ٧ ، ثم هـ(٧) = √(٧ + ١) = √٨ ⇒ <strong>(هـ ∘ د)(٢) = √٨.</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ٣٥ -->
-<div class="question">
-  <div class="q-title">السؤال (٣٥): أيُّ الدوال الآتية تكون عكسية لنفسها؟</div>
-  <div class="answer">
-    <p class="step">
-      من الأمثلة المعروفة على مجال مناسب:  
-      <strong>ص =
-        <span class="frac"><span class="num">١</span><span class="den">س</span></span>
-      </strong> دالتها العكسية هي نفسها.
-    </p>
   </div>
 </div>
 
@@ -633,21 +823,25 @@ function drawAxes(ctx, w, h) {
   ctx.moveTo(w / 2, 0); ctx.lineTo(w / 2, h); ctx.stroke();
 }
 
-// أفقية
+// أفقية: لاختبار واحد إلى واحد
 function animateHorizontal(canvasId, funcType) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   const w = canvas.width, h = canvas.height;
   let t = 0;
+
   function f(x) {
     if (funcType === 'parabola') return x * x;
     if (funcType === 'cubic') return x * x * x / 2;
     return x;
   }
+
   function draw() {
     ctx.clearRect(0, 0, w, h);
     drawAxes(ctx, w, h);
+
+    // المنحنى
     ctx.strokeStyle = '#0066cc'; ctx.lineWidth = 2;
     ctx.beginPath();
     let first = true;
@@ -659,17 +853,20 @@ function animateHorizontal(canvasId, funcType) {
       else ctx.lineTo(px, py);
     }
     ctx.stroke();
+
+    // خط أفقي متحرِّك
     const amp = h / 2 - 10;
     const yLine = h / 2 + Math.sin(t) * amp * 0.6;
     ctx.strokeStyle = '#cc0000'; ctx.lineWidth = 2;
     ctx.beginPath(); ctx.moveTo(0, yLine); ctx.lineTo(w, yLine); ctx.stroke();
+
     t += 0.03;
     requestAnimationFrame(draw);
   }
   draw();
 }
 
-// رأسية
+// رأسية: لاختبار هل هي دالة
 function animateVertical(canvasId, type) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
@@ -708,10 +905,12 @@ function animateVertical(canvasId, type) {
     ctx.clearRect(0, 0, w, h);
     drawAxes(ctx, w, h);
     drawRelation();
+
     const amp = w / 2 - 10;
     const xLine = w / 2 + Math.sin(t) * amp * 0.6;
     ctx.strokeStyle = '#cc0000'; ctx.lineWidth = 2;
     ctx.beginPath(); ctx.moveTo(xLine, 0); ctx.lineTo(xLine, h); ctx.stroke();
+
     t += 0.03;
     requestAnimationFrame(draw);
   }

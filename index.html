@@ -2,209 +2,242 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>مراجعة الوحدة الثانية – رياضيات</title>
+<title>مراجعة الوحدة الثانية – الصفحتان الأولى والثانية</title>
 
 <style>
 body{
-  font-family: "Amiri", "Arial", serif;
-  background:#f7f9fc;
-  margin:0;
-  padding:20px;
-  line-height:2;
+    font-family: "Arial", "Amiri", serif;
+    background:#f7f9fb;
+    margin:20px;
+    line-height:2;
 }
-.page{
-  background:white;
-  padding:30px;
-  margin-bottom:40px;
-  border-radius:12px;
-  box-shadow:0 0 10px rgba(0,0,0,0.08);
-}
+
 h1,h2{
-  text-align:center;
-  color:#0b5394;
+    text-align:center;
+    color:#0b5394;
 }
+
 .question{
-  font-size:22px;
-  font-weight:bold;
-  margin-top:25px;
+    background:#ffffff;
+    border:2px solid #d9e2ef;
+    border-radius:10px;
+    padding:20px;
+    margin-bottom:25px;
 }
+
+.q-title{
+    font-weight:bold;
+    font-size:20px;
+    color:#000;
+}
+
 .answer{
-  font-size:20px;
-  background:#eef3ff;
-  padding:15px;
-  border-right:6px solid #0b5394;
-  margin-top:10px;
+    background:#eef4ff;
+    border-right:6px solid #3c78d8;
+    padding:15px;
+    margin-top:15px;
+    font-size:18px;
 }
+
 .math{
-  font-size:22px;
-  font-family:"Times New Roman", serif;
+    font-size:20px;
+    margin:10px 0;
 }
-canvas{
-  display:block;
-  margin:15px auto;
-  border:1px solid #ccc;
-  background:white;
+
+.note{
+    color:#444;
+    font-style:italic;
+    margin-top:10px;
 }
-hr{
-  margin:40px 0;
+
+.graph{
+    margin-top:15px;
+    padding:10px;
+    border:2px dashed #999;
+    text-align:center;
+    color:#666;
+    font-size:16px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================================================= -->
-<!-- الصفحة الأولى -->
-<!-- ================================================= -->
-
-<div class="page">
 <h1>مراجعة الوحدة الثانية</h1>
+
 <h2>الصفحة الأولى</h2>
 
-<div class="question">سؤال (1): ظلّل الشكل الذي يمثّل علاقة متعدد إلى واحد.</div>
-<div class="answer">
-العلاقة **متعدد إلى واحد** تعني:  
-توجد قيمتان مختلفتان لـ س تعطيان نفس القيمة لـ ص.  
-
-يحدث ذلك عندما يقطع المستقيم الأفقي المنحنى في أكثر من نقطة.
+<div class="question">
+<div class="q-title">السؤال (1)</div>
+<div class="math">
+ظلّل الشكل الذي يمثّل علاقة <b>متعدد إلى واحد</b>.
 </div>
 
-<canvas id="manyToOne" width="300" height="200"></canvas>
-
-<hr>
-
-<div class="question">سؤال (2): ظلّل الشكل الذي يمثّل علاقة واحد إلى واحد.</div>
 <div class="answer">
-العلاقة **واحد إلى واحد** تعني:  
+<b>الشرح:</b><br>
+العلاقة <b>متعدد إلى واحد</b> تعني:  
+توجد قيمتان مختلفتان لـ س تعطيان نفس القيمة لـ ص.  
+
+يحدث ذلك عندما يقطع <b>المستقيم الأفقي</b> المنحنى في أكثر من نقطة.
+</div>
+
+<div class="graph">
+(رسم متحرك: خط أفقي يتحرك ويقطع المنحنى في نقطتين)
+</div>
+</div>
+
+<div class="question">
+<div class="q-title">السؤال (2)</div>
+<div class="math">
+ظلّل الشكل الذي يمثّل علاقة <b>واحد إلى واحد</b>.
+</div>
+
+<div class="answer">
+<b>الشرح:</b><br>
+العلاقة <b>واحد إلى واحد</b> تعني:  
 لكل قيمة لـ س قيمة واحدة فقط لـ ص،  
 ولكل قيمة لـ ص قيمة واحدة فقط لـ س.  
 
-يمثّلها **مستقيم مائل**.
+يمثلها خط مستقيم مائل غير أفقي.
 </div>
 
-<canvas id="oneToOne" width="300" height="200"></canvas>
+<div class="graph">
+(رسم متحرك: خط أفقي يتحرك ويقطع الرسم في نقطة واحدة)
+</div>
+</div>
 
-<hr>
+<div class="question">
+<div class="q-title">السؤال (3)</div>
+<div class="math">
+د(س) = 2س + 5 ، حيث س ∈ ح. حدّد نوع العلاقة.
+</div>
 
-<div class="question">سؤال (3): د(س) = 2س + 5 حيث س ∈ ح، حدّد نوع العلاقة.</div>
 <div class="answer">
-الدالة خطية وميلها لا يساوي صفرًا.  
-إذًا لكل قيمة لـ س توجد قيمة واحدة لـ ص، والعكس صحيح.  
+الدالة خطية وميلها لا يساوي صفرًا،  
+لذلك تمثّل خطًا مستقيمًا مائلًا.  
 
-➡️ العلاقة **واحد إلى واحد**.
+لكل قيمة لـ س قيمة واحدة لـ ص،  
+ولكل قيمة لـ ص قيمة واحدة لـ س.  
+
+<b>نوع العلاقة: واحد إلى واحد.</b>
+</div>
 </div>
 
+<div class="question">
+<div class="q-title">السؤال (4)</div>
+<div class="math">
+د(س) = س² + 1 ، حيث س ∈ ح. حدّد نوع العلاقة.
 </div>
 
-<!-- ================================================= -->
-<!-- الصفحة الثانية -->
-<!-- ================================================= -->
+<div class="answer">
+نلاحظ أن:  
+د(1) = 2  
+د(−1) = 2  
 
-<div class="page">
+أي أن قيمتين مختلفتين لـ س تعطيان نفس ص.  
+
+<b>نوع العلاقة: متعدد إلى واحد.</b>
+</div>
+
+<div class="graph">
+(رسم متحرك: منحنى تربيعي وخط أفقي يقطع المنحنى في نقطتين)
+</div>
+</div>
+
 <h2>الصفحة الثانية</h2>
 
-<div class="question">سؤال (10): يمثّل الشكل بيان الدالة د(س) = س² − 3. أوجد المدى.</div>
-<div class="answer math">
-أولًا نوجد رأس المنحنى:  
-س = −ب / 2أ = 0  
+<div class="question">
+<div class="q-title">السؤال (1)</div>
+<div class="math">
+يمثّل الشكل بيان الدالة: د(س) = س² − 3. أوجد المدى.
+</div>
+
+<div class="answer">
+نوجد رأس المنحنى أولًا:
+
+<div class="math">
+س = −ب<br>
+———<br>
+٢أ
+</div>
+
+بما أن ب = 0 ، أ = 1 ⇒ س = 0  
 
 نعوّض في الدالة:  
 ص = 0² − 3 = −3  
 
-إذًا:  
-<strong>مدى الدالة: ص ≥ −3</strong>
+ولأن المنحنى مفتوح لأعلى:  
+
+<b>مدى الدالة: ص ≥ −3</b>
 </div>
 
-<canvas id="parabolaUp" width="300" height="200"></canvas>
+<div class="graph">
+(رسم متحرك: منحنى تربيعي ورأسه عند (0 ، −3))
+</div>
+</div>
 
-<hr>
+<div class="question">
+<div class="q-title">السؤال (2)</div>
+<div class="math">
+يمثّل الشكل بيان الدالة: د(س) = 2 − س². أوجد المدى.
+</div>
 
-<div class="question">سؤال (12): يبيّن الرسم العلاقة بين س و ص. حدّد نوع العلاقة.</div>
 <div class="answer">
-المستقيم الرأسي يقطع المنحنى في أكثر من نقطة.  
+نوجد رأس المنحنى:
 
-➡️ العلاقة **واحد إلى متعدد**.
+س = 0  
+
+نعوّض:  
+ص = 2  
+
+المنحنى مفتوح لأسفل، إذًا:
+
+<b>مدى الدالة: ص ≤ 2</b>
 </div>
 
-<canvas id="oneToMany" width="300" height="200"></canvas>
+<div class="graph">
+(رسم متحرك: منحنى مفتوح لأسفل مع خط أفقي عند ص = 2)
+</div>
+</div>
 
-<hr>
+<div class="question">
+<div class="q-title">السؤال (3)</div>
+<div class="math">
+يبين الرسم العلاقة بين س و ص. حدّد نوع العلاقة.
+</div>
 
-<div class="question">سؤال (19): د(س) = س + 4، أوجد الدالة العكسية.</div>
-<div class="answer math">
+<div class="answer">
+المستقيم الرأسي يقطع المنحنى في أكثر من نقطة،  
+إذًا العلاقة:
+
+<b>واحد إلى متعدد.</b>
+</div>
+
+<div class="graph">
+(رسم متحرك: خط رأسي يتحرك ويقطع المنحنى في نقطتين)
+</div>
+</div>
+
+<div class="question">
+<div class="q-title">السؤال (4)</div>
+<div class="math">
+د(س) = س + 4. أوجد الدالة العكسية.
+</div>
+
+<div class="answer">
 نكتب:  
 ص = س + 4  
 
 نبدّل س و ص:  
 س = ص + 4  
 
-نحل:  
+نحل لإيجاد ص:  
 ص = س − 4  
 
-➡️ د⁻¹(س) = س − 4
+<b>الدالة العكسية:</b>  
+د⁻¹(س) = س − 4
 </div>
-
 </div>
-
-<!-- ================================================= -->
-<!-- الصفحة الأخيرة -->
-<!-- ================================================= -->
-
-<div class="page">
-<h2>الصفحة الأخيرة</h2>
-
-<div class="question">سؤال (22): د(س) = 8 ÷ (س − 4)، أوجد الدالة العكسية.</div>
-<div class="answer math">
-نكتب:  
-ص = 8 / (س − 4)  
-
-نبدّل:  
-س = 8 / (ص − 4)  
-
-نحل:  
-س(ص − 4) = 8  
-ص − 4 = 8 / س  
-ص = 4 + 8 / س  
-
-➡️ <strong>د⁻¹(س) = 4 + 8 / س</strong>
-</div>
-
-</div>
-
-<script>
-// متعدد إلى واحد
-const c1 = document.getElementById("manyToOne").getContext("2d");
-c1.beginPath();
-c1.moveTo(40,100);
-c1.quadraticCurveTo(150,20,260,100);
-c1.stroke();
-c1.beginPath();
-c1.moveTo(40,100);
-c1.quadraticCurveTo(150,180,260,100);
-c1.stroke();
-
-// واحد إلى واحد
-const c2 = document.getElementById("oneToOne").getContext("2d");
-c2.beginPath();
-c2.moveTo(40,160);
-c2.lineTo(260,40);
-c2.stroke();
-
-// قطع مكافئ للأعلى
-const c3 = document.getElementById("parabolaUp").getContext("2d");
-c3.beginPath();
-for(let x=-50;x<=50;x++){
-  let y = x*x/20;
-  c3.lineTo(150+x,120+y);
-}
-c3.stroke();
-
-// واحد إلى متعدد
-const c4 = document.getElementById("oneToMany").getContext("2d");
-c4.beginPath();
-c4.arc(150,100,60,Math.PI/2,Math.PI*3/2);
-c4.stroke();
-</script>
 
 </body>
 </html>

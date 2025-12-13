@@ -1,538 +1,799 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>الوحدة الأولى — حلول مشروحة (من الصفحة الثالثة)</title>
 
   <style>
     :root{
-      --bg:#f5f6f8;
+      --bg:#f6f7fb;
       --card:#ffffff;
-      --border:#e6e6e6;
+      --border:#e7e7e7;
       --ink:#111;
       --muted:#555;
-      --accent:#2563eb;
-      --accent2:#16a34a;
-      --danger:#dc2626;
       --soft:#eef2ff;
       --soft2:#ecfdf5;
-      --shadow:0 8px 25px rgba(0,0,0,.06);
+      --accent:#2563eb;
+      --good:#16a34a;
+      --danger:#dc2626;
       --radius:14px;
+      --shadow:0 10px 28px rgba(0,0,0,.07);
     }
-
-    body{
-      margin:0;
-      font-family: Tahoma, Arial, sans-serif;
-      background:var(--bg);
-      color:var(--ink);
-      line-height:1.9;
-    }
-
-    .container{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 14px;
-    }
-
+    body{margin:0;font-family:Tahoma, Arial, sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;}
+    .container{max-width:980px;margin:0 auto;padding:14px;}
     header{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 14px 14px;
-      position: sticky;
-      top: 10px;
-      z-index: 10;
+      position:sticky;top:10px;z-index:10;
+      background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+      box-shadow:var(--shadow);padding:12px 14px;
     }
-
-    header .row{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-    }
-
-    .title{
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .sub{
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 4px;
-    }
-
-    .nav{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-    }
-
+    .row{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+    .title{font-size:18px;font-weight:700;}
+    .sub{font-size:13px;color:var(--muted);margin-top:4px;}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;}
     .btn{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius: 999px;
-      padding: 8px 12px;
-      cursor:pointer;
-      font-size: 13px;
+      background:#fff;border:1px solid var(--border);border-radius:999px;
+      padding:8px 12px;font-size:13px;cursor:pointer;text-decoration:none;color:var(--ink);
       transition:.15s;
-      text-decoration:none;
-      color: var(--ink);
     }
-
-    .btn:hover{
-      border-color:#cfcfcf;
-      transform: translateY(-1px);
-    }
-
-    .btn.primary{
-      background: var(--accent);
-      border-color: var(--accent);
-      color:#fff;
-    }
-
+    .btn:hover{transform:translateY(-1px);border-color:#cfcfcf}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;}
     .page{
-      margin-top: 14px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
+      margin-top:14px;background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;
     }
-
     .pageHead{
-      padding: 14px;
-      background: linear-gradient(90deg, #ffffff, #f8fafc);
-      border-bottom:1px solid var(--border);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
+      padding:12px 14px;border-bottom:1px solid var(--border);
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      background:linear-gradient(90deg,#fff,#f8fafc);
     }
-
-    .pageHead h2{
-      margin:0;
-      font-size: 18px;
-    }
-
-    .badge{
-      font-size: 12px;
-      background: #f1f5f9;
-      border: 1px solid var(--border);
-      padding: 6px 10px;
-      border-radius: 999px;
-      color: #334155;
-      white-space:nowrap;
-    }
-
-    .content{
-      padding: 14px;
-    }
-
+    .pageHead h2{margin:0;font-size:18px;}
+    .badge{font-size:12px;background:#f1f5f9;border:1px solid var(--border);padding:6px 10px;border-radius:999px;color:#334155}
+    .content{padding:14px;}
     .q{
-      padding: 12px;
-      border:1px solid var(--border);
-      border-radius: 14px;
-      background: #fff;
-      margin-bottom: 12px;
+      background:#fff;border:1px solid var(--border);border-radius:14px;
+      padding:12px;margin-bottom:12px;
     }
-
-    .qTitle{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-bottom: 8px;
-    }
-
-    .qTitle .qNo{
-      font-weight:700;
-      font-size: 16px;
-    }
-
-    .qTitle .tag{
-      font-size: 12px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      border:1px solid var(--border);
-      background: #f8fafc;
-      color:#0f172a;
-    }
-
+    .qTitle{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+    .qNo{font-size:16px;font-weight:700;}
+    .tag{font-size:12px;padding:5px 10px;border-radius:999px;border:1px solid var(--border);background:#f8fafc;}
     .box{
-      background: var(--soft);
-      border: 1px solid #dbe4ff;
-      border-radius: 12px;
-      padding: 10px 12px;
-      margin-top: 8px;
+      background:var(--soft);border:1px solid #dbe4ff;border-radius:12px;padding:10px 12px;margin-top:8px;
     }
+    .box.green{background:var(--soft2);border-color:#bbf7d0;}
+    .answer{font-weight:700;margin-top:6px;}
+    .muted{color:var(--muted);}
+    ul.steps{margin:8px 0 0;padding:0 18px;}
+    .hr{height:1px;background:var(--border);margin:12px 0;}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;}
+    @media (max-width:780px){.grid2{grid-template-columns:1fr;}}
+    .svgCard{border:1px solid var(--border);border-radius:14px;padding:10px;background:#fff;}
+    .cap{font-size:12px;color:var(--muted);margin-top:6px;}
 
-    .box.green{
-      background: var(--soft2);
-      border-color: #bbf7d0;
-    }
+    /* كسر احترافي */
+    .frac{display:inline-block;vertical-align:middle;text-align:center;line-height:1.1;margin:0 .12em;}
+    .frac .top{display:block;padding:0 .3em;}
+    .frac .bar{display:block;border-top:2px solid #111;margin:.08em .12em;}
+    .frac .bottom{display:block;padding:0 .3em;}
 
-    .answer{
-      font-weight:700;
-      margin-top: 6px;
-    }
+    /* جذر احترافي */
+    .root{display:inline-flex;align-items:flex-end;margin:0 .12em;}
+    .root .radical{font-size:1.25em;line-height:1;}
+    .root .radicand{display:inline-block;padding:0 .3em .06em;border-top:2px solid #111;margin-right:.06em;}
 
-    ul.steps{
-      margin: 8px 0 0;
-      padding: 0 18px;
-      color: var(--ink);
-    }
-
-    .muted{ color: var(--muted); }
-
-    /* Fraction */
-    .frac{
-      display:inline-block;
-      vertical-align:middle;
-      text-align:center;
-      line-height:1.1;
-      margin: 0 .12em;
-    }
-    .frac .top{display:block; padding: 0 .3em;}
-    .frac .bar{display:block; border-top:2px solid #111; margin:.08em .12em;}
-    .frac .bottom{display:block; padding: 0 .3em;}
-
-    /* Root */
-    .root{
-      display:inline-flex;
-      align-items:flex-end;
-      margin: 0 .12em;
-    }
-    .root .radical{font-size:1.25em; line-height:1;}
-    .root .radicand{
-      display:inline-block;
-      padding: 0 .3em .06em;
-      border-top:2px solid #111;
-      margin-right:.06em;
-    }
-
-    .math{ font-family: Arial, sans-serif; direction:ltr; unicode-bidi:bidi-override; }
-
-    .grid2{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    @media (max-width:780px){
-      .grid2{ grid-template-columns: 1fr; }
-    }
-
-    .svgCard{
-      border:1px solid var(--border);
-      border-radius: 14px;
-      padding: 10px;
-      background:#fff;
-    }
-
-    .cap{
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 6px;
-    }
-
-    footer{
-      margin: 14px 0 40px;
-      color: var(--muted);
-      font-size: 13px;
-      text-align:center;
-    }
-
-    .hr{
-      height:1px;
-      background: var(--border);
-      margin: 12px 0;
-    }
-
-    .warn{
-      border-right: 4px solid var(--danger);
-      background: #fff1f2;
-      border-left: 1px solid #fecdd3;
-      border-top: 1px solid #fecdd3;
-      border-bottom: 1px solid #fecdd3;
-    }
+    /* سطر معادلات */
+    .eq{direction:ltr;unicode-bidi:bidi-override;font-family:Arial, sans-serif;}
+    footer{margin:16px 0 40px;text-align:center;color:var(--muted);font-size:13px;}
   </style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <header>
-      <div class="row">
-        <div>
-          <div class="title">حلول مشروحة + رسومات توضيحية</div>
-          <div class="sub">الوحدة الأولى — بدءًا من الصفحة الثالثة (جاهز للرفع على GitHub)</div>
+  <header>
+    <div class="row">
+      <div>
+        <div class="title">الوحدة الأولى — حلول مشروحة + رسومات توضيحية</div>
+        <div class="sub">من الصفحة الثالثة إلى الصفحة السادسة (جاهز للرفع على GitHub Pages)</div>
+      </div>
+      <div class="nav">
+        <a class="btn primary" href="#p3">الصفحة ٣</a>
+        <a class="btn" href="#p4">الصفحة ٤</a>
+        <a class="btn" href="#p5">الصفحة ٥</a>
+        <a class="btn" href="#p6">الصفحة ٦</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= PAGE 3 ================= -->
+  <section class="page" id="p3">
+    <div class="pageHead">
+      <h2>الوحدة الأولى — الصفحة ٣</h2>
+      <div class="badge">قراءة من الرسم + قيمة عظمى/صغرى + إكمال مربع</div>
+    </div>
+    <div class="content">
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ١</div><div class="tag">رأس المنحنى من الرسم</div></div>
+        <div class="box">
+          <div><b>الفكرة:</b> رأس المنحنى هو أعلى/أدنى نقطة يغيّر عندها المنحنى اتجاهه.</div>
+          <ul class="steps">
+            <li>نحدد نقطة القاع (لأن المنحنى مفتوح لأعلى في الرسم الأول).</li>
+            <li>نقرأ الإحداثي السيني ثم الصادي من الشبكة.</li>
+          </ul>
+          <div class="answer">الرأس: <b>(٢ ، −٣)</b>.</div>
         </div>
-        <nav class="nav">
-          <a class="btn primary" href="#p3">الصفحة 3</a>
-          <a class="btn" href="#add">إضافة الصفحات القادمة</a>
-        </nav>
-      </div>
-    </header>
+      </article>
 
-    <!-- PAGE 3 -->
-    <section class="page" id="p3">
-      <div class="pageHead">
-        <h2>الوحدة الأولى — الصفحة الثالثة</h2>
-        <div class="badge">شرح خطوة بخطوة + رسومات (للعظمى/الصغرى وما يلزم)</div>
-      </div>
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٢</div><div class="tag">محور التماثل</div></div>
+        <div class="box">
+          <div><b>الفكرة:</b> محور التماثل خط رأسي يمر بالرأس، ومعادلته: <b>س = (قيمة س عند الرأس)</b>.</div>
+          <div class="answer">بما أن الرأس عند س = ٢ ⇒ محور التماثل: <b>س = ٢</b>.</div>
+        </div>
+      </article>
 
-      <div class="content">
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٣</div><div class="tag">القيمة الصغرى من الرسم</div></div>
+        <div class="box green">
+          <div><b>الفكرة:</b> إذا كان المنحنى يفتح <b>لأعلى</b> ⇒ أقل قيمة للدالة تكون عند الرأس.</div>
+          <div class="answer">قيمة ص عند الرأس = −٣ ⇒ <b>القيمة الصغرى: ص = −٣</b>.</div>
+          <div class="hr"></div>
 
-        <!-- Q1 -->
-        <article class="q">
-          <div class="qTitle">
-            <div class="qNo">السؤال 1</div>
-            <div class="tag">قراءة من الرسم (رأس المنحنى)</div>
+          <div class="svgCard">
+            <svg width="320" height="190" viewBox="0 0 320 190" aria-label="توضيح القيمة الصغرى">
+              <rect x="0" y="0" width="320" height="190" fill="#ffffff"/>
+              <line x1="160" y1="12" x2="160" y2="176" stroke="#111" stroke-width="2"/>
+              <line x1="18" y1="140" x2="302" y2="140" stroke="#111" stroke-width="2"/>
+              <path d="M70 70 Q160 160 250 70" fill="none" stroke="#2563eb" stroke-width="3"/>
+              <circle cx="160" cy="160" r="5" fill="#dc2626"/>
+              <text x="170" y="168" font-size="13">القيمة الصغرى عند الرأس</text>
+            </svg>
+            <div class="cap">طالما المنحنى مفتوح لأعلى ⇒ الصغرى عند رأس المنحنى.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٤</div><div class="tag">قيمة عظمى</div></div>
+        <div class="box">
+          <div class="muted">الدالة: <span class="eq">y = 2 − (x + 3)²</span></div>
+          <div class="hr"></div>
+          <div><b>الفكرة:</b> لأن أمام التربيع إشارة سالبة ⇒ المنحنى يفتح <b>لأسفل</b> ⇒ أعلى قيمة عند الرأس.</div>
+          <ul class="steps">
+            <li>(س + ٣)² ≥ ٠ دائمًا.</li>
+            <li>إذن −(س + ٣)² ≤ ٠ دائمًا، وأكبر قيمة لها = ٠.</li>
+            <li>أكبر قيمة لـ ص = ٢ + ٠ = ٢.</li>
+          </ul>
+          <div class="answer">القيمة العظمى: <b>٢</b>.</div>
+
+          <div class="hr"></div>
+          <div class="svgCard">
+            <svg width="320" height="190" viewBox="0 0 320 190" aria-label="توضيح القيمة العظمى">
+              <rect x="0" y="0" width="320" height="190" fill="#ffffff"/>
+              <line x1="160" y1="12" x2="160" y2="176" stroke="#111" stroke-width="2"/>
+              <line x1="18" y1="60" x2="302" y2="60" stroke="#111" stroke-width="2"/>
+              <path d="M70 150 Q160 60 250 150" fill="none" stroke="#16a34a" stroke-width="3"/>
+              <circle cx="160" cy="60" r="5" fill="#dc2626"/>
+              <text x="170" y="50" font-size="13">القيمة العظمى عند الرأس</text>
+            </svg>
+            <div class="cap">طالما المنحنى مفتوح لأسفل ⇒ العظمى عند رأس المنحنى.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٥</div><div class="tag">قيمة صغرى</div></div>
+        <div class="box green">
+          <div class="muted">الدالة: <span class="eq">y = (x + 2)² + 3</span></div>
+          <div class="hr"></div>
+          <div><b>الفكرة:</b> (… )² أصغر قيمة لها = ٠ ⇒ الصغرى تكون عند الرأس.</div>
+          <ul class="steps">
+            <li>(س + ٢)² ≥ ٠ دائمًا.</li>
+            <li>أصغر قيمة عندما (س + ٢)² = ٠ ⇒ س = −٢.</li>
+            <li>إذن أصغر قيمة لـ ص = ٣.</li>
+          </ul>
+          <div class="answer">القيمة الصغرى: <b>٣</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٦</div><div class="tag">إيجاد الرأس (−ب ÷ ٢أ)</div></div>
+        <div class="box">
+          <div class="muted">الدالة: <span class="eq">y = x² − 4x + 1</span></div>
+          <div class="hr"></div>
+          <ul class="steps">
+            <li>أ = ١ ، ب = −٤.</li>
+            <li>
+              س عند الرأس:
+              <span class="frac">
+                <span class="top">−ب</span><span class="bar"></span><span class="bottom">٢أ</span>
+              </span>
+              =
+              <span class="frac">
+                <span class="top">−(−٤)</span><span class="bar"></span><span class="bottom">٢×١</span>
+              </span>
+              =
+              <span class="frac"><span class="top">٤</span><span class="bar"></span><span class="bottom">٢</span></span>
+              = ٢
+            </li>
+            <li>نعوض س = ٢: ص = ٤ − ٨ + ١ = −٣.</li>
+          </ul>
+          <div class="answer">نقطة الرأس: <b>(٢ ، −٣)</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٧</div><div class="tag">الرسم الثاني</div></div>
+        <div class="box">
+          <div><b>الفكرة:</b> نفس طريقة السؤال (١،٢،٣) ولكن من الرسم الثاني (المنحنى مفتوح لأسفل).</div>
+          <ul class="steps">
+            <li>نحدد القمة (لأن المنحنى يفتح لأسفل).</li>
+            <li>القمة تقرأ من الشبكة: (١ ، ٢).</li>
+            <li>محور التماثل: س = ١.</li>
+            <li>القيمة العظمى: ص = ٢.</li>
+          </ul>
+          <div class="answer">الرأس (١ ، ٢) — محور التماثل س = ١ — العظمى ص = ٢.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٨</div><div class="tag">إكمال مربع</div></div>
+        <div class="box">
+          <div class="muted">ص = س² + ٤س + ١</div>
+          <div class="hr"></div>
+          <ul class="steps">
+            <li>نصف معامل س = ٢.</li>
+            <li>س² + ٤س = (س + ٢)² − ٤.</li>
+            <li>إذن ص = (س + ٢)² − ٣.</li>
+          </ul>
+          <div class="answer">ص = <b>(س + ٢)² − ٣</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٩</div><div class="tag">إكمال مربع</div></div>
+        <div class="box">
+          <div class="muted">ص = س² − ٦س + ٥</div>
+          <div class="hr"></div>
+          <ul class="steps">
+            <li>نصف معامل س = ٣.</li>
+            <li>س² − ٦س = (س − ٣)² − ٩.</li>
+            <li>إذن ص = (س − ٣)² − ٤.</li>
+          </ul>
+          <div class="answer">ص = <b>(س − ٣)² − ٤</b>.</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= PAGE 4 ================= -->
+  <section class="page" id="p4">
+    <div class="pageHead">
+      <h2>الوحدة الأولى — الصفحة ٤</h2>
+      <div class="badge">مميز + تقاطع + اختيار من متعدد</div>
+    </div>
+    <div class="content">
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ١</div><div class="tag">رأس الدالة القياسية</div></div>
+        <div class="box">
+          <div><b>الفكرة:</b> إذا كانت ص = (س − م)² + ب ⇒ الرأس = (م ، ب).</div>
+          <div class="answer">م = ٢ ، ب = −٥ ⇒ م + ب = <b>−٣</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٢</div><div class="tag">نوع الجذور بالمميز</div></div>
+        <div class="box">
+          <div class="muted">س² − ٣س − ١٠ = ٠</div>
+          <ul class="steps">
+            <li>المميز Δ = ب² − ٤أج = (−٣)² − ٤(١)(−١٠) = ٩ + ٤٠ = ٤٩.</li>
+            <li>Δ &gt; ٠ ⇒ جذران <b>حقيقيان مختلفان</b>.</li>
+          </ul>
+          <div class="answer">الإجابة: <b>حقيقيان مختلفان</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٣</div><div class="tag">عدد الجذور</div></div>
+        <div class="box">
+          <div class="muted">س² − ٢س + ٩ = ٠</div>
+          <ul class="steps">
+            <li>Δ = (−٢)² − ٤(١)(٩) = ٤ − ٣٦ = −٣٢.</li>
+            <li>Δ &lt; ٠ ⇒ <b>لا يوجد جذور حقيقية</b>.</li>
+          </ul>
+          <div class="answer">عدد الجذور الحقيقية: <b>٠</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٤</div><div class="tag">شرط عام</div></div>
+        <div class="box">
+          <div><b>إذا كان</b> Δ = ب² − ٤أج &lt; ٠ ⇒ <b>لا توجد جذور حقيقية</b> ⇒ عدد الجذور = <b>٠</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٥</div><div class="tag">جذران متساويان</div></div>
+        <div class="box">
+          <div class="muted">س² − ك س + ٩ = ٠</div>
+          <ul class="steps">
+            <li>جذران متساويان ⇒ Δ = ٠.</li>
+            <li>Δ = ك² − ٤(١)(٩) = ك² − ٣٦ = ٠ ⇒ ك² = ٣٦.</li>
+          </ul>
+          <div class="answer">ك = <b>±٦</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٦</div><div class="tag">حل نظام (مستقيم + دائرة)</div></div>
+        <div class="box">
+          <div class="muted">ص = س + ١ ، و س² + ص² = ١٣</div>
+          <ul class="steps">
+            <li>نعوض ص = س + ١ في الدائرة: س² + (س+١)² = ١٣.</li>
+            <li>٢س² + ٢س + ١ = ١٣ ⇒ ٢س² + ٢س − ١٢ = ٠ ⇒ س² + س − ٦ = ٠.</li>
+            <li>(س − ٢)(س + ٣) = ٠ ⇒ س = ٢ أو س = −٣.</li>
+            <li>إذا س = ٢ ⇒ ص = ٣. وإذا س = −٣ ⇒ ص = −٢.</li>
+          </ul>
+          <div class="answer">يوجد حلان، ومن الخيارات الصحيحة: <b>(٢ ، ٣)</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٧</div><div class="tag">حل نظام</div></div>
+        <div class="box">
+          <div class="muted">ص = س − ١ ، و س² + ص² = ٥</div>
+          <ul class="steps">
+            <li>س² + (س−١)² = ٥ ⇒ ٢س² − ٢س + ١ = ٥ ⇒ ٢س² − ٢س − ٤ = ٠ ⇒ س² − س − ٢ = ٠.</li>
+            <li>(س − ٢)(س + ١) = ٠ ⇒ س = ٢ أو س = −١.</li>
+            <li>إذا س = ٢ ⇒ ص = ١ (حل صحيح وموجود في الخيارات).</li>
+          </ul>
+          <div class="answer">من الخيارات: <b>(٢ ، ١)</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٨</div><div class="tag">إيجاد م وب</div></div>
+        <div class="box">
+          <div class="muted">إذا كانت (٢ ، ١) تحقق: ص = س − م ، و س² + ص² = ب</div>
+          <ul class="steps">
+            <li>١ = ٢ − م ⇒ م = ١.</li>
+            <li>ب = ٢² + ١² = ٤ + ١ = ٥.</li>
+          </ul>
+          <div class="answer">م + ب = ١ + ٥ = <b>٦</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٩</div><div class="tag">ملاحظة على خطأ محتمل في الورقة</div></div>
+        <div class="box">
+          <div class="muted">إذا كانت (٣ ، ٢) تحقق: ص = س − م ، و ب = ص² − س²</div>
+          <ul class="steps">
+            <li>٢ = ٣ − م ⇒ م = ١.</li>
+            <li>ب = ٢² − ٣² = ٤ − ٩ = −٥.</li>
+            <li>إذن م + ب = ١ + (−٥) = −٤.</li>
+          </ul>
+          <div class="answer">
+            الناتج <b>−٤</b>. (إذا لم يظهر ضمن الاختيارات في نسختك، فهذا غالبًا خطأ مطبعي في السؤال/الخيارات).
+          </div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ١٠</div><div class="tag">عدد نقاط التقاطع</div></div>
+        <div class="box">
+          <div class="muted">المستقيم ص = ٢س + ٣ ، والمنحنى ص = س²</div>
+          <ul class="steps">
+            <li>نساوي: س² = ٢س + ٣ ⇒ س² − ٢س − ٣ = ٠.</li>
+            <li>(س − ٣)(س + ١) = ٠ ⇒ س = ٣ أو س = −١.</li>
+          </ul>
+          <div class="answer">إذن يتقاطعان في <b>نقطتين</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ١١</div><div class="tag">اختيار الرسم الصحيح (نوع الجذور)</div></div>
+        <div class="box">
+          <div><b>الفكرة:</b> جذران حقيقيان مختلفان ⇐ المنحنى يقطع محور السينات <b>مرتين</b>.</div>
+          <div class="answer">اختر <b>الرسم الذي يقطع محور السينات مرتين</b> (في الورقة هو المنحنى الأزرق).</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ١٢</div><div class="tag">اختيار الرسم (جذران متساويان)</div></div>
+        <div class="box">
+          <div><b>الفكرة:</b> جذران متساويان ⇐ المنحنى يلامس محور السينات <b>مرة واحدة فقط</b>.</div>
+          <div class="answer">اختر <b>الرسم الذي يلامس محور السينات مرة واحدة</b> (في الورقة هو المنحنى الأخضر).</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= PAGE 5 ================= -->
+  <section class="page" id="p5">
+    <div class="pageHead">
+      <h2>الوحدة الأولى — الصفحة ٥</h2>
+      <div class="badge">صح/خطأ + مميز + إكمال مربع + نوع الجذور</div>
+    </div>
+    <div class="content">
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ١</div><div class="tag">صح / خطأ من الرسم</div></div>
+        <div class="box">
+          <div class="muted">الدالة (حسب الرسم): ص = س² − ٤س + ٣</div>
+          <div class="hr"></div>
+          <ul class="steps">
+            <li>نقطة التحول ليست (١ ، ٢)، لأن س الرأس = −ب/٢أ = ٤/٢ = ٢ ثم ص(٢)=٤−٨+٣=−١ ⇒ الرأس (٢ ، −١) ⇒ العبارة <b>خطأ</b>.</li>
+            <li>محور التماثل س = ٢ ⇒ <b>صح</b>.</li>
+            <li>جذرا ص=٠: س² −٤س +٣ = (س−١)(س−٣) ⇒ ١ و ٣ ⇒ <b>صح</b>.</li>
+            <li>التقاطع مع محور الصادات: عند س=٠ ⇒ ص=٣ ⇒ (٠ ، ٣) ⇒ <b>صح</b>.</li>
+          </ul>
+          <div class="answer">النتيجة: (١) خطأ — (٢) صح — (٣) صح — (٤) صح.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٢</div><div class="tag">عدد الحلول</div></div>
+        <div class="box">
+          <div class="muted">٢س² − ٥س + ٢ = ٠</div>
+          <ul class="steps">
+            <li>Δ = (−٥)² − ٤(٢)(٢) = ٢٥ − ١٦ = ٩ &gt; ٠.</li>
+          </ul>
+          <div class="answer">عدد الحلول الحقيقية: <b>٢</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٣</div><div class="tag">عدد الحلول</div></div>
+        <div class="box">
+          <div class="muted">٤س² − ١٢س + ٩ = ٠</div>
+          <ul class="steps">
+            <li>Δ = (−١٢)² − ٤(٤)(٩) = ١٤٤ − ١٤٤ = ٠.</li>
+          </ul>
+          <div class="answer">عدد الحلول الحقيقية: <b>١</b> (جذر مكرر).</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٤</div><div class="tag">مميز = ٨</div></div>
+        <div class="box">
+          <div class="muted">٤س² − ٦س + ك = ٠ ، والمميز Δ = ٨</div>
+          <ul class="steps">
+            <li>Δ = (−٦)² − ٤(٤)ك = ٣٦ − ١٦ك = ٨.</li>
+            <li>١٦ك = ٢٨ ⇒ ك =
+              <span class="frac"><span class="top">٧</span><span class="bar"></span><span class="bottom">٤</span></span>
+            </li>
+          </ul>
+          <div class="answer">ك = <b>٧/٤</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٥</div><div class="tag">مميز = ٤</div></div>
+        <div class="box">
+          <div class="muted">ك س² − ٦س + ١ = ٠ ، والمميز Δ = ٤</div>
+          <ul class="steps">
+            <li>Δ = (−٦)² − ٤(ك)(١) = ٣٦ − ٤ك = ٤.</li>
+            <li>٤ك = ٣٢ ⇒ ك = ٨.</li>
+          </ul>
+          <div class="answer">ك = <b>٨</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٦</div><div class="tag">إكمال مربع (نقاط الفراغ)</div></div>
+        <div class="box">
+          <ul class="steps">
+            <li>س² − ٤س + ٥ = <b>(س − ٢)² + ١</b></li>
+            <li>س² + ٦س + ٣ = <b>(س + ٣)² − ٦</b></li>
+            <li>س² − ٥س + ٧ =
+              <b>(س −
+              <span class="frac"><span class="top">٥</span><span class="bar"></span><span class="bottom">٢</span></span>
+              )² +
+              <span class="frac"><span class="top">٣</span><span class="bar"></span><span class="bottom">٤</span></span>
+              </b>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٧</div><div class="tag">إكمال مربع + عناصر الرسم</div></div>
+        <div class="box green">
+          <div class="muted">ص = س² − ٢س − ٣</div>
+          <div class="hr"></div>
+          <ul class="steps">
+            <li>نصف معامل س = ١.</li>
+            <li>س² − ٢س = (س − ١)² − ١.</li>
+            <li>إذن ص = (س − ١)² − ٤.</li>
+          </ul>
+          <div class="answer">الصورة القياسية: <b>ص = (س − ١)² − ٤</b></div>
+          <div class="hr"></div>
+          <ul class="steps">
+            <li>نقطة التحول: <b>(١ ، −٤)</b></li>
+            <li>محور التماثل: <b>س = ١</b></li>
+            <li>القيمة الصغرى: <b>−٤</b></li>
+            <li>نقاط التقاطع مع السينات: بحل س² − ٢س − ٣ = ٠ ⇒ (س−٣)(س+١)=٠ ⇒ <b>(−١ ، ٠)</b> و <b>(٣ ، ٠)</b></li>
+            <li>نقطة التقاطع مع الصادات: عند س=٠ ⇒ ص=−٣ ⇒ <b>(٠ ، −٣)</b></li>
+          </ul>
+
+          <div class="hr"></div>
+          <div class="svgCard">
+            <svg width="340" height="200" viewBox="0 0 340 200" aria-label="رسم تقريبي للدالة">
+              <rect x="0" y="0" width="340" height="200" fill="#fff"/>
+              <line x1="170" y1="12" x2="170" y2="185" stroke="#111" stroke-width="2"/>
+              <line x1="18" y1="130" x2="322" y2="130" stroke="#111" stroke-width="2"/>
+              <path d="M70 70 Q170 180 270 70" fill="none" stroke="#2563eb" stroke-width="3"/>
+              <circle cx="170" cy="180" r="5" fill="#dc2626"/>
+              <text x="182" y="188" font-size="13">الرأس (١ ، −٤)</text>
+            </svg>
+            <div class="cap">الرسم للتوضيح: المنحنى مفتوح لأعلى والرأس عند (١ ، −٤).</div>
           </div>
 
-          <div class="box">
-            <div><b>الفكرة:</b> رأس المنحنى هو <b>أعلى نقطة أو أدنى نقطة</b> في الرسم.</div>
-            <ul class="steps">
-              <li>نحدد النقطة التي عندها يغير المنحنى اتجاهه (قمة/قاع).</li>
-              <li>نقرأ الإحداثيين مباشرة من الرسم: س ثم ص.</li>
-            </ul>
-            <div class="answer">إذن نقطة الرأس هي: <b>(2 ، −3)</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٨</div><div class="tag">نوع الجذور</div></div>
+        <div class="box">
+          <ul class="steps">
+            <li>س² − ٦س + ٩ = ٠ ⇒ Δ = ٠ ⇒ <b>حقيقيان متساويان</b>.</li>
+            <li>س² + ٥س + ٦ = ٠ ⇒ Δ = ٢٥ − ٢٤ = ١ &gt; ٠ ⇒ <b>حقيقيان مختلفان</b>.</li>
+            <li>س² − ٣س = ٠ ⇒ س(س−٣)=٠ ⇒ <b>حقيقيان مختلفان</b>.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٩</div><div class="tag">جذران متساويان</div></div>
+        <div class="box">
+          <div class="muted">س² − ك س + ١ = ٠ (جذران حقيقيان متساويان)</div>
+          <ul class="steps">
+            <li>شرط التساوي: Δ = ٠ ⇒ ك² − ٤ = ٠ ⇒ ك = ±٢.</li>
+          </ul>
+          <div class="answer">ك = <b>±٢</b>.</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= PAGE 6 ================= -->
+  <section class="page" id="p6">
+    <div class="pageHead">
+      <h2>الوحدة الأولى — الصفحة ٦</h2>
+      <div class="badge">متباينات + إكمال مربع بطريقتين + صيغـة تربيعية</div>
+    </div>
+    <div class="content">
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ١</div><div class="tag">جذران متساويان</div></div>
+        <div class="box">
+          <div class="muted">س² − ٨س + ك = ٠</div>
+          <ul class="steps">
+            <li>Δ = (−٨)² − ٤(١)ك = ٦٤ − ٤ك.</li>
+            <li>للجذرين المتساويين: Δ = ٠ ⇒ ٦٤ − ٤ك = ٠ ⇒ ك = ١٦.</li>
+          </ul>
+          <div class="answer">ك = <b>١٦</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٢</div><div class="tag">حل متباينة</div></div>
+        <div class="box">
+          <div class="muted">س² − ٣س − ١٠ &lt; ٠</div>
+          <ul class="steps">
+            <li>نحل المعادلة: س² − ٣س − ١٠ = ٠ ⇒ (س−٥)(س+٢)=٠ ⇒ الجذور: −٢ ، ٥.</li>
+            <li>لأن أ موجب ⇒ التعبير سالب بين الجذرين.</li>
+          </ul>
+          <div class="answer">الحل: <b>−٢ &lt; س &lt; ٥</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٣</div><div class="tag">حل متباينة</div></div>
+        <div class="box">
+          <div class="muted">س² − س − ١٢ ≥ ٠</div>
+          <ul class="steps">
+            <li>(س−٤)(س+٣) ≥ ٠.</li>
+            <li>الحل خارج الجذرين: س ≤ −٣ أو س ≥ ٤.</li>
+          </ul>
+          <div class="answer"><b>س ≤ −٣</b> أو <b>س ≥ ٤</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٤</div><div class="tag">حل متباينة</div></div>
+        <div class="box">
+          <div class="muted">س² − ٣س &lt; ٠</div>
+          <ul class="steps">
+            <li>س(س−٣) &lt; ٠ ⇒ الحل بين الجذرين.</li>
+          </ul>
+          <div class="answer"><b>٠ &lt; س &lt; ٣</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٥</div><div class="tag">متباينة دائمًا صحيحة</div></div>
+        <div class="box">
+          <div class="muted">س² − ٦س + ٩ ≥ ٠</div>
+          <ul class="steps">
+            <li>س² − ٦س + ٩ = (س−٣)² ≥ ٠ دائمًا.</li>
+          </ul>
+          <div class="answer">الحل: <b>جميع قيم س الحقيقية</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٦</div><div class="tag">لا يوجد حل حقيقي</div></div>
+        <div class="box">
+          <div class="muted">س² &lt; ٣س − ٥</div>
+          <ul class="steps">
+            <li>ننقل: س² − ٣س + ٥ &lt; ٠.</li>
+            <li>Δ = (−٣)² − ٤(١)(٥) = ٩ − ٢٠ = −١١ &lt; ٠، ومع أ موجب ⇒ التعبير موجب دائمًا.</li>
+          </ul>
+          <div class="answer"><b>لا يوجد حل</b>.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٧</div><div class="tag">حل متباينة</div></div>
+        <div class="box">
+          <div class="muted">س² ≤ ١٢س − ٣٦</div>
+          <ul class="steps">
+            <li>س² − ١٢س + ٣٦ ≤ ٠ ⇒ (س−٦)² ≤ ٠.</li>
+            <li>مربع ≤ ٠ يتحقق فقط عندما يساوي صفر.</li>
+          </ul>
+          <div class="answer">س = <b>٦</b> فقط.</div>
+        </div>
+      </article>
+
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٨</div><div class="tag">حل بالإكمال إلى مربع</div></div>
+        <div class="box">
+          <div class="muted">(١) س² + ٦س = −١٠</div>
+          <ul class="steps">
+            <li>نصف معامل س = ٣ ⇒ س² + ٦س = (س+٣)² − ٩.</li>
+            <li>(س+٣)² − ٩ = −١٠ ⇒ (س+٣)² = −١.</li>
+          </ul>
+          <div class="answer">لا يوجد حل حقيقي (لأن مربع عدد لا يساوي عددًا سالبًا).</div>
+
+          <div class="hr"></div>
+
+          <div class="muted">(٢) س² − ٥س + ١ = ٠</div>
+          <ul class="steps">
+            <li>نصف معامل س =
+              <span class="frac"><span class="top">٥</span><span class="bar"></span><span class="bottom">٢</span></span>
+            </li>
+            <li>س² − ٥س = (س − ٥/٢)² − (٥/٢)².</li>
+            <li>(س − ٥/٢)² − ٢٥/٤ + ١ = ٠ ⇒ (س − ٥/٢)² = ٢١/٤.</li>
+            <li>س = ٥/٢ ±
+              <span class="frac">
+                <span class="top"><span class="root"><span class="radical">√</span><span class="radicand">٢١</span></span></span>
+                <span class="bar"></span>
+                <span class="bottom">٢</span>
+              </span>
+            </li>
+          </ul>
+          <div class="answer">س =
+            <b>
+              <span class="frac"><span class="top">٥ ± √٢١</span><span class="bar"></span><span class="bottom">٢</span></span>
+            </b>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <!-- Q2 -->
-        <article class="q">
-          <div class="qTitle">
-            <div class="qNo">السؤال 2</div>
-            <div class="tag">محور التماثل</div>
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ٩</div><div class="tag">صيغة تربيعية (تقريب)</div></div>
+        <div class="box">
+          <div class="muted">(١) ٢س² + ٥س = −٦</div>
+          <ul class="steps">
+            <li>نحوّل: ٢س² + ٥س + ٦ = ٠.</li>
+            <li>Δ = ٢٥ − ٤(٢)(٦) = ٢٥ − ٤٨ = −٢٣ &lt; ٠.</li>
+          </ul>
+          <div class="answer">لا يوجد حل حقيقي. (الجذور مركبة).</div>
+
+          <div class="hr"></div>
+
+          <div class="muted">(٢) س² + ٣س − ٥ = ٠</div>
+          <ul class="steps">
+            <li>س =
+              <span class="frac">
+                <span class="top">−٣ ± √٢٩</span><span class="bar"></span><span class="bottom">٢</span>
+              </span>
+            </li>
+            <li>√٢٩ ≈ ٥٫٣٩</li>
+          </ul>
+          <div class="answer">
+            س ≈ <b>١٫١٩</b> أو <b>−٤٫١٩</b>
           </div>
+        </div>
+      </article>
 
-          <div class="box">
-            <div><b>الفكرة:</b> محور التماثل في الدالة التربيعية يكون خطًا رأسيًا يمر عبر الرأس.</div>
-            <ul class="steps">
-              <li>نأخذ قيمة س عند الرأس.</li>
-              <li>محور التماثل: <span class="math">x = (قيمة س عند الرأس)</span></li>
-            </ul>
-            <div class="answer">وبما أن الرأس عند س = 2 ⇒ محور التماثل: <b>س = 2</b>.</div>
-          </div>
-        </article>
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ١٠</div><div class="tag">مميز ونوع الجذور</div></div>
+        <div class="box">
+          <ul class="steps">
+            <li>س² − ٧س + ٨ = ٠ ⇒ Δ = ٤٩ − ٣٢ = ١٧ &gt; ٠ ⇒ <b>حقيقيان مختلفان</b>.</li>
+            <li>٣س² + ١٠س − ٢ = ٠ ⇒ Δ = ١٠٠ + ٢٤ = ١٢٤ &gt; ٠ ⇒ <b>حقيقيان مختلفان</b>.</li>
+          </ul>
+        </div>
+      </article>
 
-        <!-- Q3 -->
-        <article class="q">
-          <div class="qTitle">
-            <div class="qNo">السؤال 3</div>
-            <div class="tag">القيمة الصغرى</div>
-          </div>
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ١١</div><div class="tag">تحديد عدد الجذور بالمميز</div></div>
+        <div class="box">
+          <div class="muted">المعادلة: ٢ − س = ٤/س</div>
+          <ul class="steps">
+            <li>نضرب في س: ٢س − س² = ٤ ⇒ س² − ٢س + ٤ = ٠.</li>
+            <li>Δ = (−٢)² − ٤(١)(٤) = ٤ − ١٦ = −١٢ &lt; ٠.</li>
+          </ul>
+          <div class="answer">عدد الجذور الحقيقية: <b>٠</b>.</div>
+        </div>
+      </article>
 
-          <div class="box green">
-            <div><b>الفكرة:</b> إذا كان المنحنى <b>يفتح لأعلى</b> ⇒ أقل قيمة للدالة تكون عند الرأس.</div>
-            <ul class="steps">
-              <li>ننظر إلى اتجاه فتح المنحنى (لأعلى).</li>
-              <li>إذن الرأس يمثل أقل قيمة.</li>
-              <li>القيمة الصغرى هي قيمة ص عند الرأس.</li>
-            </ul>
-            <div class="answer">قيمة ص عند الرأس = −3 ⇒ القيمة الصغرى: <b>ص = −3</b>.</div>
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ١٢</div><div class="tag">حل معادلات تحقق (من الورقة)</div></div>
+        <div class="box">
+          <ul class="steps">
+            <li>س⁴ − ١٣س² + ٣٦ = ٠ ⇒ (س²−٩)(س²−٤)=٠ ⇒ س = <b>±٣ ، ±٢</b>.</li>
+            <li>٩س⁴ − ١٣س² + ٤ = ٠ ⇒ س² = ١ أو ٤/٩ ⇒ س = <b>±١ ، ±٢/٣</b>.</li>
+            <li>س² − ٣س + ٢ = ٠ ⇒ س = <b>١ ، ٢</b>.</li>
+            <li>س² − ٥س + ٦ = ٠ ⇒ س = <b>٢ ، ٣</b>.</li>
+          </ul>
+        </div>
+      </article>
 
-            <div class="hr"></div>
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ١٣</div><div class="tag">شرط تقاطع بنقطتين</div></div>
+        <div class="box">
+          <div class="muted">ص = ك س − ٣ ، و ص = س² − ٩</div>
+          <ul class="steps">
+            <li>نساوي: س² − ٩ = ك س − ٣ ⇒ س² − ك س − ٦ = ٠.</li>
+            <li>Δ = ك² + ٢٤ &gt; ٠ دائمًا لأي ك حقيقي.</li>
+          </ul>
+          <div class="answer">إذن الشرط يتحقق لكل <b>قيم ك الحقيقية</b>.</div>
+        </div>
+      </article>
 
-            <div class="svgCard">
-              <!-- Min diagram -->
-              <svg width="320" height="190" viewBox="0 0 320 190" aria-label="رسم يوضح القيمة الصغرى">
-                <rect x="0" y="0" width="320" height="190" fill="#ffffff"/>
-                <!-- axes -->
-                <line x1="160" y1="12" x2="160" y2="176" stroke="#111" stroke-width="2"/>
-                <line x1="18" y1="140" x2="302" y2="140" stroke="#111" stroke-width="2"/>
-                <!-- parabola up -->
-                <path d="M70 70 Q160 160 250 70" fill="none" stroke="#2563eb" stroke-width="3"/>
-                <!-- vertex -->
-                <circle cx="160" cy="160" r="5" fill="#dc2626"/>
-                <text x="170" y="168" font-size="13" fill="#111">القيمة الصغرى عند الرأس</text>
-              </svg>
-              <div class="cap">طالما المنحنى مفتوح لأعلى ⇒ أقل قيمة تكون عند رأس المنحنى.</div>
-            </div>
+      <article class="q">
+        <div class="qTitle"><div class="qNo">السؤال ١٤</div><div class="tag">شرط المماس (Δ=٠)</div></div>
+        <div class="box">
+          <div class="muted">ص = ك س + ٣ مماس لـ ص = ٤س² − ١٢س + ٧</div>
+          <ul class="steps">
+            <li>٤س² − ١٢س + ٧ = ك س + ٣ ⇒ ٤س² − (١٢+ك)س + ٤ = ٠.</li>
+            <li>شرط المماس: Δ=٠ ⇒ (١٢+ك)² − ٦٤ = ٠ ⇒ ١٢+ك = ±٨.</li>
+          </ul>
+          <div class="answer">ك = <b>−٤</b> أو <b>−٢٠</b>.</div>
+        </div>
+      </article>
 
-          </div>
-        </article>
+    </div>
+  </section>
 
-        <!-- Q4 -->
-        <article class="q">
-          <div class="qTitle">
-            <div class="qNo">السؤال 4</div>
-            <div class="tag">القيمة العظمى (من الصورة القياسية)</div>
-          </div>
+  <footer>إذا تريد أكمل “الوحدة الثانية/الثالثة…” من نفس الملف (باقي الـ PDF) بنفس الأسلوب، قل لي فقط: “كمل بعد الصفحة ٦”.</footer>
 
-          <div class="box">
-            <div class="muted">الدالة: <span class="math">y = 2 − (x + 3)^2</span></div>
-            <div class="hr"></div>
+</div>
 
-            <div><b>الفكرة:</b> إذا كانت إشارة التربيع سالبة (− …²) ⇒ المنحنى يفتح <b>لأسفل</b> ⇒ أعلى قيمة عند الرأس.</div>
+<script>
+  // تحويل أي أرقام إنجليزية تظهر بالخطأ إلى أرقام هندية
+  (function(){
+    const map = {'0':'٠','1':'١','2':'٢','3':'٣','4':'٤','5':'٥','6':'٦','7':'٧','8':'٨','9':'٩'};
+    function convert(node){
+      if(node.nodeType === 3){
+        node.nodeValue = node.nodeValue.replace(/[0-9]/g, d => map[d]);
+      } else if(node.nodeType === 1){
+        // لا نغيّر داخل عناصر eq لأنها لاتينية الاتجاه
+        if(node.classList && node.classList.contains('eq')) return;
+        for(const ch of node.childNodes) convert(ch);
+      }
+    }
+    convert(document.body);
+  })();
+</script>
 
-            <ul class="steps">
-              <li>(س + 3)² دائمًا ≥ 0</li>
-              <li>إذن −(س + 3)² دائمًا ≤ 0</li>
-              <li>أكبر ما يمكن أن يصل له −(س + 3)² هو 0 (عندما س = −3)</li>
-              <li>إذن أكبر قيمة لـ ص = 2 + 0 = 2</li>
-            </ul>
-
-            <div class="answer">القيمة العظمى: <b>2</b>.</div>
-
-            <div class="hr"></div>
-
-            <div class="svgCard">
-              <!-- Max diagram -->
-              <svg width="320" height="190" viewBox="0 0 320 190" aria-label="رسم يوضح القيمة العظمى">
-                <rect x="0" y="0" width="320" height="190" fill="#ffffff"/>
-                <!-- axes -->
-                <line x1="160" y1="12" x2="160" y2="176" stroke="#111" stroke-width="2"/>
-                <line x1="18" y1="60" x2="302" y2="60" stroke="#111" stroke-width="2"/>
-                <!-- parabola down -->
-                <path d="M70 150 Q160 60 250 150" fill="none" stroke="#16a34a" stroke-width="3"/>
-                <!-- vertex -->
-                <circle cx="160" cy="60" r="5" fill="#dc2626"/>
-                <text x="170" y="50" font-size="13" fill="#111">القيمة العظمى عند الرأس</text>
-              </svg>
-              <div class="cap">طالما المنحنى مفتوح لأسفل ⇒ أعلى قيمة تكون عند رأس المنحنى.</div>
-            </div>
-
-          </div>
-        </article>
-
-        <!-- Q5 -->
-        <article class="q">
-          <div class="qTitle">
-            <div class="qNo">السؤال 5</div>
-            <div class="tag">القيمة الصغرى (من الصورة القياسية)</div>
-          </div>
-
-          <div class="box green">
-            <div class="muted">الدالة: <span class="math">y = (x + 2)^2 + 3</span></div>
-            <div class="hr"></div>
-
-            <div><b>الفكرة:</b> (… )² دائمًا ≥ 0 ⇒ أقل قيمة تتحقق عندما (… )² = 0.</div>
-
-            <ul class="steps">
-              <li>(س + 2)² ≥ 0 دائمًا</li>
-              <li>أصغر قيمة لـ (س + 2)² هي 0 عندما س = −2</li>
-              <li>إذن أصغر قيمة لـ ص = 0 + 3 = 3</li>
-            </ul>
-
-            <div class="answer">القيمة الصغرى: <b>3</b>.</div>
-
-            <div class="hr"></div>
-
-            <div class="svgCard">
-              <!-- Min diagram (again) -->
-              <svg width="320" height="190" viewBox="0 0 320 190" aria-label="رسم يوضح القيمة الصغرى">
-                <rect x="0" y="0" width="320" height="190" fill="#ffffff"/>
-                <!-- axes -->
-                <line x1="160" y1="12" x2="160" y2="176" stroke="#111" stroke-width="2"/>
-                <line x1="18" y1="140" x2="302" y2="140" stroke="#111" stroke-width="2"/>
-                <!-- parabola up -->
-                <path d="M70 70 Q160 160 250 70" fill="none" stroke="#2563eb" stroke-width="3"/>
-                <!-- vertex -->
-                <circle cx="160" cy="160" r="5" fill="#dc2626"/>
-                <text x="170" y="168" font-size="13" fill="#111">الصغرى عند الرأس</text>
-              </svg>
-              <div class="cap">لأن المنحنى مفتوح لأعلى ⇒ أصغر قيمة عند الرأس.</div>
-            </div>
-
-          </div>
-        </article>
-
-        <!-- Q6 -->
-        <article class="q">
-          <div class="qTitle">
-            <div class="qNo">السؤال 6</div>
-            <div class="tag">إيجاد الرأس بالطريقة (−ب ÷ 2أ)</div>
-          </div>
-
-          <div class="box">
-            <div class="muted">الدالة: <span class="math">y = x^2 − 4x + 1</span></div>
-            <div class="hr"></div>
-
-            <div><b>الهدف:</b> إيجاد نقطة الرأس (س ، ص).</div>
-
-            <ul class="steps">
-              <li>نحدد معاملات الدالة: أ = 1 ، ب = −4 ، ج = 1</li>
-              <li>نحسب س عند الرأس:
-                <span class="math">
-                  x = −b / (2a)
-                </span>
-                =
-                <span class="frac">
-                  <span class="top">−(−4)</span><span class="bar"></span><span class="bottom">2×1</span>
-                </span>
-                =
-                <span class="frac">
-                  <span class="top">4</span><span class="bar"></span><span class="bottom">2</span>
-                </span>
-                = 2
-              </li>
-              <li>نعوض س = 2 لإيجاد ص:
-                <span class="math">
-                  y = 2^2 − 4(2) + 1 = 4 − 8 + 1 = −3
-                </span>
-              </li>
-            </ul>
-
-            <div class="answer">إذن نقطة الرأس: <b>(2 ، −3)</b>.</div>
-
-            <div class="hr"></div>
-
-            <div class="svgCard">
-              <svg width="320" height="190" viewBox="0 0 320 190" aria-label="توضيح موقع الرأس">
-                <rect x="0" y="0" width="320" height="190" fill="#ffffff"/>
-                <!-- axes -->
-                <line x1="160" y1="12" x2="160" y2="176" stroke="#111" stroke-width="2"/>
-                <line x1="18" y1="140" x2="302" y2="140" stroke="#111" stroke-width="2"/>
-                <!-- parabola up -->
-                <path d="M70 70 Q160 160 250 70" fill="none" stroke="#2563eb" stroke-width="3"/>
-                <!-- animated vertical line x=vertex -->
-                <line id="vline" x1="160" y1="12" x2="160" y2="176" stroke="#dc2626" stroke-width="3" opacity="0.9"/>
-                <animate xlink:href="#vline" attributeName="opacity" values="0.25;1;0.25" dur="1.2s" repeatCount="indefinite"></animate>
-                <!-- vertex -->
-                <circle cx="160" cy="160" r="5" fill="#dc2626"/>
-                <text x="170" y="168" font-size="13" fill="#111">الرأس (2 ، −3)</text>
-              </svg>
-              <div class="cap">الخط الأحمر يوضح محور التماثل المار بالرأس (س = 2).</div>
-            </div>
-
-          </div>
-        </article>
-
-        <!-- Helpful note -->
-        <article class="q warn" id="add">
-          <div class="qTitle">
-            <div class="qNo">مهم — إضافة الصفحات القادمة</div>
-            <div class="tag">قالب جاهز</div>
-          </div>
-
-          <div class="box">
-            <div>
-              لما تقول لي: <b>“كمل الصفحة الرابعة والخامسة…”</b>  
-              أنا سأضيفها تحت هنا بنفس التنسيق تمامًا (سؤال 1، سؤال 2… + شرح + رسم عند الحاجة).
-            </div>
-            <div class="hr"></div>
-            <div class="muted">
-              فقط أرسل لي صورة/لقطة للصفحات أو ارفع PDF كامل، وأنا أكمّل مباشرة.
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <footer>
-      إذا تبغى: أضيف زر “التالي/السابق” بين الصفحات + فهرس جانبي + وضع ليلي.
-    </footer>
-
-  </div>
 </body>
 </html>

@@ -2,7 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>مراجعة الوحدة الثانية – الصفحة الأولى والثانية</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مراجعة الوحدة الثانية</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
@@ -13,23 +14,58 @@ window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
 
 <style>
 body{
-  font-family:'Cairo', sans-serif;
+  font-family:'Cairo',sans-serif;
   background:#f7f9fc;
   margin:0;
-  padding:20px;
+  padding:18px;
   line-height:2;
 }
-.page-title{ text-align:center; color:#1f4e79; font-size:26px; margin-bottom:20px; }
-.section-title{ text-align:center; color:#2e75b6; font-size:22px; margin:30px 0; }
-.question{
-  background:#fff; border-radius:10px; padding:20px; margin-bottom:25px;
-  box-shadow:0 0 8px rgba(0,0,0,0.08);
+.page-title{
+  text-align:center;
+  color:#1f4e79;
+  font-size:26px;
+  margin-bottom:16px;
 }
-.q-title{ font-size:20px; font-weight:700; margin-bottom:10px; }
-.answer{ background:#eef4ff; padding:15px; border-right:6px solid #2e75b6; margin-top:10px; }
-svg{ display:block; margin:15px auto; }
-.legend{ font-size:14px; color:#444; text-align:center; margin-top:-8px; }
-hr{ border:none; border-top:2px dashed #ccc; margin:40px 0; }
+.section-title{
+  text-align:center;
+  color:#2e75b6;
+  font-size:22px;
+  margin:26px 0 14px;
+}
+.question{
+  background:#fff;
+  border-radius:12px;
+  padding:18px;
+  margin-bottom:18px;
+  box-shadow:0 0 8px rgba(0,0,0,.08);
+}
+.q-title{
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+.answer{
+  background:#eef4ff;
+  padding:14px;
+  border-right:6px solid #2e75b6;
+  margin-top:10px;
+  border-radius:8px;
+}
+.legend{
+  font-size:14px;
+  color:#444;
+  text-align:center;
+  margin-top:6px;
+}
+svg{
+  display:block;
+  margin:14px auto 0;
+}
+hr{
+  border:none;
+  border-top:2px dashed #ccc;
+  margin:26px 0;
+}
 </style>
 </head>
 
@@ -40,92 +76,69 @@ hr{ border:none; border-top:2px dashed #ccc; margin:40px 0; }
 <!-- ================= الصفحة الأولى ================= -->
 <div class="section-title">الصفحة الأولى</div>
 
-<!-- (1) متعدد إلى واحد: خط أفقي متحرك -->
+<!-- سؤال 1 -->
 <div class="question">
   <div class="q-title">السؤال (1): ظلّل الشكل الذي يمثل علاقة متعدّد إلى واحد.</div>
   <div class="answer">
-    <b>متعدّد إلى واحد</b>: توجد قيمتان مختلفتان لـ س تعطيان نفس القيمة لـ ص.  
-    لذلك نستخدم <b>الخط الأفقي</b>: إذا قطع المنحنى في نقطتين ⟵ متعدد إلى واحد.
+    العلاقة <b>متعدّد إلى واحد</b> تعني: توجد قيمتان مختلفتان لـ س تعطيان نفس القيمة لـ ص.  
+    نستخدم <b>الاختبار الأفقي فقط</b>:
+    إذا قطع الخط الأفقي الرسم في أكثر من نقطة ⇒ العلاقة متعدّد إلى واحد.
   </div>
 
-  <svg width="280" height="190" viewBox="0 0 280 190">
-    <!-- منحنى تربيعي (∪) -->
+  <svg width="280" height="190">
     <path d="M30 150 Q140 30 250 150" fill="none" stroke="#000" stroke-width="2"/>
-
-    <!-- خط أفقي متحرك (أحمر) -->
     <line x1="20" y1="90" x2="260" y2="90" stroke="#d62728" stroke-width="2">
       <animate attributeName="y1" from="70" to="135" dur="2.2s" repeatCount="indefinite"/>
       <animate attributeName="y2" from="70" to="135" dur="2.2s" repeatCount="indefinite"/>
     </line>
-
-    <!-- خط رأسي متحرك (أخضر) لإثبات أنها دالة -->
-    <line x1="140" y1="15" x2="140" y2="175" stroke="#2ca02c" stroke-width="2" opacity="0.85">
-      <animate attributeName="x1" from="70" to="210" dur="2.2s" repeatCount="indefinite"/>
-      <animate attributeName="x2" from="70" to="210" dur="2.2s" repeatCount="indefinite"/>
-    </line>
   </svg>
-  <div class="legend">الأحمر: اختبار أفقي — الأخضر: اختبار رأسي</div>
+  <div class="legend">الخط الأحمر: اختبار أفقي</div>
 </div>
 
-<!-- (2) واحد إلى واحد: خط أفقي + خط رأسي كلاهما يقطع نقطة واحدة -->
+<!-- سؤال 2 -->
 <div class="question">
   <div class="q-title">السؤال (2): ظلّل الشكل الذي يمثل علاقة واحد إلى واحد.</div>
   <div class="answer">
-    <b>واحد إلى واحد</b>:  
-    الخط الأفقي يقطع الرسم في <b>نقطة واحدة</b> دائمًا، والخط الرأسي أيضًا يقطع في نقطة واحدة.
+    العلاقة <b>واحد إلى واحد</b> تعني:
+    الخط الأفقي يقطع الرسم في <b>نقطة واحدة فقط</b>.
   </div>
 
-  <svg width="280" height="190" viewBox="0 0 280 190">
-    <!-- خط مستقيم مائل -->
+  <svg width="280" height="190">
     <line x1="35" y1="155" x2="245" y2="35" stroke="#000" stroke-width="2"/>
-
-    <!-- خط أفقي متحرك -->
     <line x1="20" y1="95" x2="260" y2="95" stroke="#d62728" stroke-width="2">
       <animate attributeName="y1" from="55" to="155" dur="2.1s" repeatCount="indefinite"/>
       <animate attributeName="y2" from="55" to="155" dur="2.1s" repeatCount="indefinite"/>
     </line>
-
-    <!-- خط رأسي متحرك -->
-    <line x1="140" y1="15" x2="140" y2="175" stroke="#2ca02c" stroke-width="2" opacity="0.85">
-      <animate attributeName="x1" from="55" to="225" dur="2.1s" repeatCount="indefinite"/>
-      <animate attributeName="x2" from="55" to="225" dur="2.1s" repeatCount="indefinite"/>
-    </line>
   </svg>
-  <div class="legend">الأحمر: اختبار أفقي — الأخضر: اختبار رأسي</div>
+  <div class="legend">الخط الأحمر: اختبار أفقي</div>
 </div>
 
-<!-- (3) خطية: واحد إلى واحد (بدون رسم إضافي هنا) -->
+<!-- سؤال 3 -->
 <div class="question">
   <div class="q-title">السؤال (3): د(س) = 2س + 5 ، حيث س ∈ ح. حدّد نوع العلاقة.</div>
   <div class="answer">
-    الدالة خطية وميلها لا يساوي صفرًا، لذلك هي <b>واحد إلى واحد</b>.
+    الدالة خطية وميلها لا يساوي صفرًا،  
+    ولكل قيمة لـ س قيمة واحدة لـ ص ⇒ العلاقة <b>واحد إلى واحد</b>.
   </div>
 </div>
 
-<!-- (4) س²+1: متعدد إلى واحد (اختبار أفقي يقطع نقطتين) -->
+<!-- سؤال 4 -->
 <div class="question">
   <div class="q-title">السؤال (4): د(س) = س² + 1 ، حيث س ∈ ح. حدّد نوع العلاقة.</div>
   <div class="answer">
-    مثال: د(1)=2 و د(−1)=2 ⇒ قيمتان مختلفتان لـ س أعطتا نفس ص  
-    إذًا العلاقة <b>متعدّد إلى واحد</b>.
+    مثال:
+    د(1)=2 و د(−1)=2  
+    قيمتان مختلفتان لـ س أعطتا نفس ص ⇒ العلاقة <b>متعدّد إلى واحد</b>.
   </div>
 
-  <svg width="280" height="190" viewBox="0 0 280 190">
+  <svg width="280" height="190">
     <path d="M30 150 Q140 30 250 150" fill="none" stroke="#000" stroke-width="2"/>
-
-    <!-- أفقي متحرك (يقطع غالبًا نقطتين) -->
     <line x1="20" y1="95" x2="260" y2="95" stroke="#d62728" stroke-width="2">
       <animate attributeName="y1" from="70" to="140" dur="2.2s" repeatCount="indefinite"/>
       <animate attributeName="y2" from="70" to="140" dur="2.2s" repeatCount="indefinite"/>
     </line>
-
-    <!-- رأسي متحرك لإثبات دالة -->
-    <line x1="140" y1="15" x2="140" y2="175" stroke="#2ca02c" stroke-width="2" opacity="0.85">
-      <animate attributeName="x1" from="70" to="210" dur="2.2s" repeatCount="indefinite"/>
-      <animate attributeName="x2" from="70" to="210" dur="2.2s" repeatCount="indefinite"/>
-    </line>
   </svg>
-  <div class="legend">الأحمر: اختبار أفقي — الأخضر: اختبار رأسي</div>
+  <div class="legend">الخط الأحمر: اختبار أفقي</div>
 </div>
 
 <hr>
@@ -133,81 +146,59 @@ hr{ border:none; border-top:2px dashed #ccc; margin:40px 0; }
 <!-- ================= الصفحة الثانية ================= -->
 <div class="section-title">الصفحة الثانية</div>
 
-<!-- (1) y = x^2 - 3 : مفتوح لأعلى -->
+<!-- سؤال 1 -->
 <div class="question">
   <div class="q-title">السؤال (1): يمثّل الشكل بيان الدالة د(س) = س² − 3. أوجد المدى.</div>
   <div class="answer">
+    نحسب رأس المنحنى:
     $$ س = \frac{-ب}{2أ} = \frac{0}{2} = 0 $$
     $$ ص = 0^2 - 3 = -3 $$
-    بما أن المنحنى <b>مفتوح لأعلى</b>:
+    وبما أن المنحنى مفتوح لأعلى:
     $$ \text{مدى الدالة: } ص \ge -3 $$
   </div>
 
-  <!-- (∪) مفتوح لأعلى: الرأس أسفل -->
-  <svg width="280" height="190" viewBox="0 0 280 190">
-    <path d="M30 60 Q140 160 250 60" fill="none" stroke="#000" stroke-width="2"/>
-    <!-- خط أفقي ثابت عند المدى الأدنى تقريبًا -->
-    <line x1="20" y1="160" x2="260" y2="160" stroke="#d62728" stroke-width="2"/>
-    <!-- نقطة الرأس -->
-    <circle cx="140" cy="160" r="4" fill="#000"/>
-  </svg>
-  <div class="legend">المنحنى مفتوح لأعلى (∪) والرأس في الأسفل</div>
+  <svg id="p1svg" width="300" height="210"></svg>
 </div>
 
-<!-- (2) y = -x^2 + 2 : مفتوح لأسفل -->
+<!-- سؤال 2 -->
 <div class="question">
   <div class="q-title">السؤال (2): يمثّل الشكل بيان الدالة د(س) = −س² + 2. أوجد المدى.</div>
   <div class="answer">
-    $$ س = 0 $$
-    $$ ص = 2 $$
-    بما أن المنحنى <b>مفتوح لأسفل</b>:
+    رأس المنحنى:
+    $$ س = 0 \Rightarrow ص = 2 $$
+    وبما أن المنحنى مفتوح لأسفل:
     $$ \text{مدى الدالة: } ص \le 2 $$
   </div>
 
-  <!-- (∩) مفتوح لأسفل: الرأس أعلى -->
-  <svg width="280" height="190" viewBox="0 0 280 190">
-    <path d="M30 160 Q140 60 250 160" fill="none" stroke="#000" stroke-width="2"/>
-    <!-- خط أفقي ثابت عند المدى الأعلى تقريبًا -->
-    <line x1="20" y1="60" x2="260" y2="60" stroke="#d62728" stroke-width="2"/>
-    <!-- نقطة الرأس -->
-    <circle cx="140" cy="60" r="4" fill="#000"/>
-  </svg>
-  <div class="legend">المنحنى مفتوح لأسفل (∩) والرأس في الأعلى</div>
+  <svg id="p2svg" width="300" height="210"></svg>
 </div>
 
-<!-- (3) واحد إلى متعدد: خط رأسي متحرك -->
-<div class="question">
-  <div class="q-title">السؤال (3): يبيّن الرسم العلاقة بين س و ص. حدّد نوع العلاقة.</div>
-  <div class="answer">
-    إذا كان <b>الخط الرأسي</b> يقطع الرسم في أكثر من نقطة ⟵ العلاقة <b>واحد إلى متعدّد</b>.
-  </div>
+<script>
+function drawQuad(svgId,a,k){
+  const svg=document.getElementById(svgId);
+  const W=300,H=210,l=25,t=20,w=250,h=170;
+  const xMin=-6,xMax=6,yMin=-10,yMax=10;
+  const X=x=>l+(x-xMin)/(xMax-xMin)*w;
+  const Y=y=>t+(yMax-y)/(yMax-yMin)*h;
 
-  <svg width="280" height="190" viewBox="0 0 280 190">
-    <!-- منحنى جانبي بسيط -->
-    <path d="M140 30 C80 60 80 130 140 160 C200 130 200 60 140 30" fill="none" stroke="#000" stroke-width="2"/>
+  let d="";
+  for(let i=0;i<=120;i++){
+    let x=xMin+(i/120)*(xMax-xMin);
+    let y=a*x*x+k;
+    d+=(i? "L":"M")+X(x)+" "+Y(y)+" ";
+  }
 
-    <!-- رأسي متحرك -->
-    <line x1="140" y1="15" x2="140" y2="175" stroke="#d62728" stroke-width="2">
-      <animate attributeName="x1" from="90" to="190" dur="2.2s" repeatCount="indefinite"/>
-      <animate attributeName="x2" from="90" to="190" dur="2.2s" repeatCount="indefinite"/>
-    </line>
-  </svg>
-  <div class="legend">الأحمر: اختبار رأسي متحرك</div>
-</div>
+  svg.innerHTML=`
+    <rect x="10" y="10" width="280" height="190" fill="none" stroke="#ddd"/>
+    <path d="${d}" fill="none" stroke="#000" stroke-width="2"/>
+    <line x1="${l}" y1="${Y(k)}" x2="${l+w}" y2="${Y(k)}" stroke="#d62728" stroke-width="2"/>
+    <circle cx="${X(0)}" cy="${Y(k)}" r="4" fill="#000"/>
+  `;
+}
 
-<!-- (4) العكسية -->
-<div class="question">
-  <div class="q-title">السؤال (4): د(س) = س + 4. أوجد الدالة العكسية.</div>
-  <div class="answer">
-    $$ ص = س + 4 $$
-    نبدّل س و ص:
-    $$ س = ص + 4 $$
-    نحل لإيجاد ص:
-    $$ ص = س - 4 $$
-    إذًا:
-    $$ د^{-1}(س) = س - 4 $$
-  </div>
-</div>
+drawQuad("p1svg",1,-3);
+drawQuad("p2svg",-1,2);
+</script>
 
 </body>
 </html>

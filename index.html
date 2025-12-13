@@ -1,170 +1,538 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"/>
-<title>حل مراجعة الاختبار النهائي - من الصفحة الثالثة</title>
-<style>
-body{
-  font-family: Tahoma, Arial, sans-serif;
-  line-height:1.9;
-  background:#fafafa;
-  margin:20px;
-}
-.page{
-  background:#fff;
-  border:1px solid #ddd;
-  border-radius:12px;
-  padding:16px;
-  margin-bottom:20px;
-}
-h2{
-  background:#f1f1f1;
-  padding:10px;
-  border-radius:8px;
-}
-.q{
-  border-top:1px dashed #ccc;
-  padding:10px 0;
-}
-.q:first-child{border-top:none;}
-.ans{
-  background:#eef2ff;
-  padding:10px;
-  border-radius:8px;
-  margin-top:6px;
-}
-.frac{
-  display:inline-block;
-  text-align:center;
-}
-.frac .top{display:block;}
-.frac .bar{border-top:2px solid #000;}
-.frac .bottom{display:block;}
-.root{
-  display:inline-flex;
-  align-items:flex-end;
-}
-.root span:last-child{
-  border-top:2px solid #000;
-  padding:0 4px;
-}
-svg{margin-top:10px;}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الوحدة الأولى — حلول مشروحة (من الصفحة الثالثة)</title>
+
+  <style>
+    :root{
+      --bg:#f5f6f8;
+      --card:#ffffff;
+      --border:#e6e6e6;
+      --ink:#111;
+      --muted:#555;
+      --accent:#2563eb;
+      --accent2:#16a34a;
+      --danger:#dc2626;
+      --soft:#eef2ff;
+      --soft2:#ecfdf5;
+      --shadow:0 8px 25px rgba(0,0,0,.06);
+      --radius:14px;
+    }
+
+    body{
+      margin:0;
+      font-family: Tahoma, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.9;
+    }
+
+    .container{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 14px;
+    }
+
+    header{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 14px 14px;
+      position: sticky;
+      top: 10px;
+      z-index: 10;
+    }
+
+    header .row{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    .title{
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .sub{
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .nav{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+      cursor:pointer;
+      font-size: 13px;
+      transition:.15s;
+      text-decoration:none;
+      color: var(--ink);
+    }
+
+    .btn:hover{
+      border-color:#cfcfcf;
+      transform: translateY(-1px);
+    }
+
+    .btn.primary{
+      background: var(--accent);
+      border-color: var(--accent);
+      color:#fff;
+    }
+
+    .page{
+      margin-top: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .pageHead{
+      padding: 14px;
+      background: linear-gradient(90deg, #ffffff, #f8fafc);
+      border-bottom:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pageHead h2{
+      margin:0;
+      font-size: 18px;
+    }
+
+    .badge{
+      font-size: 12px;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #334155;
+      white-space:nowrap;
+    }
+
+    .content{
+      padding: 14px;
+    }
+
+    .q{
+      padding: 12px;
+      border:1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      margin-bottom: 12px;
+    }
+
+    .qTitle{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom: 8px;
+    }
+
+    .qTitle .qNo{
+      font-weight:700;
+      font-size: 16px;
+    }
+
+    .qTitle .tag{
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border:1px solid var(--border);
+      background: #f8fafc;
+      color:#0f172a;
+    }
+
+    .box{
+      background: var(--soft);
+      border: 1px solid #dbe4ff;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-top: 8px;
+    }
+
+    .box.green{
+      background: var(--soft2);
+      border-color: #bbf7d0;
+    }
+
+    .answer{
+      font-weight:700;
+      margin-top: 6px;
+    }
+
+    ul.steps{
+      margin: 8px 0 0;
+      padding: 0 18px;
+      color: var(--ink);
+    }
+
+    .muted{ color: var(--muted); }
+
+    /* Fraction */
+    .frac{
+      display:inline-block;
+      vertical-align:middle;
+      text-align:center;
+      line-height:1.1;
+      margin: 0 .12em;
+    }
+    .frac .top{display:block; padding: 0 .3em;}
+    .frac .bar{display:block; border-top:2px solid #111; margin:.08em .12em;}
+    .frac .bottom{display:block; padding: 0 .3em;}
+
+    /* Root */
+    .root{
+      display:inline-flex;
+      align-items:flex-end;
+      margin: 0 .12em;
+    }
+    .root .radical{font-size:1.25em; line-height:1;}
+    .root .radicand{
+      display:inline-block;
+      padding: 0 .3em .06em;
+      border-top:2px solid #111;
+      margin-right:.06em;
+    }
+
+    .math{ font-family: Arial, sans-serif; direction:ltr; unicode-bidi:bidi-override; }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    @media (max-width:780px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
+
+    .svgCard{
+      border:1px solid var(--border);
+      border-radius: 14px;
+      padding: 10px;
+      background:#fff;
+    }
+
+    .cap{
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    footer{
+      margin: 14px 0 40px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align:center;
+    }
+
+    .hr{
+      height:1px;
+      background: var(--border);
+      margin: 12px 0;
+    }
+
+    .warn{
+      border-right: 4px solid var(--danger);
+      background: #fff1f2;
+      border-left: 1px solid #fecdd3;
+      border-top: 1px solid #fecdd3;
+      border-bottom: 1px solid #fecdd3;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
 
-<div class="page">
-<h2>الوحدة الأولى — الصفحة الثالثة</h2>
+    <header>
+      <div class="row">
+        <div>
+          <div class="title">حلول مشروحة + رسومات توضيحية</div>
+          <div class="sub">الوحدة الأولى — بدءًا من الصفحة الثالثة (جاهز للرفع على GitHub)</div>
+        </div>
+        <nav class="nav">
+          <a class="btn primary" href="#p3">الصفحة 3</a>
+          <a class="btn" href="#add">إضافة الصفحات القادمة</a>
+        </nav>
+      </div>
+    </header>
 
-<div class="q">
-<b>السؤال 1</b>
-<div class="ans">
-نقطة رأس المنحنى من الرسم هي (2 ، −3).
-</div>
-</div>
+    <!-- PAGE 3 -->
+    <section class="page" id="p3">
+      <div class="pageHead">
+        <h2>الوحدة الأولى — الصفحة الثالثة</h2>
+        <div class="badge">شرح خطوة بخطوة + رسومات (للعظمى/الصغرى وما يلزم)</div>
+      </div>
 
-<div class="q">
-<b>السؤال 2</b>
-<div class="ans">
-محور التماثل هو: س = 2
-</div>
-</div>
+      <div class="content">
 
-<div class="q">
-<b>السؤال 3</b>
-<div class="ans">
-القيمة الصغرى للدالة هي: ص = −3
-</div>
-</div>
+        <!-- Q1 -->
+        <article class="q">
+          <div class="qTitle">
+            <div class="qNo">السؤال 1</div>
+            <div class="tag">قراءة من الرسم (رأس المنحنى)</div>
+          </div>
 
-<div class="q">
-<b>السؤال 4</b>
-<div class="ans">
-الدالة ص = 2 − (س + 3)² تفتح لأسفل،  
-إذن القيمة العظمى = 2
-</div>
-</div>
+          <div class="box">
+            <div><b>الفكرة:</b> رأس المنحنى هو <b>أعلى نقطة أو أدنى نقطة</b> في الرسم.</div>
+            <ul class="steps">
+              <li>نحدد النقطة التي عندها يغير المنحنى اتجاهه (قمة/قاع).</li>
+              <li>نقرأ الإحداثيين مباشرة من الرسم: س ثم ص.</li>
+            </ul>
+            <div class="answer">إذن نقطة الرأس هي: <b>(2 ، −3)</b>.</div>
+          </div>
+        </article>
 
-<div class="q">
-<b>السؤال 5</b>
-<div class="ans">
-الدالة ص = (س + 2)² + 3 تفتح لأعلى،  
-إذن القيمة الصغرى = 3
-</div>
-</div>
+        <!-- Q2 -->
+        <article class="q">
+          <div class="qTitle">
+            <div class="qNo">السؤال 2</div>
+            <div class="tag">محور التماثل</div>
+          </div>
 
-<div class="q">
-<b>السؤال 6</b>
-<div class="ans">
-ص = س² − 4س + 1  
-<br><br>
-الطريقة الثانية (−ب ÷ 2أ):  
-س = −(−4) ÷ (2×1) = 2  
-<br>
-ص = 4 − 8 + 1 = −3  
-<br><br>
-نقطة الرأس: (2 ، −3)
-</div>
-</div>
+          <div class="box">
+            <div><b>الفكرة:</b> محور التماثل في الدالة التربيعية يكون خطًا رأسيًا يمر عبر الرأس.</div>
+            <ul class="steps">
+              <li>نأخذ قيمة س عند الرأس.</li>
+              <li>محور التماثل: <span class="math">x = (قيمة س عند الرأس)</span></li>
+            </ul>
+            <div class="answer">وبما أن الرأس عند س = 2 ⇒ محور التماثل: <b>س = 2</b>.</div>
+          </div>
+        </article>
 
-</div>
+        <!-- Q3 -->
+        <article class="q">
+          <div class="qTitle">
+            <div class="qNo">السؤال 3</div>
+            <div class="tag">القيمة الصغرى</div>
+          </div>
 
-<div class="page">
-<h2>الوحدة الأولى — الصفحة الرابعة</h2>
+          <div class="box green">
+            <div><b>الفكرة:</b> إذا كان المنحنى <b>يفتح لأعلى</b> ⇒ أقل قيمة للدالة تكون عند الرأس.</div>
+            <ul class="steps">
+              <li>ننظر إلى اتجاه فتح المنحنى (لأعلى).</li>
+              <li>إذن الرأس يمثل أقل قيمة.</li>
+              <li>القيمة الصغرى هي قيمة ص عند الرأس.</li>
+            </ul>
+            <div class="answer">قيمة ص عند الرأس = −3 ⇒ القيمة الصغرى: <b>ص = −3</b>.</div>
 
-<div class="q">
-<b>السؤال 1</b>
-<div class="ans">
-إذا كان رأس المنحنى (م ، ب) = (2 ، −5)  
-فإن م + ب = −3
-</div>
-</div>
+            <div class="hr"></div>
 
-<div class="q">
-<b>السؤال 2</b>
-<div class="ans">
-س² − 3س − 10 = 0  
-<br>
-المميز = 9 + 40 = 49  
-<br>
-عدد الحلول: حلان حقيقيان
-</div>
-</div>
+            <div class="svgCard">
+              <!-- Min diagram -->
+              <svg width="320" height="190" viewBox="0 0 320 190" aria-label="رسم يوضح القيمة الصغرى">
+                <rect x="0" y="0" width="320" height="190" fill="#ffffff"/>
+                <!-- axes -->
+                <line x1="160" y1="12" x2="160" y2="176" stroke="#111" stroke-width="2"/>
+                <line x1="18" y1="140" x2="302" y2="140" stroke="#111" stroke-width="2"/>
+                <!-- parabola up -->
+                <path d="M70 70 Q160 160 250 70" fill="none" stroke="#2563eb" stroke-width="3"/>
+                <!-- vertex -->
+                <circle cx="160" cy="160" r="5" fill="#dc2626"/>
+                <text x="170" y="168" font-size="13" fill="#111">القيمة الصغرى عند الرأس</text>
+              </svg>
+              <div class="cap">طالما المنحنى مفتوح لأعلى ⇒ أقل قيمة تكون عند رأس المنحنى.</div>
+            </div>
 
-<div class="q">
-<b>السؤال 3</b>
-<div class="ans">
-س² − 6س + 9 = 0  
-<br>
-المميز = 0  
-<br>
-عدد الحلول: حل واحد مكرر
-</div>
-</div>
+          </div>
+        </article>
 
-</div>
+        <!-- Q4 -->
+        <article class="q">
+          <div class="qTitle">
+            <div class="qNo">السؤال 4</div>
+            <div class="tag">القيمة العظمى (من الصورة القياسية)</div>
+          </div>
 
-<div class="page">
-<h2>الوحدة الأولى — اختبار الدالة (رسم متحرك)</h2>
+          <div class="box">
+            <div class="muted">الدالة: <span class="math">y = 2 − (x + 3)^2</span></div>
+            <div class="hr"></div>
 
-<div class="ans">
-اختبار الخط الرأسي لتحديد هل العلاقة تمثل دالة:
-</div>
+            <div><b>الفكرة:</b> إذا كانت إشارة التربيع سالبة (− …²) ⇒ المنحنى يفتح <b>لأسفل</b> ⇒ أعلى قيمة عند الرأس.</div>
 
-<svg width="260" height="180">
-<line x1="130" y1="10" x2="130" y2="170" stroke="red" stroke-width="3">
-<animate attributeName="x1" from="40" to="220" dur="3s" repeatCount="indefinite"/>
-<animate attributeName="x2" from="40" to="220" dur="3s" repeatCount="indefinite"/>
-</line>
-<path d="M60 120 Q130 40 200 120" stroke="blue" fill="none" stroke-width="3"/>
-</svg>
+            <ul class="steps">
+              <li>(س + 3)² دائمًا ≥ 0</li>
+              <li>إذن −(س + 3)² دائمًا ≤ 0</li>
+              <li>أكبر ما يمكن أن يصل له −(س + 3)² هو 0 (عندما س = −3)</li>
+              <li>إذن أكبر قيمة لـ ص = 2 + 0 = 2</li>
+            </ul>
 
-<div class="ans">
-إذا قطع الخط الرأسي المنحنى أكثر من مرة → ليست دالة
-</div>
+            <div class="answer">القيمة العظمى: <b>2</b>.</div>
 
-</div>
+            <div class="hr"></div>
 
+            <div class="svgCard">
+              <!-- Max diagram -->
+              <svg width="320" height="190" viewBox="0 0 320 190" aria-label="رسم يوضح القيمة العظمى">
+                <rect x="0" y="0" width="320" height="190" fill="#ffffff"/>
+                <!-- axes -->
+                <line x1="160" y1="12" x2="160" y2="176" stroke="#111" stroke-width="2"/>
+                <line x1="18" y1="60" x2="302" y2="60" stroke="#111" stroke-width="2"/>
+                <!-- parabola down -->
+                <path d="M70 150 Q160 60 250 150" fill="none" stroke="#16a34a" stroke-width="3"/>
+                <!-- vertex -->
+                <circle cx="160" cy="60" r="5" fill="#dc2626"/>
+                <text x="170" y="50" font-size="13" fill="#111">القيمة العظمى عند الرأس</text>
+              </svg>
+              <div class="cap">طالما المنحنى مفتوح لأسفل ⇒ أعلى قيمة تكون عند رأس المنحنى.</div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Q5 -->
+        <article class="q">
+          <div class="qTitle">
+            <div class="qNo">السؤال 5</div>
+            <div class="tag">القيمة الصغرى (من الصورة القياسية)</div>
+          </div>
+
+          <div class="box green">
+            <div class="muted">الدالة: <span class="math">y = (x + 2)^2 + 3</span></div>
+            <div class="hr"></div>
+
+            <div><b>الفكرة:</b> (… )² دائمًا ≥ 0 ⇒ أقل قيمة تتحقق عندما (… )² = 0.</div>
+
+            <ul class="steps">
+              <li>(س + 2)² ≥ 0 دائمًا</li>
+              <li>أصغر قيمة لـ (س + 2)² هي 0 عندما س = −2</li>
+              <li>إذن أصغر قيمة لـ ص = 0 + 3 = 3</li>
+            </ul>
+
+            <div class="answer">القيمة الصغرى: <b>3</b>.</div>
+
+            <div class="hr"></div>
+
+            <div class="svgCard">
+              <!-- Min diagram (again) -->
+              <svg width="320" height="190" viewBox="0 0 320 190" aria-label="رسم يوضح القيمة الصغرى">
+                <rect x="0" y="0" width="320" height="190" fill="#ffffff"/>
+                <!-- axes -->
+                <line x1="160" y1="12" x2="160" y2="176" stroke="#111" stroke-width="2"/>
+                <line x1="18" y1="140" x2="302" y2="140" stroke="#111" stroke-width="2"/>
+                <!-- parabola up -->
+                <path d="M70 70 Q160 160 250 70" fill="none" stroke="#2563eb" stroke-width="3"/>
+                <!-- vertex -->
+                <circle cx="160" cy="160" r="5" fill="#dc2626"/>
+                <text x="170" y="168" font-size="13" fill="#111">الصغرى عند الرأس</text>
+              </svg>
+              <div class="cap">لأن المنحنى مفتوح لأعلى ⇒ أصغر قيمة عند الرأس.</div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Q6 -->
+        <article class="q">
+          <div class="qTitle">
+            <div class="qNo">السؤال 6</div>
+            <div class="tag">إيجاد الرأس بالطريقة (−ب ÷ 2أ)</div>
+          </div>
+
+          <div class="box">
+            <div class="muted">الدالة: <span class="math">y = x^2 − 4x + 1</span></div>
+            <div class="hr"></div>
+
+            <div><b>الهدف:</b> إيجاد نقطة الرأس (س ، ص).</div>
+
+            <ul class="steps">
+              <li>نحدد معاملات الدالة: أ = 1 ، ب = −4 ، ج = 1</li>
+              <li>نحسب س عند الرأس:
+                <span class="math">
+                  x = −b / (2a)
+                </span>
+                =
+                <span class="frac">
+                  <span class="top">−(−4)</span><span class="bar"></span><span class="bottom">2×1</span>
+                </span>
+                =
+                <span class="frac">
+                  <span class="top">4</span><span class="bar"></span><span class="bottom">2</span>
+                </span>
+                = 2
+              </li>
+              <li>نعوض س = 2 لإيجاد ص:
+                <span class="math">
+                  y = 2^2 − 4(2) + 1 = 4 − 8 + 1 = −3
+                </span>
+              </li>
+            </ul>
+
+            <div class="answer">إذن نقطة الرأس: <b>(2 ، −3)</b>.</div>
+
+            <div class="hr"></div>
+
+            <div class="svgCard">
+              <svg width="320" height="190" viewBox="0 0 320 190" aria-label="توضيح موقع الرأس">
+                <rect x="0" y="0" width="320" height="190" fill="#ffffff"/>
+                <!-- axes -->
+                <line x1="160" y1="12" x2="160" y2="176" stroke="#111" stroke-width="2"/>
+                <line x1="18" y1="140" x2="302" y2="140" stroke="#111" stroke-width="2"/>
+                <!-- parabola up -->
+                <path d="M70 70 Q160 160 250 70" fill="none" stroke="#2563eb" stroke-width="3"/>
+                <!-- animated vertical line x=vertex -->
+                <line id="vline" x1="160" y1="12" x2="160" y2="176" stroke="#dc2626" stroke-width="3" opacity="0.9"/>
+                <animate xlink:href="#vline" attributeName="opacity" values="0.25;1;0.25" dur="1.2s" repeatCount="indefinite"></animate>
+                <!-- vertex -->
+                <circle cx="160" cy="160" r="5" fill="#dc2626"/>
+                <text x="170" y="168" font-size="13" fill="#111">الرأس (2 ، −3)</text>
+              </svg>
+              <div class="cap">الخط الأحمر يوضح محور التماثل المار بالرأس (س = 2).</div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Helpful note -->
+        <article class="q warn" id="add">
+          <div class="qTitle">
+            <div class="qNo">مهم — إضافة الصفحات القادمة</div>
+            <div class="tag">قالب جاهز</div>
+          </div>
+
+          <div class="box">
+            <div>
+              لما تقول لي: <b>“كمل الصفحة الرابعة والخامسة…”</b>  
+              أنا سأضيفها تحت هنا بنفس التنسيق تمامًا (سؤال 1، سؤال 2… + شرح + رسم عند الحاجة).
+            </div>
+            <div class="hr"></div>
+            <div class="muted">
+              فقط أرسل لي صورة/لقطة للصفحات أو ارفع PDF كامل، وأنا أكمّل مباشرة.
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <footer>
+      إذا تبغى: أضيف زر “التالي/السابق” بين الصفحات + فهرس جانبي + وضع ليلي.
+    </footer>
+
+  </div>
 </body>
 </html>

@@ -2,404 +2,208 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>مراجعة الاختبار النهائي – الوحدة الثانية</title>
-
-<!-- MathJax للجذور الواضحة -->
-<script>
-window.MathJax = {
-  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
-};
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>مراجعة الوحدة الثانية – رياضيات</title>
 
 <style>
 body{
-  font-family: "Cairo","Tahoma",sans-serif;
-  background:#fafafa;
-  margin:20px;
+  font-family: "Amiri", "Arial", serif;
+  background:#f7f9fc;
+  margin:0;
+  padding:20px;
   line-height:2;
 }
-h1{
+.page{
+  background:white;
+  padding:30px;
+  margin-bottom:40px;
+  border-radius:12px;
+  box-shadow:0 0 10px rgba(0,0,0,0.08);
+}
+h1,h2{
   text-align:center;
-  color:#003366;
+  color:#0b5394;
 }
 .question{
-  background:#ffffff;
-  border:1px solid #ddd;
-  border-radius:10px;
-  padding:15px;
-  margin-bottom:25px;
-}
-.q-title{
+  font-size:22px;
   font-weight:bold;
-  font-size:20px;
-  color:#1a3a5f;
-  margin-bottom:10px;
+  margin-top:25px;
 }
 .answer{
-  background:#eef5ff;
-  padding:12px;
-  border-radius:8px;
-  border-right:5px solid #1a3a5f;
+  font-size:20px;
+  background:#eef3ff;
+  padding:15px;
+  border-right:6px solid #0b5394;
+  margin-top:10px;
 }
-.step{
-  margin-right:15px;
-}
-.graph-box{
-  margin-top:15px;
-  text-align:center;
+.math{
+  font-size:22px;
+  font-family:"Times New Roman", serif;
 }
 canvas{
+  display:block;
+  margin:15px auto;
   border:1px solid #ccc;
-  background:#fff;
+  background:white;
 }
-.note{
-  color:#444;
-  font-size:16px;
+hr{
+  margin:40px 0;
 }
 </style>
 </head>
 
 <body>
 
-<h1>حل أسئلة مراجعة الوحدة الثانية</h1>
+<!-- ================================================= -->
+<!-- الصفحة الأولى -->
+<!-- ================================================= -->
 
-<!-- سؤال 1 -->
-<div class="question">
-<div class="q-title">
-السؤال (١): ظلِّل الشكل المقترن بالعلاقة التي تمثِّل <b>متعدِّد إلى واحد</b>.
-</div>
+<div class="page">
+<h1>مراجعة الوحدة الثانية</h1>
+<h2>الصفحة الأولى</h2>
+
+<div class="question">سؤال (1): ظلّل الشكل الذي يمثّل علاقة متعدد إلى واحد.</div>
 <div class="answer">
-<p class="step">
-العلاقة متعدِّد إلى واحد تعني: توجد قيمتان مختلفتان لـ س تعطيان نفس القيمة لـ ص.
-</p>
-<p class="step">
-هذا يحدث في المنحنى التربيعي الرأسي (شكل U)، لأن أي خط أفقي يقطع المنحنى غالبًا في نقطتين.
-</p>
-<p class="step">
-<b>الإجابة الصحيحة:</b> الشكل الذي يمثِّل منحنى تربيعي رأسي على شكل U.
-</p>
+العلاقة **متعدد إلى واحد** تعني:  
+توجد قيمتان مختلفتان لـ س تعطيان نفس القيمة لـ ص.  
 
-<div class="graph-box">
-<canvas id="q1" width="280" height="200"></canvas>
-<p class="note">تحريك خط أفقي يبيِّن أنه يقطع المنحنى في نقطتين</p>
-</div>
-</div>
+يحدث ذلك عندما يقطع المستقيم الأفقي المنحنى في أكثر من نقطة.
 </div>
 
-<!-- سؤال 2 -->
-<div class="question">
-<div class="q-title">
-السؤال (٢): ظلِّل الشكل المقترن بالعلاقة التي تمثِّل <b>واحد إلى واحد</b>.
-</div>
+<canvas id="manyToOne" width="300" height="200"></canvas>
+
+<hr>
+
+<div class="question">سؤال (2): ظلّل الشكل الذي يمثّل علاقة واحد إلى واحد.</div>
 <div class="answer">
-<p class="step">
-واحد إلى واحد تعني: لكل قيمة لـ س قيمة واحدة لـ ص، ولكل قيمة لـ ص قيمة واحدة لـ س.
-</p>
-<p class="step">
-هذا يتحقق في الخط المستقيم المائل، حيث كل خط أفقي يقطع الرسم في نقطة واحدة فقط.
-</p>
-<p class="step">
-<b>الإجابة الصحيحة:</b> الشكل الذي يمثِّل خطًا مستقيمًا مائلًا.
-</p>
+العلاقة **واحد إلى واحد** تعني:  
+لكل قيمة لـ س قيمة واحدة فقط لـ ص،  
+ولكل قيمة لـ ص قيمة واحدة فقط لـ س.  
 
-<div class="graph-box">
-<canvas id="q2" width="280" height="200"></canvas>
-<p class="note">أي خط أفقي يقطع الرسم في نقطة واحدة</p>
-</div>
-</div>
+يمثّلها **مستقيم مائل**.
 </div>
 
-<!-- سؤال 3 -->
-<div class="question">
-<div class="q-title">
-السؤال (٣): د(س) = ٢س + ٥ ، حيث س ∈ ح. حدِّد نوع العلاقة.
-</div>
+<canvas id="oneToOne" width="300" height="200"></canvas>
+
+<hr>
+
+<div class="question">سؤال (3): د(س) = 2س + 5 حيث س ∈ ح، حدّد نوع العلاقة.</div>
 <div class="answer">
-<p class="step">
-الدالة خطية وميلها لا يساوي صفرًا، لذلك تمثِّل خطًا مستقيمًا مائلًا.
-</p>
-<p class="step">
-لكل قيمة لـ س توجد قيمة واحدة لـ ص، والعكس صحيح.
-</p>
-<p class="step">
-<b>نوع العلاقة: واحد إلى واحد.</b>
-</p>
-</div>
+الدالة خطية وميلها لا يساوي صفرًا.  
+إذًا لكل قيمة لـ س توجد قيمة واحدة لـ ص، والعكس صحيح.  
+
+➡️ العلاقة **واحد إلى واحد**.
 </div>
 
-<!-- سؤال 4 -->
-<div class="question">
-<div class="q-title">
-السؤال (٤): د(س) = س² + ١ ، حيث س ∈ ح. حدِّد نوع العلاقة.
 </div>
+
+<!-- ================================================= -->
+<!-- الصفحة الثانية -->
+<!-- ================================================= -->
+
+<div class="page">
+<h2>الصفحة الثانية</h2>
+
+<div class="question">سؤال (10): يمثّل الشكل بيان الدالة د(س) = س² − 3. أوجد المدى.</div>
+<div class="answer math">
+أولًا نوجد رأس المنحنى:  
+س = −ب / 2أ = 0  
+
+نعوّض في الدالة:  
+ص = 0² − 3 = −3  
+
+إذًا:  
+<strong>مدى الدالة: ص ≥ −3</strong>
+</div>
+
+<canvas id="parabolaUp" width="300" height="200"></canvas>
+
+<hr>
+
+<div class="question">سؤال (12): يبيّن الرسم العلاقة بين س و ص. حدّد نوع العلاقة.</div>
 <div class="answer">
-<p class="step">
-نلاحظ أن: د(١) = ٢ ، د(−١) = ٢.
-</p>
-<p class="step">
-أي توجد قيمتان مختلفتان لـ س تعطيان نفس القيمة لـ ص.
-</p>
-<p class="step">
-<b>نوع العلاقة: متعدِّد إلى واحد.</b>
-</p>
-</div>
+المستقيم الرأسي يقطع المنحنى في أكثر من نقطة.  
+
+➡️ العلاقة **واحد إلى متعدد**.
 </div>
 
-<!-- سؤال 5 -->
-<div class="question">
-<div class="q-title">
-السؤال (٥): أيُّ العلاقات البيانية تمثِّل علاقة <b>واحد إلى متعدِّد</b>؟
-</div>
-<div class="answer">
-<p class="step">
-واحد إلى متعدِّد تعني: قيمة واحدة لـ س تقابلها أكثر من قيمة لـ ص.
-</p>
-<p class="step">
-يحدث هذا في المنحنى الجانبي، لأن المستقيم الرأسي يقطع الرسم في نقطتين.
-</p>
-<p class="step">
-<b>الإجابة الصحيحة:</b> الرسم الذي يمثِّل منحنى جانبي.
-</p>
+<canvas id="oneToMany" width="300" height="200"></canvas>
 
-<div class="graph-box">
-<canvas id="q5" width="280" height="200"></canvas>
-<p class="note">المستقيم الرأسي يقطع المنحنى في نقطتين</p>
-</div>
-</div>
+<hr>
+
+<div class="question">سؤال (19): د(س) = س + 4، أوجد الدالة العكسية.</div>
+<div class="answer math">
+نكتب:  
+ص = س + 4  
+
+نبدّل س و ص:  
+س = ص + 4  
+
+نحل:  
+ص = س − 4  
+
+➡️ د⁻¹(س) = س − 4
 </div>
 
-<!-- سؤال 6 -->
-<div class="question">
-<div class="q-title">
-السؤال (٦): حدِّد المجال والمدى لكل دالة ممثَّلة بالرسم.
-</div>
-<div class="answer">
-<p class="step">
-نحدِّد المجال من أقصى يسار وأقصى يمين المنحنى.
-</p>
-<p class="step">
-ونحدِّد المدى من أصغر وأكبر قيمة لـ ص ظاهرة في الرسم.
-</p>
-<p class="step">
-نقرأ القيم مباشرة من النقاط المرسومة على الشكل.
-</p>
-</div>
 </div>
 
-<!-- سؤال 19 -->
-<div class="question">
-<div class="q-title">
-السؤال (١٩): الدالة ت(س) = س + ٥ ، حيث ٠ &lt; س &lt; ١٠. مثِّل الدالة بيانيًا.
-</div>
-<div class="answer">
-<p class="step">
-نعوِّض بطرفي المجال:
-</p>
-<p class="step">
-عند س = ٠ ⟹ ص = ٥  
-<br>
-عند س = ١٠ ⟹ ص = ١٥
-</p>
-<p class="step">
-نرسم خطًا مستقيمًا بين النقطتين (٠ ، ٥) و (١٠ ، ١٥) مع دوائر مفتوحة لأن الطرفين غير داخلين في المجال.
-</p>
+<!-- ================================================= -->
+<!-- الصفحة الأخيرة -->
+<!-- ================================================= -->
 
-<div class="graph-box">
-<canvas id="q19" width="280" height="200"></canvas>
-<p class="note">الرسم يوضِّح كيفية تمثيل المجال المحدود</p>
-</div>
-</div>
+<div class="page">
+<h2>الصفحة الأخيرة</h2>
+
+<div class="question">سؤال (22): د(س) = 8 ÷ (س − 4)، أوجد الدالة العكسية.</div>
+<div class="answer math">
+نكتب:  
+ص = 8 / (س − 4)  
+
+نبدّل:  
+س = 8 / (ص − 4)  
+
+نحل:  
+س(ص − 4) = 8  
+ص − 4 = 8 / س  
+ص = 4 + 8 / س  
+
+➡️ <strong>د⁻¹(س) = 4 + 8 / س</strong>
 </div>
 
-<!-- سؤال 21 -->
-<div class="question">
-<div class="q-title">
-السؤال (٢١): د(س) = (س − ٢)² − ٧ ، حيث س ≥ ٢. أوجد الدالة العكسية.
-</div>
-<div class="answer">
-<p class="step">
-أولًا: نضع ص بدل د(س):  
-<br>
-$ص = (س - ٢)^2 - ٧$
-</p>
-
-<p class="step">
-ثانيًا: نبدِّل س مع ص:  
-<br>
-$س = (ص - ٢)^2 - ٧$
-</p>
-
-<p class="step">
-ثالثًا: نحل لإيجاد ص:
-</p>
-
-<p class="step">
-$س + ٧ = (ص - ٢)^2$
-</p>
-
-<p class="step">
-$\sqrt{س + ٧} = ص - ٢$
-</p>
-
-<p class="step">
-$ص = ٢ + \sqrt{س + ٧}$
-</p>
-
-<p class="step">
-وبما أن المجال الأصلي س ≥ ٢، نأخذ الجذر الموجب فقط.
-</p>
-
-<p class="step">
-<b>الدالة العكسية:</b>  
-$د^{-1}(س) = ٢ + \sqrt{س + ٧}$
-</p>
-</div>
 </div>
 
-<!-- سؤال 22 -->
-<div class="question">
-<div class="q-title">
-السؤال (٢٢): د(س) = $\frac{٨}{س - ٤}$ ، حيث س ≠ ٤. أوجد الدالة العكسية.
-</div>
-<div class="answer">
-<p class="step">
-نضع ص بدل د(س):
-</p>
-<p class="step">
-$ص = \frac{٨}{س - ٤}$
-</p>
-
-<p class="step">
-نبدِّل س مع ص:
-</p>
-<p class="step">
-$س = \frac{٨}{ص - ٤}$
-</p>
-
-<p class="step">
-نضرب طرفي المعادلة:
-</p>
-<p class="step">
-$س(ص - ٤) = ٨$
-</p>
-
-<p class="step">
-$سص - ٤س = ٨$
-</p>
-
-<p class="step">
-$سص = ٨ + ٤س$
-</p>
-
-<p class="step">
-$ص = \frac{٨ + ٤س}{س}$
-</p>
-
-<p class="step">
-<b>الدالة العكسية:</b>  
-$د^{-1}(س) = \frac{٨ + ٤س}{س}$
-</p>
-</div>
-</div>
-
-<!-- سؤال 23 -->
-<div class="question">
-<div class="q-title">
-السؤال (٢٣): د(س) = س² + ٨ ، حيث س ≥ ٠. أوجد د⁻¹(٩).
-</div>
-<div class="answer">
-<p class="step">
-نوجد الدالة العكسية أولًا:
-</p>
-
-<p class="step">
-$ص = س^2 + ٨$
-</p>
-
-<p class="step">
-نبدِّل س مع ص:
-</p>
-
-<p class="step">
-$س = ص^2 + ٨$
-</p>
-
-<p class="step">
-$س - ٨ = ص^2$
-</p>
-
-<p class="step">
-$ص = \sqrt{س - ٨}$
-</p>
-
-<p class="step">
-إذًا:
-</p>
-
-<p class="step">
-$د^{-1}(س) = \sqrt{س - ٨}$
-</p>
-
-<p class="step">
-نعوِّض بـ ٩:
-</p>
-
-<p class="step">
-$د^{-1}(٩) = \sqrt{٩ - ٨} = \sqrt{١} = ١$
-</p>
-</div>
-</div>
-
-<!-- سؤال 26 -->
-<div class="question">
-<div class="q-title">
-السؤال (٢٦): ارسم منحنى الدالة العكسية لكل رسم معطى.
-</div>
-<div class="answer">
-<p class="step">
-نرسم أولًا المستقيم ص = س.
-</p>
-<p class="step">
-ثم نعكس كل نقطة في الرسم الأصلي حول المستقيم ص = س.
-</p>
-
-<div class="graph-box">
-<canvas id="q26" width="280" height="200"></canvas>
-<p class="note">الانعكاس حول المستقيم ص = س</p>
-</div>
-</div>
-</div>
-
-<!-- JavaScript للرسومات -->
 <script>
-function drawParabola(canvas){
-const c=canvas.getContext("2d");
-c.clearRect(0,0,280,200);
-c.translate(140,100);
-c.beginPath();
-for(let x=-70;x<=70;x++){
-let y=(x*x)/30;
-c.lineTo(x,-y);
-}
-c.strokeStyle="#0066cc";
-c.stroke();
-c.resetTransform();
-}
-drawParabola(document.getElementById("q1"));
+// متعدد إلى واحد
+const c1 = document.getElementById("manyToOne").getContext("2d");
+c1.beginPath();
+c1.moveTo(40,100);
+c1.quadraticCurveTo(150,20,260,100);
+c1.stroke();
+c1.beginPath();
+c1.moveTo(40,100);
+c1.quadraticCurveTo(150,180,260,100);
+c1.stroke();
 
-function drawLine(canvas){
-const c=canvas.getContext("2d");
-c.clearRect(0,0,280,200);
-c.beginPath();
-c.moveTo(20,160);
-c.lineTo(260,40);
-c.strokeStyle="#0066cc";
-c.stroke();
+// واحد إلى واحد
+const c2 = document.getElementById("oneToOne").getContext("2d");
+c2.beginPath();
+c2.moveTo(40,160);
+c2.lineTo(260,40);
+c2.stroke();
+
+// قطع مكافئ للأعلى
+const c3 = document.getElementById("parabolaUp").getContext("2d");
+c3.beginPath();
+for(let x=-50;x<=50;x++){
+  let y = x*x/20;
+  c3.lineTo(150+x,120+y);
 }
-drawLine(document.getElementById("q2"));
-drawLine(document.getElementById("q19"));
-drawLine(document.getElementById("q26"));
+c3.stroke();
+
+// واحد إلى متعدد
+const c4 = document.getElementById("oneToMany").getContext("2d");
+c4.beginPath();
+c4.arc(150,100,60,Math.PI/2,Math.PI*3/2);
+c4.stroke();
 </script>
 
 </body>

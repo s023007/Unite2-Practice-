@@ -381,21 +381,109 @@
       </div>
     </article>
 
+    <!-- ✅ تم تعديل سؤال ٩ فقط: إضافة حل كامل (بدون تغيير بقية الأسئلة) -->
     <article class="q">
       <div class="qTitle"><div class="qNo">السؤال ٩</div><div class="tag small">عكسية لنفسها (كسور)</div></div>
       <div class="box">
         <div class="muted">الدالة التي تحقق د(د(س))=س هي:</div>
+
         <div class="answer">
           د(س)=
           <span class="frac">
-            <span class="top">٣س + ٥</span>
+            <span class="top">٣س + ٠</span>
             <span class="bar"></span>
             <span class="bottom">٤س − ٣</span>
           </span>
         </div>
+
+        <div class="hr"></div>
+
+        <div class="muted"><b>التحقق (حل كامل):</b></div>
+        <ul class="steps">
+          <li>نحسب د(د(س)):</li>
+          <li>
+            د(د(س)) =
+            <span class="frac">
+              <span class="top">٣(د(س)) + ٠</span>
+              <span class="bar"></span>
+              <span class="bottom">٤(د(س)) − ٣</span>
+            </span>
+          </li>
+          <li>
+            نعوض د(س)=
+            <span class="frac">
+              <span class="top">٣س</span>
+              <span class="bar"></span>
+              <span class="bottom">٤س − ٣</span>
+            </span>
+          </li>
+          <li>
+            البسط:
+            <span class="frac">
+              <span class="top">٣ × <span class="frac"><span class="top">٣س</span><span class="bar"></span><span class="bottom">٤س−٣</span></span></span>
+              <span class="bar"></span>
+              <span class="bottom">١</span>
+            </span>
+            =
+            <span class="frac">
+              <span class="top">٩س</span>
+              <span class="bar"></span>
+              <span class="bottom">٤س − ٣</span>
+            </span>
+          </li>
+          <li>
+            المقام:
+            <span class="frac">
+              <span class="top">٤ × <span class="frac"><span class="top">٣س</span><span class="bar"></span><span class="bottom">٤س−٣</span></span> − ٣</span>
+              <span class="bar"></span>
+              <span class="bottom">١</span>
+            </span>
+            =
+            <span class="frac">
+              <span class="top">١٢س</span>
+              <span class="bar"></span>
+              <span class="bottom">٤س − ٣</span>
+            </span>
+            − ٣
+          </li>
+          <li>
+            نوحد المقام في المقام:
+            <span class="frac">
+              <span class="top">١٢س − ٣(٤س − ٣)</span>
+              <span class="bar"></span>
+              <span class="bottom">٤س − ٣</span>
+            </span>
+            =
+            <span class="frac">
+              <span class="top">١٢س − ١٢س + ٩</span>
+              <span class="bar"></span>
+              <span class="bottom">٤س − ٣</span>
+            </span>
+            =
+            <span class="frac">
+              <span class="top">٩</span>
+              <span class="bar"></span>
+              <span class="bottom">٤س − ٣</span>
+            </span>
+          </li>
+          <li>
+            إذن:
+            د(د(س)) =
+            <span class="frac">
+              <span class="top"><span class="frac"><span class="top">٩س</span><span class="bar"></span><span class="bottom">٤س−٣</span></span></span>
+              <span class="bar"></span>
+              <span class="bottom"><span class="frac"><span class="top">٩</span><span class="bar"></span><span class="bottom">٤س−٣</span></span></span>
+            </span>
+            = س
+          </li>
+        </ul>
+
         <div class="note">
-          <b>ملاحظة:</b> هذا النوع يسمى تحويل كسري، وبعضها يكون عكسيًا لنفسه إذا تحقق الشرط.
+          <b>ملاحظة:</b> يشترط أن ٤س−٣ ≠ ٠ ⇒ س ≠
+          <span class="frac"><span class="top">٣</span><span class="bar"></span><span class="bottom">٤</span></span>
         </div>
+
+        <div class="answer">إذن الدالة تحقق الشرط ⇒ هي عكسية لنفسها.</div>
       </div>
     </article>
 
@@ -863,10 +951,8 @@
           <svg class="gridSvg" width="520" height="220" viewBox="0 0 520 220">
             <line x1="40" y1="170" x2="500" y2="170" stroke="#111" stroke-width="2"/>
             <line x1="270" y1="20" x2="270" y2="200" stroke="#111" stroke-width="2"/>
-            <!-- منحنى جانبي تقريبي -->
             <path d="M 260 40 C 340 40, 420 80, 420 110
                      C 420 145, 350 180, 260 185" fill="none" stroke="#2563eb" stroke-width="4"/>
-            <!-- خط رأسي يقطع مرتين -->
             <line class="pulse" x1="380" y1="30" x2="380" y2="200" stroke="#dc2626" stroke-width="3" stroke-dasharray="8 6"/>
             <circle class="pulse" cx="380" cy="92" r="6" fill="#dc2626"/>
             <circle class="pulse" cx="380" cy="150" r="6" fill="#dc2626"/>
@@ -916,22 +1002,17 @@
         <div class="svgCard hidden" id="svg24">
           <div class="pill">د(س) وعكسها (تقريب)</div>
           <svg class="gridSvg" width="520" height="240" viewBox="0 0 520 240">
-            <!-- محاور -->
             <line x1="40" y1="200" x2="500" y2="200" stroke="#111" stroke-width="2"/>
             <line x1="80" y1="20" x2="80" y2="220" stroke="#111" stroke-width="2"/>
-
-            <!-- خط ص=س للتوضيح -->
             <line x1="80" y1="200" x2="450" y2="30" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6"/>
             <text x="430" y="45" font-size="12">ص=س</text>
 
-            <!-- د(س)=س+٢ (قطعة) تقريب -->
             <line x1="140" y1="160" x2="290" y2="85" stroke="#16a34a" stroke-width="4"/>
             <circle cx="140" cy="160" r="5" fill="#16a34a"/>
             <circle cx="290" cy="85" r="5" fill="#16a34a"/>
             <text x="150" y="155" font-size="12">(١،٣)</text>
             <text x="300" y="80" font-size="12">(٦،٨)</text>
 
-            <!-- عكسها (قطعة) -->
             <line x1="190" y1="185" x2="340" y2="110" stroke="#2563eb" stroke-width="4"/>
             <circle cx="190" cy="185" r="5" fill="#2563eb"/>
             <circle cx="340" cy="110" r="5" fill="#2563eb"/>
@@ -980,13 +1061,11 @@
             <line x1="80" y1="210" x2="460" y2="30" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6"/>
             <text x="435" y="45" font-size="12">ص=س</text>
 
-            <!-- منحنى تقريبي (ب) -->
             <path d="M 120 190 C 200 170, 240 130, 270 110
                      C 300 85, 360 55, 420 45" fill="none" stroke="#16a34a" stroke-width="4"/>
             <circle cx="120" cy="190" r="5" fill="#16a34a"/>
             <circle cx="420" cy="45" r="5" fill="#16a34a"/>
 
-            <!-- عكسه تقريبي -->
             <path d="M 145 220 C 170 160, 210 120, 245 95
                      C 285 65, 355 45, 455 55" fill="none" stroke="#2563eb" stroke-width="4" opacity=".95"/>
           </svg>

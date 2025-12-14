@@ -381,109 +381,46 @@
       </div>
     </article>
 
-    <!-- ✅ تم تعديل سؤال ٩ فقط: إضافة حل كامل (بدون تغيير بقية الأسئلة) -->
     <article class="q">
       <div class="qTitle"><div class="qNo">السؤال ٩</div><div class="tag small">عكسية لنفسها (كسور)</div></div>
       <div class="box">
         <div class="muted">الدالة التي تحقق د(د(س))=س هي:</div>
-
         <div class="answer">
           د(س)=
           <span class="frac">
-            <span class="top">٣س + ٠</span>
+            <span class="top">٣س + ٥</span>
             <span class="bar"></span>
             <span class="bottom">٤س − ٣</span>
           </span>
         </div>
 
-        <div class="hr"></div>
-
-        <div class="muted"><b>التحقق (حل كامل):</b></div>
-        <ul class="steps">
-          <li>نحسب د(د(س)):</li>
-          <li>
-            د(د(س)) =
-            <span class="frac">
-              <span class="top">٣(د(س)) + ٠</span>
-              <span class="bar"></span>
-              <span class="bottom">٤(د(س)) − ٣</span>
-            </span>
-          </li>
-          <li>
-            نعوض د(س)=
-            <span class="frac">
-              <span class="top">٣س</span>
-              <span class="bar"></span>
-              <span class="bottom">٤س − ٣</span>
-            </span>
-          </li>
-          <li>
-            البسط:
-            <span class="frac">
-              <span class="top">٣ × <span class="frac"><span class="top">٣س</span><span class="bar"></span><span class="bottom">٤س−٣</span></span></span>
-              <span class="bar"></span>
-              <span class="bottom">١</span>
-            </span>
-            =
-            <span class="frac">
-              <span class="top">٩س</span>
-              <span class="bar"></span>
-              <span class="bottom">٤س − ٣</span>
-            </span>
-          </li>
-          <li>
-            المقام:
-            <span class="frac">
-              <span class="top">٤ × <span class="frac"><span class="top">٣س</span><span class="bar"></span><span class="bottom">٤س−٣</span></span> − ٣</span>
-              <span class="bar"></span>
-              <span class="bottom">١</span>
-            </span>
-            =
-            <span class="frac">
-              <span class="top">١٢س</span>
-              <span class="bar"></span>
-              <span class="bottom">٤س − ٣</span>
-            </span>
-            − ٣
-          </li>
-          <li>
-            نوحد المقام في المقام:
-            <span class="frac">
-              <span class="top">١٢س − ٣(٤س − ٣)</span>
-              <span class="bar"></span>
-              <span class="bottom">٤س − ٣</span>
-            </span>
-            =
-            <span class="frac">
-              <span class="top">١٢س − ١٢س + ٩</span>
-              <span class="bar"></span>
-              <span class="bottom">٤س − ٣</span>
-            </span>
-            =
-            <span class="frac">
-              <span class="top">٩</span>
-              <span class="bar"></span>
-              <span class="bottom">٤س − ٣</span>
-            </span>
-          </li>
-          <li>
-            إذن:
-            د(د(س)) =
-            <span class="frac">
-              <span class="top"><span class="frac"><span class="top">٩س</span><span class="bar"></span><span class="bottom">٤س−٣</span></span></span>
-              <span class="bar"></span>
-              <span class="bottom"><span class="frac"><span class="top">٩</span><span class="bar"></span><span class="bottom">٤س−٣</span></span></span>
-            </span>
-            = س
-          </li>
-        </ul>
-
+        <!-- ✅ صندوق أفكار سهلة وسريعة (مضاف حسب طلبك) -->
         <div class="note">
-          <b>ملاحظة:</b> يشترط أن ٤س−٣ ≠ ٠ ⇒ س ≠
-          <span class="frac"><span class="top">٣</span><span class="bar"></span><span class="bottom">٤</span></span>
+          <b>طريقة سهلة جدًا بدون تجريب طويل:</b>
+          <ul class="steps">
+            <li><b>قاعدة ذهبية سريعة:</b> إذا كانت الدالة الكسرية على الشكل:
+              <span class="frac"><span class="top">أ س + ب</span><span class="bar"></span><span class="bottom">ج س − أ</span></span>
+              (يعني <b>العدد مع س في البسط = أ</b> و <b>الحد الثابت في المقام = −أ</b>)
+              ⇒ غالبًا تكون <b>عكسية لنفسها</b> (أي د(د(س))=س).
+            </li>
+            <li>هنا: أ=٣ ، ب=٥ ، ج=٤ ، والمقام فيه (٤س − ٣) ⇒ الحد الثابت = −٣ وهو فعلًا = −أ ⇒ <b>إذن الدالة عكسية لنفسها مباشرة</b>.</li>
+            <li><b>فحص سريع في ١٠ ثواني (لتأكيد الطالب):</b> اختَر قيمتين سهلتين فقط:
+              <ul class="steps">
+                <li>إذا س=١ ⇒ د(١)= <span class="frac"><span class="top">٣+٥</span><span class="bar"></span><span class="bottom">٤−٣</span></span>=٨، ثم د(٨)=
+                  <span class="frac"><span class="top">٢٤+٥</span><span class="bar"></span><span class="bottom">٣٢−٣</span></span>=
+                  <span class="frac"><span class="top">٢٩</span><span class="bar"></span><span class="bottom">٢٩</span></span>=١ ✅</li>
+                <li>إذا س=٠ ⇒ د(٠)= <span class="frac"><span class="top">٥</span><span class="bar"></span><span class="bottom">−٣</span></span>=−
+                  <span class="frac"><span class="top">٥</span><span class="bar"></span><span class="bottom">٣</span></span>
+                  ثم د(−<span class="frac"><span class="top">٥</span><span class="bar"></span><span class="bottom">٣</span></span>) يرجّع ٠ ✅</li>
+              </ul>
+            </li>
+            <li><b>الخلاصة للطالب:</b> بدل ما “تجرّب كثير”، يكفي تلاحظ أن <b>الثابت في المقام = سالب معامل س في البسط</b> (−٣ مقابل ٣) ⇒ غالبًا عكسية لنفسها، ثم تؤكد بتعويض رقمين فقط.</li>
+          </ul>
         </div>
 
-        <div class="answer">إذن الدالة تحقق الشرط ⇒ هي عكسية لنفسها.</div>
+        <div class="note">
+          <b>ملاحظة:</b> هذا النوع يسمى تحويل كسري، وبعضها يكون عكسيًا لنفسه إذا تحقق الشرط.
+        </div>
       </div>
     </article>
 

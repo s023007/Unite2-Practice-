@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>الوحدة الثانية — الصفحة ٨</title>
+<title>الوحدة الثانية — الحل الكامل (٨–١٨)</title>
 
 <style>
   :root{
@@ -14,14 +14,19 @@
   body{margin:0;font-family:Tahoma, Arial, sans-serif;background:var(--bg);color:var(--ink);line-height:2;}
   .container{max-width:1000px;margin:auto;padding:14px;}
   header{
+    position:sticky;top:10px;z-index:10;
     background:var(--card);border:1px solid var(--b);border-radius:var(--radius);
-    box-shadow:var(--shadow);padding:12px 14px;margin-bottom:14px;
+    box-shadow:var(--shadow);padding:12px 14px;
   }
   .row{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
   .title{font-size:18px;font-weight:700;}
   .sub{font-size:13px;color:var(--muted);margin-top:4px;}
-  .teacher{font-size:14px;margin-top:6px}
-  .teacher b{background:#f1f5f9;border:1px solid var(--b);padding:3px 10px;border-radius:999px}
+  .btn{
+    background:#fff;border:1px solid var(--b);border-radius:999px;
+    padding:8px 12px;font-size:13px;cursor:pointer;text-decoration:none;color:var(--ink);
+  }
+  .btn:hover{transform:translateY(-1px);}
+  nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
   .page{
     margin-top:14px;background:var(--card);border:1px solid var(--b);
     border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;
@@ -34,10 +39,14 @@
   .pageHead h2{margin:0;font-size:18px;}
   .badge{font-size:12px;background:#f1f5f9;border:1px solid var(--b);padding:6px 10px;border-radius:999px;color:#334155}
   .content{padding:14px;}
-  .q{background:#fff;border:1px solid var(--b);border-radius:14px;padding:12px;margin-bottom:12px;}
+  .q{
+    background:#fff;border:1px solid var(--b);border-radius:14px;
+    padding:12px;margin-bottom:12px;
+  }
   .qTitle{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
   .qNo{font-size:16px;font-weight:700;}
   .tag{font-size:12px;padding:5px 10px;border-radius:999px;border:1px solid var(--b);background:#f8fafc;}
+  .tag.small{font-size:11px}
   .box{background:var(--soft);border:1px solid #dbe4ff;border-radius:12px;padding:10px 12px;margin-top:8px;}
   .box.green{background:var(--soft2);border-color:#bbf7d0;}
   .note{background:var(--warn);border:1px solid var(--warnb);border-radius:12px;padding:10px 12px;margin-top:8px;}
@@ -55,230 +64,734 @@
   .frac .bar{display:block;border-top:2px solid #111;margin:.08em .12em;}
   .frac .bottom{display:block;padding:0 .3em;}
 
-  /* جذر احترافي */
+  /* جذر احترافي (رمز + عصا فوق) */
   .root{display:inline-flex;align-items:flex-end;margin:0 .12em;}
   .root .radical{font-size:1.25em;line-height:1;}
   .root .radicand{display:inline-block;padding:0 .3em .06em;border-top:2px solid #111;margin-right:.06em;}
 
-  /* خطوط متحركة للاختبارات */
-  .vline{animation:moveV 2.4s linear infinite;}
-  @keyframes moveV{0%{transform:translateX(-80px)}100%{transform:translateX(80px)}}
-  .hline{animation:moveH 2.4s linear infinite;}
-  @keyframes moveH{0%{transform:translateY(-40px)}100%{transform:translateY(40px)}}
+  /* متجه عمودي (السيني فوق الصادي) */
+  .vec{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}
+  .vec .br{font-weight:900;font-size:22px;line-height:1;}
+  .vec .v{display:inline-grid;grid-auto-rows:min-content;line-height:1.2;justify-items:center;min-width:18px}
+  .vec .v span{display:block}
 
-  /* مربعات اختيار شكلية */
-  .choiceBox{
-    display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;
-    padding:8px 10px;border:1px dashed #cbd5e1;border-radius:12px;background:#fff;
-  }
-  .chk{
-    width:18px;height:18px;border:2px solid #f59e0b;border-radius:4px;display:inline-block;
-  }
+  /* نقاط/خطوط متحركة للتوضيح */
+  .pulse{animation:pulse 1.5s infinite;}
+  @keyframes pulse{0%{opacity:1}50%{opacity:.3}100%{opacity:1}}
 
-  .grid4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
-  @media (max-width:780px){.grid4{grid-template-columns:1fr}}
+  /* رسومات بسيطة */
+  .gridSvg text{font-family:Tahoma, Arial, sans-serif}
 </style>
 </head>
 
 <body>
 <div class="container">
 
-<header>
+<header id="top">
   <div class="row">
     <div>
-      <div class="title">أسئلة على الوحدة الثانية — الصفحة ٨</div>
-      <div class="sub">دوال وعلاقات: اختبار الخط الرأسي/الأفقي + واحد لواحد / متعدد لواحد</div>
-      <div class="teacher">إعداد الأستاذ: <b>زايد الرواحي</b></div>
+      <div class="title">الوحدة الثانية — الحل الكامل (الصفحات ٨ إلى ١٨)</div>
+      <div class="sub">بطاقات + أرقام هندية + جذر بعصا + متجه عمودي + رسوم توضيحية واضحة</div>
+      <nav>
+        <a class="btn" href="#p8">٨</a>
+        <a class="btn" href="#p9">٩</a>
+        <a class="btn" href="#p10">١٠</a>
+        <a class="btn" href="#p11">١١</a>
+        <a class="btn" href="#p12">١٢</a>
+        <a class="btn" href="#p13">١٣</a>
+        <a class="btn" href="#p14">١٤</a>
+        <a class="btn" href="#p15">١٥</a>
+        <a class="btn" href="#p16">١٦</a>
+        <a class="btn" href="#p17">١٧</a>
+        <a class="btn" href="#p18">١٨</a>
+      </nav>
     </div>
+    <a class="btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">أعلى</a>
   </div>
 </header>
 
+<!-- ===================== الصفحة ٨ ===================== -->
 <section class="page" id="p8">
   <div class="pageHead">
     <h2>الوحدة الثانية — الصفحة الثامنة</h2>
-    <div class="badge">أسئلة اختيار من متعدد + تفسير بالرسم</div>
+    <div class="badge">علاقات (واحد/متعدد) + شرح مرئي</div>
   </div>
 
   <div class="content">
 
-    <!-- السؤال 1 -->
+    <!-- السؤال ١ -->
     <article class="q">
       <div class="qTitle">
         <div class="qNo">السؤال ١</div>
-        <div class="tag">اختيار: متعدد إلى واحد</div>
+        <div class="tag small">اختر التمثيل: متعدد إلى واحد</div>
       </div>
 
       <div class="box">
-        <div class="muted"><b>نص السؤال:</b> ظلّل الشكل المقترن بالعلاقة التي تمثل <b>متعدد إلى واحد</b>.</div>
-
-        <div class="note">
-          <b>كيف نعرف؟</b><br/>
-          العلاقة <b>متعدد إلى واحد</b> تعني:
-          <ul class="steps">
-            <li><b>هي دالة</b> ⇒ تنجح في <b>اختبار الخط الرأسي</b> (كل خط رأسي يقطع المنحنى في نقطة واحدة فقط).</li>
-            <li>لكن <b>ليست واحد إلى واحد</b> ⇒ تفشل في <b>اختبار الخط الأفقي</b> (بعض الخطوط الأفقية تقطع المنحنى في نقطتين أو أكثر).</li>
-          </ul>
-        </div>
-
-        <div class="grid4">
-
-          <!-- شكل 1: قطع مكافئ أفقي (ليس دالة) -->
-          <div class="svgCard">
-            <div class="pill">الشكل (١): قطع مكافئ أفقي</div>
-            <svg viewBox="0 0 240 180" width="100%" height="180">
-              <!-- axes -->
-              <line x1="30" y1="90" x2="230" y2="90" stroke="#111" stroke-width="2"/>
-              <line x1="60" y1="20" x2="60" y2="160" stroke="#111" stroke-width="2"/>
-              <text x="220" y="82" font-size="14">س</text>
-              <text x="50" y="30" font-size="14">ص</text>
-
-              <!-- curve: sideways parabola -->
-              <path d="M 80 90 Q 140 40 200 30" fill="none" stroke="#0f172a" stroke-width="3"/>
-              <path d="M 80 90 Q 140 140 200 150" fill="none" stroke="#0f172a" stroke-width="3"/>
-
-              <!-- vertical test line -->
-              <g class="vline" style="transform-origin:120px 0px">
-                <line x1="120" y1="25" x2="120" y2="155" stroke="#dc2626" stroke-width="3" opacity="0.9"/>
-              </g>
-            </svg>
-            <div class="cap">✗ يفشل في الاختبار الرأسي ⇒ <b>ليست دالة</b></div>
-          </div>
-
-          <!-- شكل 2: مستقيم (دالة واحد إلى واحد) -->
-          <div class="svgCard">
-            <div class="pill">الشكل (٢): مستقيم</div>
-            <svg viewBox="0 0 240 180" width="100%" height="180">
-              <line x1="30" y1="90" x2="230" y2="90" stroke="#111" stroke-width="2"/>
-              <line x1="60" y1="20" x2="60" y2="160" stroke="#111" stroke-width="2"/>
-              <text x="220" y="82" font-size="14">س</text>
-              <text x="50" y="30" font-size="14">ص</text>
-
-              <line x1="70" y1="40" x2="210" y2="140" stroke="#0f172a" stroke-width="3"/>
-
-              <g class="hline" style="transform-origin:0px 90px">
-                <line x1="40" y1="70" x2="220" y2="70" stroke="#2563eb" stroke-width="3" opacity="0.9"/>
-              </g>
-            </svg>
-            <div class="cap">✓ دالة و ✓ واحد إلى واحد (ليس متعدد إلى واحد)</div>
-          </div>
-
-          <!-- شكل 3: قطع ناقص (ليس دالة) -->
-          <div class="svgCard">
-            <div class="pill">الشكل (٣): قطع ناقص</div>
-            <svg viewBox="0 0 240 180" width="100%" height="180">
-              <line x1="30" y1="90" x2="230" y2="90" stroke="#111" stroke-width="2"/>
-              <line x1="60" y1="20" x2="60" y2="160" stroke="#111" stroke-width="2"/>
-              <text x="220" y="82" font-size="14">س</text>
-              <text x="50" y="30" font-size="14">ص</text>
-
-              <ellipse cx="125" cy="95" rx="70" ry="45" fill="none" stroke="#0f172a" stroke-width="3"/>
-
-              <g class="vline" style="transform-origin:120px 0px">
-                <line x1="130" y1="25" x2="130" y2="155" stroke="#dc2626" stroke-width="3" opacity="0.9"/>
-              </g>
-            </svg>
-            <div class="cap">✗ يفشل في الاختبار الرأسي ⇒ <b>ليست دالة</b></div>
-          </div>
-
-          <!-- شكل 4: قطع مكافئ رأسي (دالة متعدد إلى واحد) -->
-          <div class="svgCard">
-            <div class="pill">الشكل (٤): قطع مكافئ رأسي</div>
-            <svg viewBox="0 0 240 180" width="100%" height="180">
-              <line x1="30" y1="120" x2="230" y2="120" stroke="#111" stroke-width="2"/>
-              <line x1="120" y1="20" x2="120" y2="160" stroke="#111" stroke-width="2"/>
-              <text x="220" y="112" font-size="14">س</text>
-              <text x="110" y="30" font-size="14">ص</text>
-
-              <!-- parabola -->
-              <path d="M 80 120 Q 120 40 160 120" fill="none" stroke="#16a34a" stroke-width="4"/>
-
-              <!-- horizontal test line -->
-              <g class="hline" style="transform-origin:0px 90px">
-                <line x1="55" y1="85" x2="210" y2="85" stroke="#2563eb" stroke-width="3" opacity="0.9"/>
-              </g>
-            </svg>
-            <div class="cap">✓ دالة (رأسي) لكن ✗ أفقي ⇒ <b>متعدد إلى واحد</b></div>
-          </div>
-
-        </div>
-
-        <div class="answer">
-          الإجابة الصحيحة: <span class="choiceBox"><span class="chk"></span> الشكل (٤) (القطع المكافئ الرأسي)</span>
-        </div>
+        <div class="muted">الفكرة: <b>متعدد إلى واحد</b> يعني: توجد قيمتان مختلفتان لـ س تعطيان <b>نفس ص</b>.</div>
+        <ul class="steps">
+          <li>نفحص بالرسم: إذا قطعنا المنحنى بـ <b>خط أفقي</b> وقطع المنحنى في نقطتين ⇒ متعدد إلى واحد.</li>
+          <li>رسم <b>دالة تربيعية</b> (على شكل U) غالبًا يعطي نفس ص لقيمتين من س (يمين ويسار الرأس).</li>
+        </ul>
       </div>
+
+      <div class="svgCard">
+        <div class="pill">شرح مرئي (خط أفقي يبين متعدد إلى واحد)</div>
+        <svg width="520" height="200" viewBox="0 0 520 200">
+          <line x1="40" y1="160" x2="500" y2="160" stroke="#111" stroke-width="2"/>
+          <line x1="90" y1="20" x2="90" y2="185" stroke="#111" stroke-width="2"/>
+
+          <!-- دالة تربيعية -->
+          <path d="M 140 40 Q 280 260 420 40" fill="none" stroke="#2563eb" stroke-width="4"/>
+
+          <!-- خط أفقي -->
+          <line class="pulse" x1="120" y1="90" x2="470" y2="90" stroke="#dc2626" stroke-width="3" stroke-dasharray="8 6"/>
+          <circle class="pulse" cx="200" cy="90" r="6" fill="#dc2626"/>
+          <circle class="pulse" cx="360" cy="90" r="6" fill="#dc2626"/>
+
+          <text x="120" y="30" font-size="14">يقطع في نقطتين</text>
+        </svg>
+        <div class="cap">إذا الخط الأفقي قطع الرسم في نقطتين ⇒ نفس ص لقيمتين من س ⇒ <b>متعدد إلى واحد</b>.</div>
+      </div>
+
+      <div class="answer">الإجابة: التمثيل الصحيح هو <b>دالة تربيعية (مفتوحة لأعلى)</b>.</div>
     </article>
 
-    <!-- السؤال 2 -->
+    <!-- السؤال ٢ -->
     <article class="q">
       <div class="qTitle">
         <div class="qNo">السؤال ٢</div>
-        <div class="tag">اختيار: واحد إلى واحد</div>
+        <div class="tag small">اختر التمثيل: واحد إلى واحد</div>
       </div>
 
       <div class="box green">
-        <div class="muted"><b>نص السؤال:</b> ظلّل الشكل المقترن بالعلاقة التي تمثل <b>واحد إلى واحد</b>.</div>
+        <div class="muted">الفكرة: <b>واحد إلى واحد</b> يعني: كل قيمة ص تقابلها <b>قيمة واحدة فقط</b> من س.</div>
+        <ul class="steps">
+          <li>أفضل اختبار: <b>الخط الأفقي</b> إذا قطع الرسم في نقطة واحدة فقط ⇒ واحد إلى واحد.</li>
+          <li>المستقيم المائل (غير الأفقي) عادةً يحقق واحد إلى واحد.</li>
+        </ul>
+      </div>
 
-        <div class="note">
-          <b>كيف نعرف؟</b><br/>
-          العلاقة <b>واحد إلى واحد</b> تعني:
-          <ul class="steps">
-            <li>هي دالة ⇒ تنجح في <b>الاختبار الرأسي</b>.</li>
-            <li>وكل قيمة ص تقابلها قيمة س واحدة ⇒ تنجح في <b>الاختبار الأفقي</b>.</li>
-          </ul>
+      <div class="svgCard">
+        <div class="pill">شرح مرئي (خط أفقي يبين واحد إلى واحد)</div>
+        <svg width="520" height="200" viewBox="0 0 520 200">
+          <line x1="40" y1="160" x2="500" y2="160" stroke="#111" stroke-width="2"/>
+          <line x1="90" y1="20" x2="90" y2="185" stroke="#111" stroke-width="2"/>
+
+          <line x1="140" y1="140" x2="440" y2="50" stroke="#16a34a" stroke-width="4"/>
+
+          <line class="pulse" x1="120" y1="100" x2="470" y2="100" stroke="#dc2626" stroke-width="3" stroke-dasharray="8 6"/>
+          <circle class="pulse" cx="270" cy="100" r="6" fill="#dc2626"/>
+          <text x="120" y="30" font-size="14">يقطع في نقطة واحدة</text>
+        </svg>
+        <div class="cap">إذا الخط الأفقي قطع الرسم في نقطة واحدة ⇒ <b>واحد إلى واحد</b>.</div>
+      </div>
+
+      <div class="answer">الإجابة: التمثيل الصحيح هو <b>المستقيم المائل</b>.</div>
+    </article>
+
+    <!-- السؤال ٣ -->
+    <article class="q">
+      <div class="qTitle">
+        <div class="qNo">السؤال ٣</div>
+        <div class="tag small">حدد نوع العلاقة من قاعدة</div>
+      </div>
+
+      <div class="box">
+        <div class="muted">إذا كانت العلاقة على صورة: د(س) = ٢س + ٥ (ومعامل س ≠ ٠)</div>
+        <ul class="steps">
+          <li>هي دالة خطية بميل غير صفري ⇒ كل س تعطي ص واحدة (دالة).</li>
+          <li>وأيضًا كل ص تقابلها س واحدة (لأنها خط مستقيم غير أفقي) ⇒ <b>واحد إلى واحد</b>.</li>
+        </ul>
+        <div class="answer">الإجابة: <b>واحد إلى واحد</b>.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== الصفحة ٩ ===================== -->
+<section class="page" id="p9">
+  <div class="pageHead">
+    <h2>الوحدة الثانية — الصفحة التاسعة</h2>
+    <div class="badge">علاقات + مجال/مدى (شرح مرئي)</div>
+  </div>
+
+  <div class="content">
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٤</div><div class="tag small">نوع العلاقة</div></div>
+      <div class="box">
+        <div class="muted">الدالة: د(س) = س² + ١</div>
+        <ul class="steps">
+          <li>هذه <b>دالة تربيعية</b> مفتوحة لأعلى.</li>
+          <li>الخط الأفقي غالبًا يقطعها في نقطتين ⇒ <b>متعدد إلى واحد</b>.</li>
+        </ul>
+        <div class="answer">الإجابة: <b>متعدد إلى واحد</b>.</div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٥</div><div class="tag small">نوع العلاقة</div></div>
+      <div class="box green">
+        <div class="muted">الدالة: د(س) = ٢س − ٤</div>
+        <ul class="steps">
+          <li>خط مستقيم بميل ٢ ⇒ غير أفقي ⇒ يحقق واحد إلى واحد.</li>
+        </ul>
+        <div class="answer">الإجابة: <b>واحد إلى واحد</b>.</div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٦</div><div class="tag small">مجال ومدى من الرسم</div></div>
+
+      <div class="box">
+        <div class="muted"><b>(أ)</b> مقطع مستقيم بين النقطتين (−٥ ، ٩) و (٦ ، −٣)</div>
+        <ul class="steps">
+          <li>المجال: −٥ ≤ س ≤ ٦</li>
+          <li>المدى: −٣ ≤ ص ≤ ٩</li>
+        </ul>
+        <div class="answer">النتيجة: المجال [−٥ ، ٦] ، المدى [−٣ ، ٩]</div>
+
+        <div class="hr"></div>
+
+        <div class="muted"><b>(ب)</b> منحنى يمر بالنقاط (−٢ ، ٤) و (٣ ، ٩) و (١٠ ، −٥)</div>
+        <ul class="steps">
+          <li>المجال: −٢ ≤ س ≤ ١٠</li>
+          <li>المدى: −٥ ≤ ص ≤ ٩</li>
+        </ul>
+        <div class="answer">النتيجة: المجال [−٢ ، ١٠] ، المدى [−٥ ، ٩]</div>
+
+        <div class="hr"></div>
+
+        <div class="muted"><b>(ج)</b> أعلى قيمة ٢٥ وأدنى قيمة −٢٠، ويمتد من س = −٤ إلى س = ٣</div>
+        <ul class="steps">
+          <li>المجال: −٤ ≤ س ≤ ٣</li>
+          <li>المدى: −٢٠ ≤ ص ≤ ٢٥</li>
+        </ul>
+        <div class="answer">النتيجة: المجال [−٤ ، ٣] ، المدى [−٢٠ ، ٢٥]</div>
+
+        <div class="svgCard">
+          <div class="pill">تذكير مرئي سريع</div>
+          <svg width="520" height="140" viewBox="0 0 520 140">
+            <text x="420" y="35" font-size="16">المجال: يمين/يسار</text>
+            <line x1="60" y1="70" x2="240" y2="70" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+            <text x="60" y="105" font-size="14">أصغر س</text>
+            <text x="210" y="105" font-size="14">أكبر س</text>
+
+            <text x="420" y="95" font-size="16">المدى: أعلى/أسفل</text>
+            <line x1="320" y1="30" x2="320" y2="120" stroke="#16a34a" stroke-width="8" stroke-linecap="round"/>
+            <text x="340" y="40" font-size="14">أكبر ص</text>
+            <text x="340" y="120" font-size="14">أصغر ص</text>
+          </svg>
         </div>
 
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== الصفحة ١٠ ===================== -->
+<section class="page" id="p10">
+  <div class="pageHead">
+    <h2>الوحدة الثانية — الصفحة العاشرة</h2>
+    <div class="badge">تركيب دوال (جبري مفصل + تعويض)</div>
+  </div>
+
+  <div class="content">
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٤</div><div class="tag small">تركيب دوال — طريقتان</div></div>
+
+      <div class="box green">
+        <div class="muted">المعطى:</div>
+        <ul class="steps">
+          <li>د(س) = س² − ١</li>
+          <li>هـ(س) = <span class="root"><span class="radical">√</span><span class="radicand">(س + ١)</span></span></li>
+          <li>أوجد (د∘هـ)(٣)</li>
+        </ul>
+
+        <div class="note">
+          <b>مهم:</b> (د∘هـ)(س) تعني: <b>د(هـ(س))</b> (نطبق هـ أولًا ثم د).
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="muted"><b>الطريقة (١): حل جبري مفصل (تركيب رمزي)</b></div>
+        <ul class="steps">
+          <li>(د∘هـ)(س) = د(هـ(س))</li>
+          <li>وبما أن د(س)=س²−١ ⇒ إذن: د(هـ(س)) = (هـ(س))² − ١</li>
+          <li>= (<span class="root"><span class="radical">√</span><span class="radicand">(س + ١)</span></span>)² − ١</li>
+          <li>= (س + ١) − ١</li>
+          <li>= س</li>
+        </ul>
+        <div class="answer">إذن (د∘هـ)(س) = س</div>
+        <div class="answer">وعند س = ٣ ⇒ (د∘هـ)(٣) = ٣</div>
+
+        <div class="hr"></div>
+
+        <div class="muted"><b>الطريقة (٢): التعويض في هـ ثم تطبيق د على الناتج</b></div>
+        <ul class="steps">
+          <li>أولًا: هـ(٣) = <span class="root"><span class="radical">√</span><span class="radicand">(٣ + ١)</span></span> = <span class="root"><span class="radical">√</span><span class="radicand">٤</span></span> = ٢</li>
+          <li>ثانيًا: د(هـ(٣)) = د(٢) = ٢² − ١ = ٤ − ١ = ٣</li>
+        </ul>
+        <div class="answer">النتيجة النهائية: (د∘هـ)(٣) = ٣</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== الصفحة ١١ ===================== -->
+<section class="page" id="p11">
+  <div class="pageHead">
+    <h2>الوحدة الثانية — الصفحة الحادية عشرة</h2>
+    <div class="badge">تركيب + عكس الدالة</div>
+  </div>
+
+  <div class="content">
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ١</div><div class="tag small">إذا هـ(س)=س+٤ و(د∘هـ)(س)=٣س+١٢ فأوجد د(س)</div></div>
+      <div class="box">
+        <ul class="steps">
+          <li>(د∘هـ)(س)=د(هـ(س))=د(س+٤)=٣س+١٢</li>
+          <li>نضع: u = س+٤ ⇒ س = u−٤</li>
+          <li>إذن د(u)=٣(u−٤)+١٢=٣u−١٢+١٢=٣u</li>
+        </ul>
+        <div class="answer">الإجابة: د(س)=٣س</div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٢</div><div class="tag small">أي الدوال تكون عكسية لنفسها؟</div></div>
+      <div class="box green">
+        <div class="muted">الدالة تكون عكسية لنفسها إذا تحقق: د(د(س)) = س.</div>
+        <ul class="steps">
+          <li>أبسط مثال: د(س)=س ⇒ د(د(س))=د(س)=س</li>
+        </ul>
+        <div class="answer">الإجابة: د(س)=س</div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٣</div><div class="tag small">إذا كانت د(س)=٤−٢س فأوجد د⁻¹(س)</div></div>
+      <div class="box">
+        <ul class="steps">
+          <li>نفرض: ص = ٤ − ٢س</li>
+          <li>بدّل (س ↔ ص): س = ٤ − ٢ص</li>
+          <li>نحل للصاد: ٢ص = ٤ − س ⇒ ص = ٢ − <span class="frac"><span class="top">س</span><span class="bar"></span><span class="bottom">٢</span></span></li>
+        </ul>
+        <div class="answer">الإجابة: د⁻¹(س)= ٢ − <span class="frac"><span class="top">س</span><span class="bar"></span><span class="bottom">٢</span></span></div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٤</div><div class="tag small">إذا كانت الدالة العكسية هي: <span class="root"><span class="radical">√</span><span class="radicand">(س−٧)</span></span> − ٢ فأوجد الدالة د(س)</div></div>
+      <div class="box green">
+        <ul class="steps">
+          <li>نعرف: د⁻¹(س)= <span class="root"><span class="radical">√</span><span class="radicand">(س−٧)</span></span> − ٢</li>
+          <li>نكتب: ص = <span class="root"><span class="radical">√</span><span class="radicand">(س−٧)</span></span> − ٢</li>
+          <li>إذن: ص + ٢ = <span class="root"><span class="radical">√</span><span class="radicand">(س−٧)</span></span></li>
+          <li>نربع الطرفين: (ص+٢)² = س − ٧</li>
+          <li>إذن: س = (ص+٢)² + ٧</li>
+          <li>بدّل ص بـ س: د(س) = (س+٢)² + ٧</li>
+        </ul>
+        <div class="answer">الإجابة: د(س) = (س+٢)² + ٧</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== الصفحة ١٢ ===================== -->
+<section class="page" id="p12">
+  <div class="pageHead">
+    <h2>الوحدة الثانية — الصفحة الثانية عشرة</h2>
+    <div class="badge">تحويلات + متجه الانسحاب (بصيغة عمودية)</div>
+  </div>
+
+  <div class="content">
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ١</div><div class="tag small">متجه الانسحاب</div></div>
+      <div class="box">
+        <div class="muted">متجه الانسحاب الذي يحول د(س)=س²−٢س+٢ إلى د(س)=س²−٢س−٤</div>
+        <ul class="steps">
+          <li>نلاحظ أن الشكل نفسه (س²−٢س) ثابت، فقط الحد الثابت تغيّر من +٢ إلى −٤</li>
+          <li>هذا يعني نزول رأسي بمقدار ٦ (لأن ٢ − ٦ = −٤)</li>
+        </ul>
         <div class="answer">
-          المستقيم (غير أفقي) ينجح في الرأسي والأفقي ⇒ <b>واحد إلى واحد</b>.
-          <br/>
-          الإجابة الصحيحة: <span class="choiceBox"><span class="chk"></span> الشكل (٢) (المستقيم)</span>
+          المتجه =
+          <span class="vec"><span class="br">)</span><span class="v"><span>٠</span><span>−٦</span></span><span class="br">(</span></span>
         </div>
       </div>
     </article>
 
-    <!-- السؤال 3 -->
     <article class="q">
-      <div class="qTitle">
-        <div class="qNo">السؤال ٣</div>
-        <div class="tag">نوع العلاقة للمقترن</div>
-      </div>
-
-      <div class="box">
-        <div class="muted"><b>نص السؤال:</b> د(س) = ٢س + ٥ ، حيث س ∈ ح. ظلّل الشكل المقترن بنوع العلاقة.</div>
-
-        <div class="note">
-          <b>الفكرة:</b> د(س) = ٢س + ٥ دالة خطية معاملها ≠ ٠ ⇒ خط مائل.
-        </div>
-
+      <div class="qTitle"><div class="qNo">السؤال ٢</div><div class="tag small">متجه الانسحاب</div></div>
+      <div class="box green">
+        <div class="muted">الفكرة العامة للانسحاب:</div>
         <ul class="steps">
-          <li><b>اختبار الخط الرأسي:</b> أي خط رأسي يقطع المستقيم في نقطة واحدة ⇒ إذن هي <b>دالة</b>.</li>
-          <li><b>اختبار الخط الأفقي:</b> أي خط أفقي يقطع المستقيم في نقطة واحدة ⇒ إذن هي <b>واحد إلى واحد</b>.</li>
-          <li>إذن العلاقة: <b>واحد إلى واحد</b>.</li>
+          <li>إذا صار: د(س) ⟶ د(س−a)+b  ⇒ المتجه <b>(a , b)</b></li>
+          <li>يعني: <b>يمين</b> a ، و<b>أعلى</b> b</li>
+        </ul>
+        <div class="note">
+          (هذا السؤال في الصورة صياغته دقيقة لكن غير واضحة جدًا في النسخة؛ إذا أرسلت لقطة أقرب له سأكتب الناتج حرفيًا ١٠٠٪).
+        </div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٣</div><div class="tag small">انسحاب رأسي بالمتجه</div></div>
+      <div class="box">
+        <div class="muted">إذا تحولت الدالة تحت تأثير انسحاب بالمتجه
+          <span class="vec"><span class="br">)</span><span class="v"><span>٠</span><span>١</span></span><span class="br">(</span></span>
+          إلى: د(س)= <span class="frac"><span class="top">٢</span><span class="bar"></span><span class="bottom">س</span></span> +١
+        </div>
+        <ul class="steps">
+          <li>المتجه (٠ , ١) يعني: <b>إزاحة لأعلى بمقدار ١</b></li>
+          <li>إذن الدالة الجديدة = القديمة + ١</li>
+          <li>فالقديمة = الجديدة − ١ = <span class="frac"><span class="top">٢</span><span class="bar"></span><span class="bottom">س</span></span></li>
+        </ul>
+        <div class="answer">الإجابة: د(س)= <span class="frac"><span class="top">٢</span><span class="bar"></span><span class="bottom">س</span></span></div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٤</div><div class="tag small">تحويل يبقي الدالة كما هي</div></div>
+      <div class="box green">
+        <div class="muted">التحويل الذي يبقي الدالة ص = ٥س² كما هي:</div>
+        <ul class="steps">
+          <li>ص=٥س² دالة زوجية: إذا عوضنا س بـ (−س) تبقى نفسها</li>
+          <li>إذن الانعكاس حول <b>المحور الصادي</b> لا يغيّرها</li>
+        </ul>
+        <div class="answer">الإجابة: <b>انعكاس حول المحور الصادي</b></div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٥</div><div class="tag small">معامل التمدد الرأسي</div></div>
+      <div class="box">
+        <div class="muted">معامل التمدد الرأسي الذي يحول: ص = ٤س² +١ إلى: ص = ٨س² +٢</div>
+        <ul class="steps">
+          <li>نلاحظ أن كل الحدود تضاعفت ×٢: (٤ ⟶ ٨) و(١ ⟶ ٢)</li>
+        </ul>
+        <div class="answer">الإجابة: معامل التمدد الرأسي = <b>٢</b></div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٦</div><div class="tag small">تمدد رأسي بمعامل (١/٢)</div></div>
+      <div class="note">
+        هذا السؤال الأخير في الصورة غير واضح جدًا (هل الدالة أسية ٢^س أم ٢س؟).  
+        <b>القاعدة الصحيحة دائمًا:</b> إذا كان التمدد الرأسي بمعامل k ⇒ الدالة الجديدة = k × الدالة القديمة.
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== الصفحة ١٣ ===================== -->
+<section class="page" id="p13">
+  <div class="pageHead">
+    <h2>الوحدة الثانية — الصفحة الثالثة عشرة</h2>
+    <div class="badge">مجال/مدى — دوال مع تقييد</div>
+  </div>
+
+  <div class="content">
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٧</div><div class="tag small">د(س)=س−٩ ، حيث −٢ ≤ س ≤ ٨</div></div>
+      <div class="box">
+        <ul class="steps">
+          <li><b>المجال</b> هو نفس التقييد: −٢ ≤ س ≤ ٨</li>
+          <li>الدالة خطية متزايدة (معامل س = ١)</li>
+          <li>إذن <b>المدى</b>: نحسب عند الأطراف</li>
+          <li>عند س=−٢ ⇒ ص=−٢−٩=−١١</li>
+          <li>عند س=٨ ⇒ ص=٨−٩=−١</li>
+        </ul>
+        <div class="answer">المجال: [−٢ , ٨] — المدى: [−١١ , −١]</div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٨</div><div class="tag small">د(س)=٢س² ، حيث −٢ ≤ س ≤ ٣</div></div>
+      <div class="box green">
+        <ul class="steps">
+          <li><b>المجال</b>: [−٢ , ٣]</li>
+          <li>الدالة تربيعية مفتوحة لأعلى ⇒ أقل قيمة عند س=٠</li>
+          <li>أقل ص: د(٠)=٠</li>
+          <li>أكبر ص: نقارن عند الأطراف: د(−٢)=٢×٤=٨ ، د(٣)=٢×٩=١٨</li>
+        </ul>
+        <div class="answer">المجال: [−٢ , ٣] — المدى: [٠ , ١٨]</div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٩</div><div class="tag small">د(س)=س² + ٤س − ١٢ ، حيث س ∈ ح</div></div>
+      <div class="box">
+        <ul class="steps">
+          <li><b>المجال</b>: جميع الأعداد الحقيقية</li>
+          <li>الدالة تربيعية مفتوحة لأعلى</li>
+          <li>نوجد الرأس: س = −ب/٢أ = −٤ / (٢×١) = −٢</li>
+          <li>أقل قيمة: د(−٢)= (٤) + (−٨) −١٢ = −١٦</li>
+        </ul>
+        <div class="answer">المجال: ح — المدى: ص ≥ −١٦</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== الصفحة ١٤ ===================== -->
+<section class="page" id="p14">
+  <div class="pageHead">
+    <h2>الوحدة الثانية — الصفحة الرابعة عشرة</h2>
+    <div class="badge">تركيب دوال</div>
+  </div>
+
+  <div class="content">
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ١٤</div><div class="tag small">تركيب (د∘ل)(س)</div></div>
+      <div class="box">
+        <div class="muted">إذا كانت: د(س)=س+٦ ، ل(س)=س−٤</div>
+        <ul class="steps">
+          <li>(د∘ل)(س)=د(ل(س))</li>
+          <li>ل(س)=س−٤ ⇒ د(س−٤)=(س−٤)+٦=س+٢</li>
+        </ul>
+        <div class="answer">الإجابة: (د∘ل)(س)=س+٢</div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ١٥</div><div class="tag small">(د∘هـ)(٢) إذا كان (د∘هـ)(س)=٤−س²</div></div>
+      <div class="box green">
+        <ul class="steps">
+          <li>نعوض س=٢ مباشرة: ٤−(٢)² = ٤−٤ = ٠</li>
+        </ul>
+        <div class="answer">الإجابة: ٠</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== الصفحة ١٥ ===================== -->
+<section class="page" id="p15">
+  <div class="pageHead">
+    <h2>الوحدة الثانية — الصفحة الخامسة عشرة</h2>
+    <div class="badge">تركيب + إيجاد قيمة س</div>
+  </div>
+
+  <div class="content">
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ١٦</div><div class="tag small">إذا د: س ↦ س² ، هـ: س ↦ ٣س−٢ أوجد (هـ∘د)(٣)</div></div>
+      <div class="box">
+        <ul class="steps">
+          <li>(هـ∘د)(٣) = هـ(د(٣))</li>
+          <li>د(٣)=٣²=٩</li>
+          <li>هـ(٩)=٣×٩−٢=٢٧−٢=٢٥</li>
+        </ul>
+        <div class="answer">الإجابة: ٢٥</div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ١٧</div><div class="tag small">إذا (هـ∘د)(س)=٥٥ أوجد س</div></div>
+      <div class="box green">
+        <div class="muted">(بنفس تعريف د و هـ في السؤال السابق)</div>
+        <ul class="steps">
+          <li>(هـ∘د)(س)=هـ(س²)=٣س²−٢</li>
+          <li>٣س²−٢ = ٥٥ ⇒ ٣س² = ٥٧ ⇒ س² = ١٩</li>
+          <li>إذن س = ± <span class="root"><span class="radical">√</span><span class="radicand">١٩</span></span></li>
+        </ul>
+        <div class="answer">الإجابة: س = ± <span class="root"><span class="radical">√</span><span class="radicand">١٩</span></span></div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ١٨</div><div class="tag small">د(س)=(س−٣)²+١ أوجد د(٦)</div></div>
+      <div class="box">
+        <ul class="steps">
+          <li>د(٦)=(٦−٣)²+١=٣²+١=٩+١=١٠</li>
+        </ul>
+        <div class="answer">الإجابة: ١٠</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== الصفحة ١٦ ===================== -->
+<section class="page" id="p16">
+  <div class="pageHead">
+    <h2>الوحدة الثانية — الصفحة السادسة عشرة</h2>
+    <div class="badge">تركيب + معكوس + تظليل شكل الدالة المركبة</div>
+  </div>
+
+  <div class="content">
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ١٩</div><div class="tag small">تظليل صورة الدالة المركبة (فهم)</div></div>
+      <div class="box">
+        <div class="muted">عندما يُعطى: د: س ↦ س+٥ ثم هـ: س ↦ <span class="root"><span class="radical">√</span><span class="radicand">س</span></span></div>
+        <ul class="steps">
+          <li>إذا كانت المركبة (هـ∘د)(س) فهذا يعني: نطبق د أولًا ثم هـ</li>
+          <li>إذن: (هـ∘د)(س)=هـ(س+٥)= <span class="root"><span class="radical">√</span><span class="radicand">(س+٥)</span></span></li>
+        </ul>
+        <div class="answer">القاعدة: (هـ∘د)(س)= <span class="root"><span class="radical">√</span><span class="radicand">(س+٥)</span></span></div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٢٠</div><div class="tag small">إذا د(س)=س+٤ أوجد د⁻¹(س)</div></div>
+      <div class="box green">
+        <ul class="steps">
+          <li>ص = س + ٤</li>
+          <li>بدّل: س = ص + ٤</li>
+          <li>إذن ص = س − ٤</li>
+        </ul>
+        <div class="answer">الإجابة: د⁻¹(س)=س−٤</div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٢١</div><div class="tag small">إذا د(س)=(س−٢)²−٧ أوجد د⁻¹(س)</div></div>
+      <div class="box">
+        <ul class="steps">
+          <li>ص = (س−٢)² −٧</li>
+          <li>ص +٧ = (س−٢)²</li>
+          <li>نأخذ الجذر: س−٢ = ± <span class="root"><span class="radical">√</span><span class="radicand">(ص+٧)</span></span></li>
+          <li>س = ٢ ± <span class="root"><span class="radical">√</span><span class="radicand">(ص+٧)</span></span></li>
+        </ul>
+        <div class="note">
+          <b>مهم:</b> لا يكون لها معكوس كدالة إلا إذا كان المجال مُقيدًا (لاختيار + أو −).
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== الصفحة ١٧ ===================== -->
+<section class="page" id="p17">
+  <div class="pageHead">
+    <h2>الوحدة الثانية — الصفحة السابعة عشرة</h2>
+    <div class="badge">مدى من رسم + اختبار أفقي/رأسي (مع رسم واضح)</div>
+  </div>
+
+  <div class="content">
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ١٠</div><div class="tag small">يمثل الشكل بيان د(س)=س²−٣ — أوجد المدى</div></div>
+      <div class="box">
+        <ul class="steps">
+          <li>هذه دالة تربيعية مفتوحة لأعلى، وأقل قيمة عند الرأس.</li>
+          <li>د(س)=س²−٣ ⇒ أقل قيمة عندما س=٠ ⇒ ص=−٣</li>
+        </ul>
+        <div class="answer">المدى: ص ≥ −٣</div>
+
+        <div class="svgCard">
+          <div class="pill">رسم توضيحي مبسط</div>
+          <svg class="gridSvg" width="520" height="210" viewBox="0 0 520 210">
+            <line x1="40" y1="170" x2="500" y2="170" stroke="#111" stroke-width="2"/>
+            <line x1="270" y1="20" x2="270" y2="195" stroke="#111" stroke-width="2"/>
+            <path d="M 140 40 Q 270 260 400 40" fill="none" stroke="#2563eb" stroke-width="4"/>
+            <circle cx="270" cy="170" r="6" fill="#dc2626"/>
+            <text x="280" y="175" font-size="14">−٣</text>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ١٢</div><div class="tag small">هل قول الطالب الأول أم الثاني صحيح؟</div></div>
+      <div class="box green">
+        <div class="muted">الرسم (مثل C) يفشل في اختبار الدالة (الخط الرأسي يقطع في نقطتين).</div>
+        <ul class="steps">
+          <li><b>اختبار الخط الرأسي</b>: إذا قطع الرسم في أكثر من نقطة ⇒ ليست دالة</li>
+          <li>إذن العلاقة <b>متعدد إلى واحد</b> (ص واحد يقابله أكثر من س)</li>
+          <li>والطالب الثاني الذي قال: <b>واحد إلى متعدد</b> غير صحيح هنا</li>
+        </ul>
+        <div class="answer">الإجابة: <b>الطالب الأول صحيح</b> (متعدد إلى واحد)</div>
+
+        <div class="svgCard">
+          <div class="pill">رسم + خط رأسي للتوضيح</div>
+          <svg width="520" height="210" viewBox="0 0 520 210">
+            <line x1="40" y1="170" x2="500" y2="170" stroke="#111" stroke-width="2"/>
+            <line x1="270" y1="20" x2="270" y2="195" stroke="#111" stroke-width="2"/>
+            <!-- منحنى يشبه C -->
+            <path d="M 320 40 C 200 40 200 170 320 170" fill="none" stroke="#2563eb" stroke-width="4"/>
+            <path d="M 320 170 C 200 170 200 300 320 300" fill="none" stroke="#2563eb" stroke-width="4" opacity="0"/>
+            <!-- خط رأسي -->
+            <line class="pulse" x1="250" y1="30" x2="250" y2="190" stroke="#dc2626" stroke-width="3" stroke-dasharray="8 6"/>
+            <circle class="pulse" cx="250" cy="75" r="6" fill="#dc2626"/>
+            <circle class="pulse" cx="250" cy="145" r="6" fill="#dc2626"/>
+          </svg>
+          <div class="cap">الخط الرأسي قطع الرسم في نقطتين ⇒ ليست دالة ⇒ متعدد إلى واحد.</div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== الصفحة ١٨ ===================== -->
+<section class="page" id="p18">
+  <div class="pageHead">
+    <h2>الوحدة الثانية — الصفحة الثامنة عشرة</h2>
+    <div class="badge">رسم عكس الدالة (انعكاس حول ص=س) + مجال/مدى</div>
+  </div>
+
+  <div class="content">
+
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٢٦ (أ)</div><div class="tag small">ارسم منحنى الدالة العكسية وحدد المجال/المدى</div></div>
+      <div class="box">
+        <div class="muted">الفكرة الأساسية في الرسم:</div>
+        <ul class="steps">
+          <li>منحنى الدالة العكسية هو <b>انعكاس</b> منحنى الدالة حول المستقيم: ص = س</li>
+          <li>أي نقطة (س , ص) على الدالة تصبح (ص , س) على العكسية</li>
+          <li>وبالتالي: <b>مجال الدالة العكسية</b> = <b>مدى الدالة</b>، و<b>مدى العكسية</b> = <b>مجال الدالة</b></li>
         </ul>
 
         <div class="svgCard">
-          <div class="pill">رسم توضيحي للدالة الخطية</div>
-          <svg viewBox="0 0 520 180" width="100%" height="180">
-            <line x1="40" y1="140" x2="500" y2="140" stroke="#111" stroke-width="2"/>
-            <line x1="80" y1="20" x2="80" y2="160" stroke="#111" stroke-width="2"/>
-            <text x="490" y="132" font-size="14">س</text>
-            <text x="70" y="30" font-size="14">ص</text>
+          <div class="pill">رسم توضيحي للانعكاس حول ص=س</div>
+          <svg width="520" height="240" viewBox="0 0 520 240">
+            <line x1="40" y1="200" x2="500" y2="200" stroke="#111" stroke-width="2"/>
+            <line x1="90" y1="20" x2="90" y2="225" stroke="#111" stroke-width="2"/>
+            <!-- ص=س -->
+            <line x1="90" y1="200" x2="350" y2="20" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8 6"/>
+            <text x="360" y="28" font-size="12" fill="#64748b">ص = س</text>
 
-            <line x1="120" y1="40" x2="470" y2="150" stroke="#0f172a" stroke-width="4"/>
+            <!-- منحنى أصلي (قطعة) -->
+            <path d="M 140 180 L 220 120 L 250 70" fill="none" stroke="#2563eb" stroke-width="4"/>
+            <!-- منحنى عكسي (منعكس) -->
+            <path d="M 180 140 L 240 80 L 290 50" fill="none" stroke="#16a34a" stroke-width="4"/>
 
-            <!-- animated vertical + horizontal test -->
-            <g class="vline" style="transform-origin:260px 0px">
-              <line x1="260" y1="25" x2="260" y2="155" stroke="#dc2626" stroke-width="3" opacity="0.9"/>
-            </g>
-            <g class="hline" style="transform-origin:0px 90px">
-              <line x1="55" y1="85" x2="490" y2="85" stroke="#2563eb" stroke-width="3" opacity="0.9"/>
-            </g>
+            <circle cx="220" cy="120" r="5" fill="#2563eb"/>
+            <circle cx="240" cy="80" r="5" fill="#16a34a"/>
+            <text x="252" y="124" font-size="12"> (س,ص) </text>
+            <text x="300" y="86" font-size="12"> (ص,س) </text>
           </svg>
-          <div class="cap">يمر الخطان (الرأسي والأفقي) بنقطة واحدة دائمًا ⇒ واحد إلى واحد.</div>
+          <div class="cap">الأزرق: الدالة — الأخضر: العكسية (انعكاس حول ص=س).</div>
         </div>
+      </div>
+    </article>
 
-        <div class="answer">
-          الإجابة الصحيحة: <span class="choiceBox"><span class="chk"></span> واحد إلى واحد</span>
-        </div>
+    <article class="q">
+      <div class="qTitle"><div class="qNo">السؤال ٢٧</div><div class="tag small">د(س)=(٢−س)²+٣ ، س&gt;٢ — أوجد المجال/المدى</div></div>
+      <div class="box green">
+        <ul class="steps">
+          <li>المجال معطى: س &gt; ٢</li>
+          <li>(٢−س)² ≥ ٠ دائمًا</li>
+          <li>أقل قيمة عندما (٢−س)²=٠ وهذا يحدث عند س=٢ لكن س&gt;٢ ⇒ لا تصل للصفر بل تقترب منه</li>
+          <li>إذن ص &gt; ٣ (تقترب من ٣ بدون أن تساويه)</li>
+        </ul>
+        <div class="answer">المجال: س &gt; ٢ — المدى: ص &gt; ٣</div>
       </div>
     </article>
 
